@@ -1,0 +1,9 @@
+Prompt ==================
+For a given list of input numbers, write a function to calculate the Mean Absolute Deviation around the mean of the dataset. The function must receive a List of floats as the input and return a float as the output.
+
+Response ================
+{
+  "role": "assistant",
+  "content": "Here's a Python function that calculates the Mean Absolute Deviation (MAD) around the mean of a dataset:\n\n```python\ndef calculate_mad(data):\n    n = len(data)\n    mean = sum(data) / n\n    mad = sum(abs(x - mean) for x in data) / n\n    return mad\n```\n\nYou can use this function by passing a list of floats to it as the `data` parameter. It will return the MAD as a float value."
+}
+
