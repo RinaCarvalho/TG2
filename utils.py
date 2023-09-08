@@ -15,4 +15,9 @@ def write_to_jsonl():
 
 def extract_prompt_from_problem(problem_id, prompt_type):
     with open(problem_file_path, "r") as file:
-        pass
+        for line in file:
+            data = json.loads(line)
+            if data.get("problem_id") == problem_id:
+                prompts = data.get("prompts", [])
+                for prompt in prompts:
+                    return prompt[prompt_type]
