@@ -6,8 +6,9 @@ from datetime import datetime
 # TODO: Enable other LLMs than Openai's
 
 class CodeGenerator:
-    def __init__(self, model):
+    def __init__(self, model, language):
         self.model = model
+        self.language = language
         openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
@@ -30,7 +31,12 @@ class CodeGenerator:
         try:
             completion = openai.ChatCompletion.create(
                 model = self.model,
-                messages = prompt
+                messages = [
+                    {"role": "system",
+                     "content": f"You are a programming assistant, responsible for generating code in {self.language}.\
+                                Avoid additional text outside of the generated code snippets."},
+                    {"role": "user", "content": prompt}
+                ]
             )
             response = completion.choices[0].message
             self._log_api_call(prompt_series, prompt, response)
