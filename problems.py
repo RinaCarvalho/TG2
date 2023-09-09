@@ -1,7 +1,7 @@
 data = [
     {
         "problem_id": "HE4",
-        "problem_description": "Calculate mean absolute deviation",
+        "problem_description": "Write function to calculate mean absolute deviation",
         "prompts": [
             {
                 "0-shot": "For a given list of input numbers, write a function to calculate the Mean Absolute Deviation around the mean of the dataset. The function must receive a List of floats as input and return a float."
