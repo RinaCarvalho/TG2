@@ -15,7 +15,7 @@ class CodeGenerator:
     def _log_api_call(self, prompt_series, prompt, response):
         now = datetime.now()
         timestamp = now.strftime("%Y_%m_%d_%H_%M_%S")
-        log_file = f"{timestamp}__{prompt_series}.log"
+        log_file = f"{prompt_series}__{timestamp}.log"
         log_filepath = os.path.join("logs", log_file)
 
         with open(log_filepath, "a") as log:
@@ -34,7 +34,7 @@ class CodeGenerator:
                 messages = [
                     {"role": "system",
                      "content": f"You are a programming assistant, responsible for generating code in {self.language}.\
-                                Avoid additional text outside of the generated code snippets."},
+                                Your responses must consist only of code, without additional text."},
                     {"role": "user", "content": prompt}
                 ]
             )
