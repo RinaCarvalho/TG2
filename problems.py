@@ -148,7 +148,7 @@ data = [
         "problem_description": "Write function to change base of number",
         "prompts": [
             {
-                "0-shot": "For two given numbers, change the numerical base of the first number to the base represented by the second number. The function must receive two integers as inputs and return an integer."
+                "0-shot": "For two given numbers, convert the first number from decimal base to the base represented by the second number. The function must receive two integers as inputs and return an string."
             },
             {
                 "original": "\n\ndef change_base(x: int, base: int):\n    \"\"\"Change numerical base of input number x to base.\n    return string representation after the conversion.\n    base numbers are less than 10.\n    >>> change_base(8, 3)\n    '22'\n    >>> change_base(8, 2)\n    '1000'\n    >>> change_base(7, 2)\n    '111'\n    \"\"\"\n",
@@ -339,7 +339,7 @@ data = [
         "problem_description": "Write function to determine the intersection between two intervals",
         "prompts": [
             {
-                "0-shot": "Write a function to determine the intersection between two given closed intervals. The function must receive two tuples of two integers each as input and return a tuple of two integers, if the length of the intersection is larger than 1, or a single integer otherwise."
+                "0-shot": "For two given closed intervals, write a function to determine the intersection between them. The function must receive two tuples of two integers each as input and return a tuple of two integers, if the length of the intersection is larger than 1, or a single integer otherwise."
             },
             {
                 "original": "\ndef intersection(interval1, interval2):\n    \"\"\"You are given two intervals,\n    where each interval is a pair of integers. For example, interval = (start, end) = (1, 2).\n    The given intervals are closed which means that the interval (start, end)\n    includes both start and end.\n    For each given interval, it is assumed that its start is less or equal its end.\n    Your task is to determine whether the length of intersection of these two \n    intervals is a prime number.\n    Example, the intersection of the intervals (1, 3), (2, 4) is (2, 3)\n    which its length is 1, which not a prime number.\n    If the length of the intersection is a prime number, return \"YES\",\n    otherwise, return \"NO\".\n    If the two intervals don't intersect, return \"NO\".\n\n\n    [input/output] samples:\n    intersection((1, 2), (2, 3)) ==> \"NO\"\n    intersection((-1, 1), (0, 4)) ==> \"NO\"\n    intersection((-3, -1), (-5, 5)) ==> \"YES\"\n    \"\"\"\n",
@@ -370,7 +370,7 @@ data = [
         "problem_description": "Write function to convert to roman numerals",
         "prompts": [
             {
-                "0-shot": "Write a function to convert a given number to uppercase roman numerals. The function must receive an integer as input and return a string."
+                "0-shot": "For a given integer, write a function to convert the number to uppercase roman numerals. The function must receive an integer as input and return a string."
             },
             {
                 "original": "\ndef int_to_mini_roman(number):\n    \"\"\"\n    Given a positive integer, obtain its roman numeral equivalent as a string,\n    and return it in lowercase.\n    Restrictions: 1 <= num <= 1000\n\n    Examples:\n    >>> int_to_mini_roman(19) == 'xix'\n    >>> int_to_mini_roman(152) == 'clii'\n    >>> int_to_mini_roman(426) == 'cdxxvi'\n    \"\"\"\n",
@@ -426,7 +426,7 @@ data = [
         "problem_description": "Write function to convert string to md5 hash",
         "prompts": [
             {
-                "0-shot": "Write a function that converts a given string to its md5 hash. The function must receive a string as input and return a string."
+                "0-shot": "For a given string, write a function that converts the string to its md5 hash. The function must receive a string as input and return a string."
             },
             {
                 "original": "\ndef string_to_md5(text):\n    \"\"\"\n    Given a string 'text', return its md5 hash equivalent string.\n    If 'text' is an empty string, return None.\n\n    >>> string_to_md5('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n",
