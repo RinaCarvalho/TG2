@@ -1,0 +1,9 @@
+Prompt ==================
+For a given string with multiple groups of nested parentheses, write a function to determine the deepest level of nesting of the parentheses. The function must receive a string as input and return an integer.
+
+Response ================
+{
+  "role": "assistant",
+  "content": "You can use a recursive approach to solve this problem. Here's the Python code for the function:\n\n```python\ndef deepest_nested_level(string):\n    max_level = 0\n    current_level = 0\n    \n    for char in string:\n        if char == '(':\n            current_level += 1\n            max_level = max(max_level, current_level)\n        elif char == ')':\n            current_level -= 1\n    \n    return max_level\n```\n\nThis function uses two variables: `max_level` to keep track of the maximum nesting level encountered, and `current_level` to keep track of the current nesting level.\n\nThe function iterates over each character in the string and increments the `current_level` variable whenever an opening parenthesis '(' is encountered. If a closing parenthesis ')' is encountered, the `current_level` variable is decremented.\n\nFinally, the function returns the `max_level`, which represents the deepest level of nested parentheses in the string."
+}
+
