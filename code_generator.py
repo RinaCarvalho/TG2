@@ -38,7 +38,7 @@ class CodeGenerator:
                     {"role": "user", "content": prompt}
                 ]
             )
-            response = completion.choices[0].message
+            response = completion.choices[0].message.content
             self._log_api_call(prompt_series, prompt, response)
 
         except:
