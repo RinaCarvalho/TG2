@@ -4,6 +4,6 @@ For a given list of input numbers, write a function to calculate the Mean Absolu
 Response ================
 {
   "role": "assistant",
-  "content": "Here's a Python function that calculates the Mean Absolute Deviation (MAD) around the mean of a given list of numbers:\n\n```python\ndef calculate_mad(numbers):\n    # Calculate the mean of the numbers\n    mean = sum(numbers) / len(numbers)\n    \n    # Calculate the absolute deviations from the mean\n    abs_deviations = [abs(num - mean) for num in numbers]\n    \n    # Calculate the Mean Absolute Deviation\n    mad = sum(abs_deviations) / len(numbers)\n    \n    return mad\n```\n\nYou can use this function by passing a list of floats as an argument. For example:\n\n```python\nnumbers = [1.2, 2.5, 3.8, 4.6, 5.3]\nmad = calculate_mad(numbers)\nprint(mad)\n```\n\nOutput:\n```\n1.3\n```"
+  "content": "def calculate_mad(numbers):\n    # Calculate the mean of the numbers\n    mean = sum(numbers) / len(numbers)\n    \n    # Calculate the absolute deviations from the mean\n    abs_deviations = [abs(num - mean) for num in numbers]\n    \n    # Calculate the Mean Absolute Deviation\n    mad = sum(abs_deviations) / len(numbers)\n    \n    return mad\n"
 }
 
