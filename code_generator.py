@@ -1,5 +1,6 @@
 import os
 import openai
+import json
 
 from datetime import datetime
 
@@ -15,14 +16,16 @@ class CodeGenerator:
     def _log_api_call(self, prompt_series, prompt, response):
         now = datetime.now()
         timestamp = now.strftime("%Y_%m_%d_%H_%M_%S")
-        log_file = f"{prompt_series}__{timestamp}.log"
+        log_file = f"{prompt_series}__{timestamp}.json"
         log_filepath = os.path.join("logs", log_file)
+        
+        log_entry = {
+            "prompt": prompt,
+            "response": response
+        }
 
         with open(log_filepath, "a") as log:
-            log.write("Prompt ==================\n")
-            log.write(f"{prompt}\n\n")
-            log.write("Response ================\n")
-            log.write(f"{response}\n\n")
+            log.write(json.dumps(log_entry))
 
     
     def generate_code(self, prompt_series, prompt):
