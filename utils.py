@@ -21,3 +21,13 @@ def extract_prompt_from_problem(problem_id, prompt_type):
                 prompts = data.get("prompts", [])
                 for prompt in prompts:
                     return prompt[prompt_type]
+
+
+def write_test_results_to_log(log_filepath, results):
+    with open(log_filepath, "r") as log:
+        data = json.loads(log)
+
+    data["test_results"] = results
+
+    with open(log_filepath, "a") as log:
+        log.write(json.dumps(data))
