@@ -12,6 +12,18 @@ def run_tests(script_string):
 
 if __name__ == "__main__":
     import sys
-    if len(sys.argv) > 1:
+    from utils import write_test_results_to_log
+
+    if len(sys.argv) > 2:
         script_string = sys.argv[1]
-        run_tests(script_string)
+        log_filepath = sys.argv[2]
+
+        try:
+            run_tests(script_string)
+            results = "Tests passed successfully"
+            write_test_results_to_log(log_filepath, results)
+
+        except AssertionError as e:
+            results = f"Test failed: {e}"
+            write_test_results_to_log(log_filepath, results)
+            sys.exit(1)
