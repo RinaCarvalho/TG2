@@ -2,7 +2,6 @@
 
 from prompt_generator import PromptGenerator
 from code_generator import CodeGenerator
-from evaluator import Evaluator
 from utils import extract_prompt_from_problem
 
 model = "gpt-3.5-turbo"
