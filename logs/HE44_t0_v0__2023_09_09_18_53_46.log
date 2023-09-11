@@ -1,9 +1,0 @@
-Prompt ==================
-For two given numbers, change the numerical base of the first number to the base represented by the second number. The function must receive two integers as inputs and return an integer.
-
-Response ================
-{
-  "role": "assistant",
-  "content": "def change_base(num, new_base):\n    return int(str(num), new_base)"
-}
-

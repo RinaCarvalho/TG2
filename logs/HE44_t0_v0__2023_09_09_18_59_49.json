@@ -1,0 +1,4 @@
+{
+    "prompt": "For two given numbers, convert the first number from decimal base to the base represented by the second number. The function must receive two integers as inputs and return an string.",
+    "response": "def decimal_to_base(number, base):\n    # create a list to store the digits of the converted base\n    result = []\n\n    # convert decimal number to the specified base\n    while number > 0:\n        result.append(str(number % base))\n        number = number // base\n\n    # reverse the order of the digits to get the correct base representation\n    result.reverse()\n\n    # return the base representation as a string\n    return ''.join(result)"
+}

@@ -1,0 +1,4 @@
+{
+    "prompt": "For a given string with multiple groups of nested parentheses, write a function to determine the deepest level of nesting of the parentheses. The function must receive a string as input and return an integer.",
+    "response": "def deepest_nested_level(string):\n    max_level = 0\n    current_level = 0\n    \n    for char in string:\n        if char == '(':\n            current_level += 1\n            max_level = max(max_level, current_level)\n        elif char == ')':\n            current_level -= 1\n    \n    return max_level\n"
+}

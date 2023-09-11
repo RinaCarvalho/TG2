@@ -7,7 +7,7 @@ from utils import extract_prompt_from_problem
 
 model = "gpt-3.5-turbo"
 language = "Python"
-problem_id = "HE162"
+problem_id = "HE6"
 prompt_type = "0-shot"
 
 if __name__ == "__main__":
