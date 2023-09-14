@@ -23,6 +23,14 @@ def extract_prompt_from_problem(problem_id, prompt_type):
                     return prompt[prompt_type]
 
 
+def extract_tests_from_problem(problem_id):
+    with open(problem_file_path, "r") as file:
+        for line in file:
+            data = json.loads(line)
+            if data.get("problem_id") == problem_id:
+                return data.get("tests", [])
+
+
 def write_test_results_to_log(log_filepath, results):
     with open(log_filepath, "r") as log:
         data = json.loads(log)
