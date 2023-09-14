@@ -1,6 +1,7 @@
 import json
 import os
-import subprocess
+import re
+from utils import write_test_results_to_log
 
 class Evaluator:
     def __init__(self, log_file):
@@ -23,10 +24,30 @@ class Evaluator:
         return data["response"]
 
 
-    def run_test(self):
+    def _extract_name_from_namespace(self, generated_code):
+        function_name = r"def\s+(\w+)\s*\("
+        match = re.search(function_name, generated_code)
+
+        if match:
+            return match.group(1)
+        else:
+            return None
+
+
+    def run_test(self, tests):
         generated_code = self._extract_generated_code()
 
-        if generated_code:
-            test_filepath = os.path.join("tests", f"test_{self.problem_id}.py")
-            abs_log_filepath = os.path.abspath(self.log_filepath)
-            subprocess.call(["python", test_filepath, generated_code, abs_log_filepath])
+        if not generated_code:
+            results = "Tests unsuccessful due to error in code generation"
+            write_test_results_to_log(self.log_filepath, results)
+            return
+            
+        function_name = self._extract_name_from_namespace(generated_code)
+        namespace = {}
+        exec(generated_code, namespace)
+
+        test_function = namespace[function_name]
+
+        for input, output in tests:
+            result = test_function(input)
+            assert result == output
