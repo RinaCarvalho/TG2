@@ -13,5 +13,4 @@ if __name__ == "__main__":
     except AssertionError as e:
         results = f"Test failed: {e}"
 
-    finally:
-        write_test_results_to_log(evaluator.log_filepath, results)
+    write_test_results_to_log(evaluator.log_filepath, results)
