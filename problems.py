@@ -312,6 +312,28 @@ data = [
                 ],
                 "output": "1000"
             }
+        ],
+        "tests": [
+            {
+                "inputs": [8, 3],
+                "output": "22"
+            },
+            {
+                "inputs": [8, 2],
+                "output": "1000"
+            },
+            {
+                "inputs": [7, 8],
+                "output": "7"
+            },
+            {
+                "inputs": [15325, 10],
+                "output": "15325"
+            },
+            {
+                "inputs": [234, 2],
+                "output": "11101010"
+            }
         ]
     },
     {
@@ -336,6 +358,36 @@ data = [
             {
                 "input": "zbcd",
                 "output": "False"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": ["abcba"],
+                "output": True
+            },
+            {
+                "inputs": ["zbcd"],
+                "output": False
+            },
+            {
+                "inputs": ["aaaaaaa"],
+                "output": True
+            },
+            {
+                "inputs": [""],
+                "output": True
+            },
+            {
+                "inputs": ["abccba"],
+                "output": True
+            },
+            {
+                "inputs": ["Palindrome"],
+                "output": False
+            },
+            {
+                "inputs": ["Abcba"],
+                "output": False
             }
         ]
     },
@@ -362,6 +414,28 @@ data = [
                 "input": "aeiou",
                 "output": ""
             }
+        ],
+        "tests": [
+            {
+                "inputs": ["abcdef"],
+                "output": "bcdf"
+            },
+            {
+                "inputs": ["aeiou"],
+                "output": ""
+            },
+            {
+                "inputs": ["A string with vowels"],
+                "output": " strng wth vwls"
+            },
+            {
+                "inputs": ["aAbBcC"],
+                "output": "bBcC"
+            },
+            {
+                "inputs": ["yaml"],
+                "output": "yml"
+            }
         ]
     },
     {
@@ -386,6 +460,28 @@ data = [
             {
                 "input": "1",
                 "output": "1"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [1],
+                "output": 1
+            },
+            {
+                "inputs": [2],
+                "output": 1
+            },
+            {
+                "inputs": [3],
+                "output": 2
+            },
+            {
+                "inputs": [10],
+                "output": 55
+            },
+            {
+                "inputs": [12],
+                "output": 144
             }
         ]
     },
@@ -418,6 +514,28 @@ data = [
                 ],
                 "output": "ewhjklnop"
             }
+        ],
+        "tests": [
+            {
+                "inputs": ["hi", 2],
+                "output": "jk"
+            },
+            {
+                "inputs": ["asdfghjkl", 4],
+                "output": "ewhjklnop"
+            },
+            {
+                "inputs": ["Caesar Cipher", 9],
+                "output": "Ljnbja Lryqna"
+            },
+            {
+                "inputs": ["Thirteen", 13],
+                "output": "Guvegrra"
+            },
+            {
+                "inputs": ["dxzdlmnilfuhmilufhlihufnmlimnufhlimnufhfucufh", 4],
+                "output": "hbdhpqrmpjylqmpyjlpmlyjrqpmqryjlpmqryjljygyjl"
+            }
         ]
     },
     {
@@ -442,6 +560,28 @@ data = [
             {
                 "input": "abcbaa",
                 "output": "{'a': 3, 'b': 2, 'c': 1}"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": ["abc"],
+                "output": {'a': 1, 'b': 1, 'c': 1}
+            },
+            {
+                "inputs": ["abcbaa"],
+                "output": {'a': 3, 'b': 2, 'c': 1}
+            },
+            {
+                "inputs": ["bbbbba"],
+                "output": {'b': 5, 'a': 1}
+            },
+            {
+                "inputs": [''],
+                "output": {}
+            },
+            {
+                "inputs": ['a'],
+                "output": {'a': 1}
             }
         ]
     },
@@ -471,6 +611,40 @@ data = [
             {
                 "input": "06/04/1998",
                 "output": "False"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": ["03-11-2000"],
+                "output": True
+            },
+            {
+                "inputs": ["15-01-2012"],
+                "output": False
+            },
+            {
+                "inputs": ["06/04/1998"],
+                "output": False
+            },
+            {
+                "inputs": ["02-0-2009"],
+                "output": False
+            },
+            {
+                "inputs": ["12-31-2000"],
+                "output": True
+            },
+            {
+                "inputs": ["02-31-1999"],
+                "output": False
+            },
+            {
+                "inputs": ["02.02.1990"],
+                "output": False
+            },
+            {
+                "inputs": ["01-01-2023"],
+                "output": True
             }
         ]
     },
@@ -503,6 +677,28 @@ data = [
                 ],
                 "output": "2"
             }
+        ],
+        "tests": [
+            {
+                "inputs": [(1,3), (2,4)],
+                "output": (2,3)
+            },
+            {
+                "inputs": [(1,2), (2,3)],
+                "output": 2
+            },
+            {
+                "inputs": [(-1,2), (0,2)],
+                "output": (0,2)
+            },
+            {
+                "inputs": [(0,5), (2,3)],
+                "output": (2,3)
+            },
+            {
+                "inputs": [(-5,-1), (-2,0)],
+                "output": (-2,-1)
+            }
         ]
     },
     {
@@ -527,6 +723,28 @@ data = [
             {
                 "input": "426",
                 "output": "CDXXVI"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [19],
+                "output": "XIX"
+            },
+            {
+                "inputs": [426],
+                "output": "CDXXVI"
+            },
+            {
+                "inputs": [1],
+                "output": "I"
+            },
+            {
+                "inputs": [1992],
+                "output": "MCMXCII"
+            },
+            {
+                "inputs": [46],
+                "output": "XLVI"
             }
         ]
     },
@@ -559,6 +777,28 @@ data = [
                 ],
                 "output": "37"
             }
+        ],
+        "tests": [
+            {
+                "inputs": [[2, 3, 4, 5], ['+', '*', '-']],
+                "output": 9
+            },
+            {
+                "inputs": [[2, 3, 4, 5], ['**', '*', '+']],
+                "output": 37
+            },
+            {
+                "inputs": [[1, 0, 5, -2], ['*', '/', '-']],
+                "output": 2
+            },
+            {
+                "inputs": [[2, 3, 4, 0], ['*', '*', '**']],
+                "output": 6
+            },
+            {
+                "inputs": [[5, 5, 5, 5], ['*', '/', '+']],
+                "output": 10
+            },
         ]
     },
     {
@@ -579,6 +819,28 @@ data = [
             {
                 "input": "Hello world",
                 "output": "3e25960a79dbc69b674cd4ec67a72c62"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": ["Hello world"],
+                "output": "3e25960a79dbc69b674cd4ec67a72c62"
+            },
+            {
+                "inputs": [""],
+                "output": None
+            },
+            {
+                "inputs": ["password"],
+                "output": "5f4dcc3b5aa765d61d8327deb882cf99"
+            },
+            {
+                "inputs": ["A B C"],
+                "output": "0ef78513b0cb8cef12743f5aeb35f888"
+            },
+            {
+                "inputs": ["SuperSecretCredential123!"],
+                "output": "c6ebb6c8a0c55764f1e4e1703e8482cb"
             }
         ]
     }
