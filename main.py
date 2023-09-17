@@ -2,7 +2,7 @@
 
 from prompt_generator import PromptGenerator
 from code_generator import CodeGenerator
-from utils import extract_prompt_from_problem
+from utils import extract_prompt_from_problem, write_to_jsonl
 
 model = "gpt-3.5-turbo"
 language = "Python"
@@ -10,6 +10,7 @@ problem_id = "HE6"
 prompt_type = "0-shot"
 
 if __name__ == "__main__":
+    write_to_jsonl()
     prompt = extract_prompt_from_problem(problem_id=problem_id, prompt_type=prompt_type)
 
     if prompt:
