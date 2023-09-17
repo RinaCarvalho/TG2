@@ -25,23 +25,33 @@ data = [
         ],
         "tests": [
             {
-                "input": [1.0, 2.0, 3.0, 4.0],
+                "inputs": [
+                    [1.0, 2.0, 3.0, 4.0]
+                ],
                 "output": 1.0
             },
             {
-                "input": [-3.2, -1, 0.5, 2.5],
+                "inputs": [
+                    [-3.2, -1, 0.5, 2.5]
+                ],
                 "output": 1.8
             },
             {
-                "input": [1.0, 1.0],
+                "inputs": [
+                    [1.0, 1.0]
+                ],
                 "output": 0.0
             },
             {
-                "input": [5.0],
+                "inputs": [
+                    [5.0]
+                ],
                 "output": 0.0
             },
             {
-                "input": [1.0, -1.0, 1.0, -1.0],
+                "inputs": [
+                    [1.0, -1.0, 1.0, -1.0]
+                ],
                 "output": 1.0
             }
         ]
@@ -68,6 +78,28 @@ data = [
             {
                 "input": "((())()())",
                 "output": "3"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": ["()"],
+                "output": 1
+            },
+            {
+                "inputs": ["((())()())"],
+                "output": 3
+            },
+            {
+                "inputs": ["(()()())"],
+                "output": 2
+            },
+            {
+                "inputs": ["(((()(()))()))"],
+                "output": 5
+            },
+            {
+                "inputs": ["(()((())))"],
+                "output": 4
             }
         ]
     },
@@ -99,6 +131,32 @@ data = [
                     "0"
                 ],
                 "output": "1"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": ["010", "110"],
+                "output": "100"
+            },
+            {
+                "inputs": ["0", "0"],
+                "output": "0"
+            },
+            {
+                "inputs": ["1", "0"],
+                "output": "1"
+            },
+            {
+                "inputs": ["0", "1"],
+                "output": "1"
+            },
+            {
+                "inputs": ["1", "1"],
+                "output": "0"
+            },
+            {
+                "inputs": ["001001", "100100"],
+                "output": "101101"
             }
         ]
     },
@@ -138,6 +196,28 @@ data = [
                 ],
                 "output": "2"
             }
+        ],
+        "tests": [
+            {
+                "inputs": ["", "string"],
+                "output": 0
+            },
+            {
+                "inputs": ["aaa", "a"],
+                "output": 3
+            },
+            {
+                "inputs": ["aaa", "aa"],
+                "output": 2
+            },
+            {
+                "inputs": ["substring", "string"],
+                "output": 1
+            },
+            {
+                "inputs": ["A string with spaces", " "],
+                "output": 3
+            }
         ]
     },
     {
@@ -162,6 +242,44 @@ data = [
             {
                 "input": "11",
                 "output": "True"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [1],
+                "output": False
+            },
+            {
+                "inputs": [2],
+                "output": True
+            },
+            {
+                "inputs": [5],
+                "output": True
+            },
+            {
+                "inputs": [6],
+                "output": False
+            },
+            {
+                "inputs": [11],
+                "output": True
+            },
+            {
+                "inputs": [23],
+                "output": True
+            },
+            {
+                "inputs": [24],
+                "output": False
+            },
+            {
+                "inputs": [13441],
+                "output": True
+            },
+            {
+                "inputs": [13441 * 2],
+                "output": False
             }
         ]
     },
