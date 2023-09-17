@@ -32,10 +32,11 @@ def extract_tests_from_problem(problem_id):
 
 
 def write_test_results_to_log(log_filepath, results):
-    with open(log_filepath, "r") as log:
+    with open(log_filepath, "r") as log_file:
+        log = log_file.read()
         data = json.loads(log)
 
     data["test_results"] = results
 
-    with open(log_filepath, "a") as log:
-        log.write(json.dumps(data))
+    with open(log_filepath, "w") as log:
+        log.write(json.dumps(data, indent = 4))
