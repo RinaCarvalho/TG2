@@ -50,4 +50,4 @@ class Evaluator:
 
         for test in tests:
             result = test_function(test["input"])
-            assert result == test["output"], f"{function_name}({test['input']}) != {test['output']}"
+            assert result == test["output"], f"result {result} != {test['output']} (expected)"
