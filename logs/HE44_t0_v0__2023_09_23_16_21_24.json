@@ -1,0 +1,5 @@
+{
+    "prompt": "For two given numbers, convert the first number from decimal base to the base represented by the second number. The function must receive two integers as inputs and return an string.",
+    "response": "def dec_to_base(num, base):\n    if base < 2 or base > 36:\n        return \"Invalid base\"\n    elif num == 0:\n        return \"0\"\n    else:\n        digits = \"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\"\n        result = \"\"\n        negative = False\n        if num < 0:\n            negative = True\n            num = abs(num)\n            \n        while num > 0:\n            remainder = num % base\n            result = digits[remainder] + result\n            num = num // base\n        \n        if negative:\n            result = \"-\" + result\n            \n        return result",
+    "test_results": "Tests passed successfully"
+}

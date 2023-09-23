@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given string, write a function that encrypts the string using a Caesar cipher with a shift corresponding to a given number. The function must receive a string and a number as inputs and return a string.",
+    "response": "def caesar_cipher(string, shift):\n    encrypted_string = ''\n  \n    for char in string:\n        if char.isalpha():\n            ascii_offset = 65 if char.isupper() else 97\n            encrypted_char = chr((ord(char) - ascii_offset + shift) % 26 + ascii_offset)\n            encrypted_string += encrypted_char\n        else:\n            encrypted_string += char\n    \n    return encrypted_string\n",
+    "test_results": "Tests passed successfully"
+}

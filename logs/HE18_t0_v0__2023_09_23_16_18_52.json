@@ -1,0 +1,5 @@
+{
+    "prompt": "For two given strings, write a function to count how many times the second string can be found in the first string, incluing overlapping cases. The function must receive two strings as inputs and return an integer.",
+    "response": "def count_overlapping(string1, string2):\n    count = 0\n    start = 0\n    while start + len(string2) <= len(string1):\n        if string1[start:start + len(string2)] == string2:\n            count += 1\n        start += 1\n    return count",
+    "test_results": "Tests passed successfully"
+}

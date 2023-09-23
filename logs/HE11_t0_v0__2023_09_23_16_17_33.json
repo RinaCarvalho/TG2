@@ -1,0 +1,5 @@
+{
+    "prompt": "For two given strings, consisting only of 0s and 1s, write a function that performs binary XOR on the inputs. The function must receive two strings as inputs and return a string.",
+    "response": "def binary_xor(a, b):\n    return ''.join(str(int(x) ^ int(y)) for x, y in zip(a, b))",
+    "test_results": "Tests passed successfully"
+}
