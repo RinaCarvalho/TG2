@@ -11,7 +11,7 @@ COPY run_tests.py /app/run_tests.py
 COPY problems.py /app/problems.py
 
 # Copy 'requirements.txt'
-COPY requirements.txt /app/requirements.txt
+# COPY requirements.txt /app/requirements.txt
 
 # Copy the entire 'logs' directory into the container
 COPY logs /app/logs
@@ -22,7 +22,7 @@ COPY problems.jsonl /app/problems.jsonl
 # Install any needed packages (if any) for your application
 # You can add additional dependencies to your requirements.txt
 # and install them here using pip.
-RUN pip install -r requirements.txt
+# RUN pip install -r requirements.txt
 
 # Command to run your tests
 CMD ["python", "run_tests.py"]
