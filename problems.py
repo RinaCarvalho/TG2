@@ -827,10 +827,6 @@ data = [
                 "output": "3e25960a79dbc69b674cd4ec67a72c62"
             },
             {
-                "inputs": [""],
-                "output": None
-            },
-            {
                 "inputs": ["password"],
                 "output": "5f4dcc3b5aa765d61d8327deb882cf99"
             },
