@@ -28,24 +28,24 @@ class CodeGenerator:
             log.write(json.dumps(log_entry))
 
     
-    def generate_code(self, prompt_series, prompt):
+    def generate_code(self, prompt_series, prompt, n_samples = 1):
         # chat completion only for now
         # only openai for now
-        try:
-            completion = openai.ChatCompletion.create(
-                model = self.model,
-                messages = [
-                    {"role": "system",
-                     "content": f"You are a programming assistant, responsible for generating code in {self.language}.\
-                                Your responses must consist only of code, without additional text."},
-                    {"role": "user", "content": prompt}
-                ]
-            )
-            response = completion.choices[0].message.content
-            self._log_api_call(prompt_series, prompt, response)
 
-        except:
-            response = None
-            self._log_api_call(prompt_series, prompt, "Error generating code")
-        
-        return response
+        for i in range(n_samples):
+            try:
+                completion = openai.ChatCompletion.create(
+                    model = self.model,
+                    messages = [
+                        {"role": "system",
+                        "content": f"You are a programming assistant, responsible for generating code in {self.language}.\
+                                    Your responses must consist only of code, without additional text."},
+                        {"role": "user", "content": prompt}
+                    ]
+                )
+                response = completion.choices[0].message.content
+                self._log_api_call(prompt_series, prompt, response)
+
+            except:
+                response = None
+                self._log_api_call(prompt_series, prompt, "Error generating code")
