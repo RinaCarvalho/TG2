@@ -11,6 +11,10 @@ if __name__ == "__main__":
     for log_file in os.listdir("logs"):
         evaluator = Evaluator(log_file=log_file)
         tests = extract_tests_from_problem(evaluator.problem_id)
+
+        if not tests:
+            continue
+
         try:
             evaluator.run_test(tests)
             results = "Tests passed successfully"
