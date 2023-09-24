@@ -4,9 +4,9 @@ import re
 from utils import write_test_results_to_log
 
 class Evaluator:
-    def __init__(self, log_file):
+    def __init__(self, log_file, log_directory):
         self.log_file = log_file
-        self.log_filepath = os.path.join("logs", log_file)
+        self.log_filepath = os.path.join(log_directory, log_file)
         self.problem_id = self._extract_problem_id()
 
 
