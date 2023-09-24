@@ -3,6 +3,7 @@ import openai
 import json
 
 from datetime import datetime
+from utils import remove_fluff_from_code
 
 # TODO: Enable other LLMs than Openai's
 
@@ -18,6 +19,8 @@ class CodeGenerator:
         timestamp = now.strftime("%Y_%m_%d_%H_%M_%S")
         log_file = f"{prompt_series}__{timestamp}.json"
         log_filepath = os.path.join("logs", log_file)
+
+        response = remove_fluff_from_code(response)
         
         log_entry = {
             "prompt": prompt,

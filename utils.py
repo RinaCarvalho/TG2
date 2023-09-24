@@ -1,4 +1,5 @@
 import json
+import re
 from problems import data
 
 problem_file_path = 'problems.jsonl'
@@ -29,6 +30,25 @@ def extract_tests_from_problem(problem_id):
             return problem['tests']
         
     return None
+
+
+def remove_fluff_from_code(response):
+    start_pattern = r'```(?:python)?'
+    end_pattern = r'```'
+
+    start_match = re.search(start_pattern, response)
+
+    if start_match:
+        end_match = re.search(end_pattern, response[start_match.end():])
+
+        if end_match:
+            start_pos = start_match.end()
+            end_pos = start_match.end() + end_match.start()
+            code_snippet = response[start_pos:end_pos]
+
+            return code_snippet
+
+    return response
 
 
 def write_test_results_to_log(log_filepath, results):
