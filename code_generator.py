@@ -14,11 +14,11 @@ class CodeGenerator:
         openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
-    def _log_api_call(self, prompt_series, prompt, response):
+    def _log_api_call(self, prompt_series, prompt, response, log_path):
         now = datetime.now()
         timestamp = now.strftime("%Y_%m_%d_%H_%M_%S")
         log_file = f"{prompt_series}__{timestamp}.json"
-        log_filepath = os.path.join("logs", log_file)
+        log_filepath = os.path.join(log_path, log_file)
 
         response = remove_fluff_from_code(response)
         
@@ -31,7 +31,7 @@ class CodeGenerator:
             log.write(json.dumps(log_entry))
 
     
-    def generate_code(self, prompt_series, prompt, n_samples = 1):
+    def generate_code(self, prompt_series, prompt, n_samples = 1, log_path = "logs"):
         # chat completion only for now
         # only openai for now
 
@@ -47,8 +47,8 @@ class CodeGenerator:
                     ]
                 )
                 response = completion.choices[0].message.content
-                self._log_api_call(prompt_series, prompt, response)
+                self._log_api_call(prompt_series, prompt, response, log_path)
 
             except:
                 response = None
-                self._log_api_call(prompt_series, prompt, "Error generating code")
+                self._log_api_call(prompt_series, prompt, "Error generating code", log_path)
