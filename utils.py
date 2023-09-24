@@ -33,7 +33,7 @@ def extract_tests_from_problem(problem_id):
 
 
 def remove_fluff_from_code(response):
-    start_pattern = r'```(?:python)?'
+    start_pattern = r'```(python(\\n)?)?'
     end_pattern = r'```'
 
     start_match = re.search(start_pattern, response)
