@@ -1,6 +1,7 @@
 import typo
 import random
 from prompt_constants import Technique, Variation, TYPO_LIST
+from utils import extract_examples_from_problem
 
 class PromptGenerator:
     def __init__(self, prompt, problem, technique = Technique.ZERO_SHOT, variation = Variation.NONE):
@@ -15,6 +16,9 @@ class PromptGenerator:
         return f"{self.problem}_t{self.technique}_v{self.variation}"
     
     def generate_modified_prompt(self):
+        if self.technique == Technique.FEW_SHOT.value:
+            self.prompt = self._generate_few_shot_prompt(self.prompt)
+
         if self.variation == Variation.TYPO.value:
             self.prompt = self._generate_prompt_with_typos(self.prompt)
 
@@ -35,4 +39,11 @@ class PromptGenerator:
 
         return prompt_with_typos
     
+    def _generate_few_shot_prompt(self, prompt):
+        prompt += "\n\nExamples:"
+        examples = extract_examples_from_problem(self.problem)
+        for example in examples:
+            prompt += f"\n\nInput: {example['input']}"
+            prompt += f"\nOutput: {example['output']}"
          
+        return prompt

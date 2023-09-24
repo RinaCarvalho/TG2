@@ -24,6 +24,12 @@ def extract_prompt_from_problem(problem_id, prompt_type):
                     return prompt[prompt_type]
 
 
+def extract_examples_from_problem(problem_id):
+    for problem in data:
+        if problem['problem_id'] == problem_id:
+            return problem['input_examples']
+
+
 def extract_tests_from_problem(problem_id):
     for problem in data:
         if problem['problem_id'] == problem_id:
