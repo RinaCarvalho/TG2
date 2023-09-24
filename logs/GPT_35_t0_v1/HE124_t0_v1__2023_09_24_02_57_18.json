@@ -1,0 +1,5 @@
+{
+    "prompt": "For a givenn date string, write a function that checkz whether the date is valid. A date is considered valid if it has a valiid month and a vlaid number of days for its coresponding month, and  if it has the forrmat 'mm-dd-yyyy'. The function must receive a string as input and regurn a bolean.",
+    "response": "\ndef is_valid_date(date_string):\n    try:\n        month, day, year = date_string.split('-')\n        month = int(month)\n        day = int(day)\n        year = int(year)\n        \n        if month < 1 or month > 12:\n            return False\n        \n        if day < 1 or day > 31:\n            return False\n        \n        if month in [4, 6, 9, 11] and day > 30:\n            return False\n        \n        if month == 2:\n            if (year % 4 == 0 and year % 100 != 0 or year % 400 == 0) and day > 29:\n                return False\n            elif day > 28:\n                return False\n        \n        return True\n    except:\n        return False\n",
+    "test_results": "Tests passed successfully"
+}

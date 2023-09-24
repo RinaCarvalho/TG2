@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given list of iput umbers, write a function to calculate the Mean Absolute Deviation around the mean o f the dataset. The functon mustreceive a List of floats sa input and return a float.",
+    "response": "import numpy as np\n\ndef calculate_mean_abs_deviation(numbers):\n    mean = np.mean(numbers)\n    abs_deviations = np.abs(numbers - mean)\n    mean_abs_deviation = np.mean(abs_deviations)\n    return mean_abs_deviation",
+    "test_results": "Test failed: No module named 'numpy'"
+}

@@ -1,0 +1,5 @@
+{
+    "prompt": "Fo a given integer, wrtie a function to convert the number to upercase roma numerals. The function must receive an integer as input and return a string.",
+    "response": "def int_to_roman(n):\n    roman_numerals = {\n        1000: 'M',\n        900: 'CM',\n        500: 'D',\n        400: 'CD',\n        100: 'C',\n        90: 'XC',\n        50: 'L',\n        40: 'XL',\n        10: 'X',\n        9: 'IX',\n        5: 'V',\n        4: 'IV',\n        1: 'I'\n    }\n    result = ''\n    for num, numeral in roman_numerals.items():\n        while n >= num:\n            result += numeral\n            n -= num\n    return result",
+    "test_results": "Tests passed successfully"
+}

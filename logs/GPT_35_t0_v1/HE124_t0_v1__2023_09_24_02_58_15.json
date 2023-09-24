@@ -1,0 +1,5 @@
+{
+    "prompt": "For a givenn date string, write a function that checkz whether the date is valid. A date is considered valid if it has a valiid month and a vlaid number of days for its coresponding month, and  if it has the forrmat 'mm-dd-yyyy'. The function must receive a string as input and regurn a bolean.",
+    "response": "def check_valid_date(date_string):\n    date_format = \"%m-%d-%Y\"\n    try:\n        datetime.datetime.strptime(date_string, date_format)\n        return True\n    except ValueError:\n        return False",
+    "test_results": "Test failed: name 'datetime' is not defined"
+}

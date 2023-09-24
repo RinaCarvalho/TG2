@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given integer, write  function to check if the number is a prime number. The funxtion must recevie an integer as input amnd retuurn a boolean.",
+    "response": "def is_prime_number(num):\n    if num < 2:\n        return False\n    \n    for i in range(2, int(num ** 0.5) + 1):\n        if num % i == 0:\n            return False\n    \n    return True",
+    "test_results": "Tests passed successfully"
+}

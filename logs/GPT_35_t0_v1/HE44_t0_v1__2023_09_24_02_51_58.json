@@ -1,0 +1,5 @@
+{
+    "prompt": "For two given numbers,convert the first number from decimal bbase to the base repres ented by thesecomnd number. The function must receive two integers asinput and return an string.",
+    "response": "def convert_base(num1, num2):\n    return str(int(str(num1), num2))",
+    "test_results": "Test failed: invalid literal for int() with base 3: '8'"
+}

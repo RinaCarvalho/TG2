@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given sring, write a function tht converts the string to its md5 hash. The function must receive a string aa input and return a string.",
+    "response": "import hashlib\n\ndef get_md5_hash(string):\n    md5_hash = hashlib.md5(string.encode()).hexdigest()\n    return md5_hash",
+    "test_results": "Tests passed successfully"
+}

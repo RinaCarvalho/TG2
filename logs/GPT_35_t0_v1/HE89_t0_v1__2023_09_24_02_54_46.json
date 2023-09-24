@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given string, write a functoon that encrypts the string suing a Casear cipher with a shi ftt ocresponding to a given number. The function must receive a string and anumebr as inputs abnd return a string.",
+    "response": "def caesar_cipher(string, shift):\n    encrypted_string = \"\"\n    for char in string:\n        if char.isalpha():\n            ascii_offset = ord('A') if char.isupper() else ord('a')\n            shifted_char = chr((ord(char) - ascii_offset + shift) % 26 + ascii_offset)\n            encrypted_string += shifted_char\n        else:\n            encrypted_string += char\n    return encrypted_string",
+    "test_results": "Tests passed successfully"
+}

@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given string, write a f unction to remove the vowels from the string. The function must receive a string as input and return a string.",
+    "response": "def remove_vowels(string):\n    return ''.join([char for char in string if char.lower() not in 'aeiou'])",
+    "test_results": "Tests passed successfully"
+}

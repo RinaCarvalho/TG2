@@ -1,0 +1,5 @@
+{
+    "prompt": "For two given numbers,convert the first number from decimal bbase to the base repres ented by thesecomnd number. The function must receive two integers asinput and return an string.",
+    "response": "def convert_base(num, base):\n    if num == 0:\n        return '0'\n    digits = []\n    while num:\n        digits.append(str(num % base))\n        num //= base\n    return ''.join(reversed(digits))",
+    "test_results": "Tests passed successfully"
+}

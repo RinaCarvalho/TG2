@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given strin gg, write a function thaft counts the number of occurre nces of each letter in the string, displaying  eac h letter and its nuber of occurrences as a key-value pair in a dictionary. Tuhe function must receive a string as input and return a dictionary.",
+    "response": "def count_letters(string):\n    count = {}\n    for letter in string:\n        if letter in count:\n            count[letter] += 1\n        else:\n            count[letter] = 1\n    return count",
+    "test_results": "Tests passed successfully"
+}

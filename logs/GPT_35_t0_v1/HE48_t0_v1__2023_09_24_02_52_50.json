@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given strinyg, wrte a function to check whether the string is a palindrome. The function must receive a strimg as inut and return w bboolean.",
+    "response": "\ndef is_palindrome(string):\n    return string == string[::-1]\n",
+    "test_results": "Tests passed successfully"
+}

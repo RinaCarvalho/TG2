@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given lkst of input numbers, write a function to calculatethe Mean Absolute Deviation aro und themean of the dataset. The function must receive a List of floats as input and return a float.",
+    "response": "\ndef calculate_mad(numbers):\n    mean = sum(numbers) / len(numbers)\n    mad = sum(abs(num - mean) for num in numbers) / len(numbers)\n    return mad\n",
+    "test_results": "Tests passed successfully"
+}

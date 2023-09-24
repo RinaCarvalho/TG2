@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given nu mber n, write a functiion to determine the n-th Fibonacci number. The function kmust receive an integer as input an d erturn an integer.",
+    "response": "def fibonacci(n):\n    if n <= 0:\n        return 0\n    elif n == 1:\n        return 1\n    else:\n        previous, current = 0, 1\n        for _ in range(2, n + 1):\n            previous, current = current, previous + current\n        return current",
+    "test_results": "Tests passed successfully"
+}

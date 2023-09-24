@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given list of iput umbers, write a function to calculate the Mean Absolute Deviation around the mean o f the dataset. The functon mustreceive a List of floats sa input and return a float.",
+    "response": "import statistics\n\ndef calculate_mean_absolute_deviation(data):\n    mean = statistics.mean(data)\n    deviations = [abs(x - mean) for x in data]\n    mean_absolute_deviation = statistics.mean(deviations)\n    return mean_absolute_deviation",
+    "test_results": "Tests passed successfully"
+}

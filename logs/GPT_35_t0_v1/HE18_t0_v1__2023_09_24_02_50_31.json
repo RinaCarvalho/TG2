@@ -1,0 +1,5 @@
+{
+    "prompt": "For two given strings, write a function to  cpubnt how many times the second strng can be found in the first string, inclhuing overlaping cases. The function must receive two stringsas inputs and return an integer.",
+    "response": "def count_occurrences(str1, str2):\n    count = 0\n    for i in range(len(str1) - len(str2) + 1):\n        if str1[i:i+len(str2)] == str2:\n            count += 1\n    return count",
+    "test_results": "Tests passed successfully"
+}
