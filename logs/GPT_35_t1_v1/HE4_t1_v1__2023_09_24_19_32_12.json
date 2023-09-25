@@ -1,1 +1,5 @@
-{"prompt": "For a given list of input nukmbers, write a function to calculate the Mean Absolute Debviation around the mean of the datast. The function must receive a List of floats as inpt and return a float.\n\nExamples:\n\nInput: [1.0, 2.0, 3.0, 4.0]\nOutput: 1.0\n\nInput: [-3.2, -1, 0.5, 2.5]\nOutput: 1.8", "response": "def calculate_mad(data):\n    mean = sum(data) / len(data)\n    deviations = [abs(x - mean) for x in data]\n    mad = sum(deviations) / len(deviations)\n    return mad"}
+{
+    "prompt": "For a given list of input nukmbers, write a function to calculate the Mean Absolute Debviation around the mean of the datast. The function must receive a List of floats as inpt and return a float.\n\nExamples:\n\nInput: [1.0, 2.0, 3.0, 4.0]\nOutput: 1.0\n\nInput: [-3.2, -1, 0.5, 2.5]\nOutput: 1.8",
+    "response": "def calculate_mad(data):\n    mean = sum(data) / len(data)\n    deviations = [abs(x - mean) for x in data]\n    mad = sum(deviations) / len(deviations)\n    return mad",
+    "test_results": "Tests passed successfully"
+}

@@ -1,1 +1,5 @@
-{"prompt": "Forr two given strings, consis ting only of 0s and 1s, write a function that preforms binary XOR on the inputs. The functioon must receivetwo strings as inputs ad return a string.\n\nExamples:\n\nInput: ['010', '110']\nOutpput:100\n\nInput: ['1', '0']\nOutpuy t: 1", "response": "def binary_xor(str1, str2):\n    xor_result = \"\"\n    for i in range(len(str1)):\n        if str1[i] == str2[i]:\n            xor_result += \"0\"\n        else:\n            xor_result += \"1\"\n    return xor_result"}
+{
+    "prompt": "Forr two given strings, consis ting only of 0s and 1s, write a function that preforms binary XOR on the inputs. The functioon must receivetwo strings as inputs ad return a string.\n\nExamples:\n\nInput: ['010', '110']\nOutpput:100\n\nInput: ['1', '0']\nOutpuy t: 1",
+    "response": "def binary_xor(str1, str2):\n    xor_result = \"\"\n    for i in range(len(str1)):\n        if str1[i] == str2[i]:\n            xor_result += \"0\"\n        else:\n            xor_result += \"1\"\n    return xor_result",
+    "test_results": "Tests passed successfully"
+}

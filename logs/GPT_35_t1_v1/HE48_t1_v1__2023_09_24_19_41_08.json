@@ -1,1 +1,5 @@
-{"prompt": "For a given string, write a fumction to check whether the string is a aplindrome. The function must receive a string as input and return a boolean.\n\nExamples:\n\nInput: abcba\nOutput: True\n\n Input: zbcd\nOtput: False", "response": "def is_palindrome(input_string):\n    return input_string == input_string[::-1]"}
+{
+    "prompt": "For a given string, write a fumction to check whether the string is a aplindrome. The function must receive a string as input and return a boolean.\n\nExamples:\n\nInput: abcba\nOutput: True\n\n Input: zbcd\nOtput: False",
+    "response": "def is_palindrome(input_string):\n    return input_string == input_string[::-1]",
+    "test_results": "Tests passed successfully"
+}
