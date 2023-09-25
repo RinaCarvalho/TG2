@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import timeout_decorator
 from utils import write_test_results_to_log
 
 class Evaluator:
@@ -34,6 +35,7 @@ class Evaluator:
             return None
 
 
+    @timeout_decorator.timeout(5)
     def run_test(self, tests):
         generated_code = self._extract_generated_code()
 
