@@ -1,1 +1,5 @@
-{"prompt": "For a given list of input numbers, write a function to calculate the Mean Absolute Deviation around the mean of the dataset. The function must receive a List of floats as input and return a float.\n\nExamples:\n\nInput: [1.0, 2.0, 3.0, 4.0]\nOutput: 1.0\n\nInput: [-3.2, -1, 0.5, 2.5]\nOutput: 1.8", "response": "import numpy as np\n\ndef calculate_mad(numbers):\n    mean = np.mean(numbers)\n    absolute_deviations = np.abs(numbers - mean)\n    mad = np.mean(absolute_deviations)\n    return mad\n\nnumbers = [1.0, 2.0, 3.0, 4.0]\nmad = calculate_mad(numbers)\nmad"}
+{
+    "prompt": "For a given list of input numbers, write a function to calculate the Mean Absolute Deviation around the mean of the dataset. The function must receive a List of floats as input and return a float.\n\nExamples:\n\nInput: [1.0, 2.0, 3.0, 4.0]\nOutput: 1.0\n\nInput: [-3.2, -1, 0.5, 2.5]\nOutput: 1.8",
+    "response": "import numpy as np\n\ndef calculate_mad(numbers):\n    mean = np.mean(numbers)\n    absolute_deviations = np.abs(numbers - mean)\n    mad = np.mean(absolute_deviations)\n    return mad\n\nnumbers = [1.0, 2.0, 3.0, 4.0]\nmad = calculate_mad(numbers)\nmad",
+    "test_results": "Tests passed successfully"
+}

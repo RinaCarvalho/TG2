@@ -1,1 +1,5 @@
-{"prompt": "For a given string with multiple groups of nested parentheses, write a function to determine the deepest level of nesting of the parentheses. The function must receive a string as input and return an integer.\n\nExamples:\n\nInput: ()\nOutput: 1\n\nInput: ((())()())\nOutput: 3", "response": "def deepest_nesting(s):\n    max_depth = 0\n    current_depth = 0\n    \n    for char in s:\n        if char == '(':\n            current_depth += 1\n            max_depth = max(max_depth, current_depth)\n        elif char == ')':\n            current_depth -= 1\n    \n    return max_depth"}
+{
+    "prompt": "For a given string with multiple groups of nested parentheses, write a function to determine the deepest level of nesting of the parentheses. The function must receive a string as input and return an integer.\n\nExamples:\n\nInput: ()\nOutput: 1\n\nInput: ((())()())\nOutput: 3",
+    "response": "def deepest_nesting(s):\n    max_depth = 0\n    current_depth = 0\n    \n    for char in s:\n        if char == '(':\n            current_depth += 1\n            max_depth = max(max_depth, current_depth)\n        elif char == ')':\n            current_depth -= 1\n    \n    return max_depth",
+    "test_results": "Tests passed successfully"
+}

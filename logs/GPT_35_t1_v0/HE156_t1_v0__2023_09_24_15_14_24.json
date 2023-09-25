@@ -1,1 +1,5 @@
-{"prompt": "For a given integer, write a function to convert the number to uppercase roman numerals. The function must receive an integer as input and return a string.\n\nExamples:\n\nInput: 19\nOutput: XIX\n\nInput: 426\nOutput: CDXXVI", "response": "def integer_to_roman(num):\n    values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]\n    symbols = [\"M\", \"CM\", \"D\", \"CD\", \"C\", \"XC\", \"L\", \"XL\", \"X\", \"IX\", \"V\", \"IV\", \"I\"]\n\n    roman = \"\"\n    i = 0\n\n    while num > 0:\n        div = num // values[i]\n        num %= values[i]\n        roman += div * symbols[i]\n        i += 1\n\n    return roman"}
+{
+    "prompt": "For a given integer, write a function to convert the number to uppercase roman numerals. The function must receive an integer as input and return a string.\n\nExamples:\n\nInput: 19\nOutput: XIX\n\nInput: 426\nOutput: CDXXVI",
+    "response": "def integer_to_roman(num):\n    values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]\n    symbols = [\"M\", \"CM\", \"D\", \"CD\", \"C\", \"XC\", \"L\", \"XL\", \"X\", \"IX\", \"V\", \"IV\", \"I\"]\n\n    roman = \"\"\n    i = 0\n\n    while num > 0:\n        div = num // values[i]\n        num %= values[i]\n        roman += div * symbols[i]\n        i += 1\n\n    return roman",
+    "test_results": "Tests passed successfully"
+}
