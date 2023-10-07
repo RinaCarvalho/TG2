@@ -1,1 +1,5 @@
-{"prompt": "For two given numbers, convert the first number from decimal base to the base represented by the second number. The function must receive two integers as inputs and return an string.\n\nExamples:\n\nInput: [8, 3]\nOutput: '22'\n\nInput: [8, 2]\nOutput: '1000'", "response": "def convert_base(num1, num2):\n    return str(int(num1, 10))[2:] if num2 == 2 else str(int(num1, 10))\n\nconvert_base(8, 3)"}
+{
+    "prompt": "For two given numbers, convert the first number from decimal base to the base represented by the second number. The function must receive two integers as inputs and return an string.\n\nExamples:\n\nInput: [8, 3]\nOutput: '22'\n\nInput: [8, 2]\nOutput: '1000'",
+    "response": "def convert_base(num1, num2):\n    return str(int(num1, 10))[2:] if num2 == 2 else str(int(num1, 10))\n\nconvert_base(8, 3)",
+    "test_results": "Test failed: int() can't convert non-string with explicit base"
+}
