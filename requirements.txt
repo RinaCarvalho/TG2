@@ -1,4 +1,3 @@
-# openai
-# typo
-timeout-decorator
-numpy
+openai
+google-generativeai
+typo

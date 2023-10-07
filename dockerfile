@@ -11,7 +11,7 @@ COPY run_tests.py /app/run_tests.py
 COPY problems.py /app/problems.py
 
 # Copy 'requirements.txt'
-COPY requirements.txt /app/requirements.txt
+COPY test_requirements.txt /app/requirements.txt
 
 # Copy the entire 'logs' directory into the container
 COPY logs /app/logs
