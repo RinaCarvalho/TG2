@@ -16,11 +16,21 @@ class PromptGenerator:
         return f"{self.problem}_t{self.technique}_v{self.variation}"
     
     def generate_modified_prompt(self):
-        if self.technique == Technique.FEW_SHOT.value:
-            self.prompt = self._generate_few_shot_prompt(self.prompt)
+        match self.technique:
+            case Technique.FEW_SHOT.value:
+                if self.variation == Variation.INACCURACY.value:
+                    self.prompt = self._generate_few_shot_prompt(self.prompt, 'inaccurate_inputs')
+                elif self.variation == Variation.FORMATTING.value:
+                    self.prompt = self._generate_few_shot_prompt(self.prompt, 'misformatted_inputs')
+                else:
+                    self.prompt = self._generate_few_shot_prompt(self.prompt, 'input_examples')
 
-        if self.variation == Variation.TYPO.value:
-            self.prompt = self._generate_prompt_with_typos(self.prompt)
+                    if self.variation == Variation.TYPO.value:
+                        self.prompt = self._generate_prompt_with_typos(self.prompt)
+            
+            case default:
+                if self.variation == Variation.TYPO.value:
+                    self.prompt = self._generate_prompt_with_typos(self.prompt)
 
         return self.prompt
 
@@ -39,9 +49,9 @@ class PromptGenerator:
 
         return prompt_with_typos
     
-    def _generate_few_shot_prompt(self, prompt):
+    def _generate_few_shot_prompt(self, prompt, variation_examples):
         prompt += "\n\nExamples:"
-        examples = extract_examples_from_problem(self.problem)
+        examples = extract_examples_from_problem(self.problem, variation_examples)
         for example in examples:
             prompt += f"\n\nInput: {example['input']}"
             prompt += f"\nOutput: {example['output']}"

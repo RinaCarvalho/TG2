@@ -19,6 +19,7 @@ class Technique(Enum):
 class Variation(Enum):
     NONE = 0
     TYPO = 1
-    FORMATTING = 2
-    FORMULATION = 3
+    INACCURACY = 2
+    FORMATTING = 3
+    FORMULATION = 4
 
