@@ -23,6 +23,26 @@ data = [
                 "output": "1.8"
             }
         ],
+        "inaccurate_inputs": [
+            {
+                "input": "[1.0, 2.0, 3.0, 4.0]",
+                "output": "2.5"
+            },
+            {
+                "input": "[-3.2, -1, 0.5, 2.5]",
+                "output": "-0.3"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "[1.0, 2.0, 3.0, 4.0]",
+                "output": "1,0"
+            },
+            {
+                "input": "[-3.2, -1, 0.5, 2.5]",
+                "output": "1,8"
+            }
+        ],
         "tests": [
             {
                 "inputs": [
@@ -80,6 +100,26 @@ data = [
                 "output": "3"
             }
         ],
+        "inaccurate_inputs": [
+            {
+                "input": "()",
+                "output": "2"
+            },
+            {
+                "input": "((())()())",
+                "output": "10"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "()",
+                "output": "1"
+            },
+            {
+                "input": "((())()()",
+                "output": "3"
+            }
+        ],
         "tests": [
             {
                 "inputs": ["()"],
@@ -130,6 +170,26 @@ data = [
                     "1",
                     "0"
                 ],
+                "output": "1"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": ["010", "110"],
+                "output": "110"
+            },
+            {
+                "input": ["1", "0"],
+                "output": "1"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": ["010", "110"],
+                "output": "10"
+            },
+            {
+                "input": ["1", "0"],
                 "output": "1"
             }
         ],
@@ -197,6 +257,34 @@ data = [
                 "output": "2"
             }
         ],
+        "inaccurate_inputs": [
+            {
+                "input": ["a", ""],
+                "output": "0"
+            },
+            {
+                "input": ["a", "aaa"],
+                "output": "3"
+            },
+            {
+                "input": ["aa", "aaa"],
+                "output": "2"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": ["", "a"],
+                "output": "0"
+            },
+            {
+                "input": ("aaa", "a"),
+                "output": "3"
+            },
+            {
+                "input": ["aaa", "aa"],
+                "output": "2"
+            }
+        ],
         "tests": [
             {
                 "inputs": ["", "string"],
@@ -242,6 +330,26 @@ data = [
             {
                 "input": "11",
                 "output": "True"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "1",
+                "output": "True"
+            },
+            {
+                "input": "2",
+                "output": "True"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "6",
+                "output": "0"
+            },
+            {
+                "input": "11",
+                "output": "1"
             }
         ],
         "tests": [
@@ -313,6 +421,26 @@ data = [
                 "output": "'1000'"
             }
         ],
+        "inaccurate_inputs": [
+            {
+                "input": [8, 3],
+                "output": "3"
+            },
+            {
+                "input": [8, 2],
+                "output": "2"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": [8, 3],
+                "output": "22"
+            },
+            {
+                "input": [8, 2],
+                "output": "0b1000"
+            }
+        ],
         "tests": [
             {
                 "inputs": [8, 3],
@@ -358,6 +486,30 @@ data = [
             {
                 "input": "zbcd",
                 "output": "False"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "abcba",
+                "output": "True"
+            },
+            {
+                "input": "abcBa",
+                "output": "True"
+            },
+            {
+                "input": "zbcd",
+                "output": "False"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "abcba",
+                "output": "1"
+            },
+            {
+                "input": "zbcd",
+                "output": "0"
             }
         ],
         "tests": [
@@ -415,6 +567,30 @@ data = [
                 "output": ""
             }
         ],
+        "inaccurate_inputs": [
+            {
+                "input": "abcdef",
+                "output": "bcdf"
+            },
+            {
+                "input": "aeiou",
+                "output": ""
+            },
+            {
+                "input": "always",
+                "output": "lws"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "abcdef",
+                "output": "bcdf"
+            },
+            {
+                "input": "aeiou",
+                "output": None
+            }
+        ],
         "tests": [
             {
                 "inputs": ["abcdef"],
@@ -443,7 +619,7 @@ data = [
         "problem_description": "Write function to return n-th Fibonacci number",
         "prompts": [
             {
-                "0-shot": "For a given number n, write a function to determine the n-th Fibonacci number. The function must receive an integer as input and return an integer."
+                "0-shot": "For a given number n, write a function to determine the n-th Fibonacci number, starting from 1 and 1. The function must receive an integer as input and return an integer."
             },
             {
                 "original": "\n\ndef fib(n: int):\n    \"\"\"Return n-th Fibonacci number.\n    >>> fib(10)\n    55\n    >>> fib(1)\n    1\n    >>> fib(8)\n    21\n    \"\"\"\n",
@@ -460,6 +636,26 @@ data = [
             {
                 "input": "1",
                 "output": "1"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "10",
+                "output": "34"
+            },
+            {
+                "input": "1",
+                "output": "0"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "10",
+                "output": "'55'"
+            },
+            {
+                "input": "1",
+                "output": "'1"
             }
         ],
         "tests": [
@@ -515,6 +711,26 @@ data = [
                 "output": "ewhjklnop"
             }
         ],
+        "inaccurate_inputs": [
+            {
+                "input": ["hi", "2"],
+                "output": "fg"
+            },
+            {
+                "input": ["asdfghjkl", "4"],
+                "output": "wozbcdfgh"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": ["hi", "2"],
+                "output": "jk"
+            },
+            {
+                "input": ["asdfghjkl", "4"],
+                "output": "ewhjklno"
+            }
+        ],
         "tests": [
             {
                 "inputs": ["hi", 2],
@@ -562,6 +778,26 @@ data = [
                 "output": "{'a': 3, 'b': 2, 'c': 1}"
             }
         ],
+        "inaccurate_inputs": [
+            {
+                "input": "abc",
+                "output": "{'a': 1, 'b': 1, 'c': 1}"
+            },
+            {
+                "input": "acbbaa",
+                "output": "{'a': 3, 'b': 2, 'c': 1}"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "abc",
+                "output": "{'a': 1, 'b': 1, 'c': 1}"
+            },
+            {
+                "input": "abcbaa",
+                "output": "{'a': 3, 'b': 2}"
+            }
+        ],
         "tests": [
             {
                 "inputs": ["abc"],
@@ -606,6 +842,34 @@ data = [
             },
             {
                 "input": "15-01-2012",
+                "output": "False"
+            },
+            {
+                "input": "06/04/1998",
+                "output": "False"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "03-11-2000",
+                "output": "True"
+            },
+            {
+                "input": "15-01-2012",
+                "output": "False"
+            },
+            {
+                "input": "06/04/1998",
+                "output": "True"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "3-11-2000",
+                "output": "True"
+            },
+            {
+                "input": "15-1-2012",
                 "output": "False"
             },
             {
@@ -678,6 +942,26 @@ data = [
                 "output": "2"
             }
         ],
+        "inaccurate_inputs": [
+            {
+                "input": ["(1, 3)", "(2, 4)"],
+                "output": "(2, 3)"
+            },
+            {
+                "input": ["(1, 2)", "(2, 3)"],
+                "output": "(2, 2)"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": [(1, 3), (2, 4)],
+                "output": "'(2, 3)'"
+            },
+            {
+                "input": [(1, 2), (2, 3)],
+                "output": "'2'"
+            }
+        ],
         "tests": [
             {
                 "inputs": [(1,3), (2,4)],
@@ -723,6 +1007,26 @@ data = [
             {
                 "input": "426",
                 "output": "CDXXVI"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "19",
+                "output": "xix"
+            },
+            {
+                "input": "426",
+                "output": "cdxxvi"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "19",
+                "output": "XIX"
+            },
+            {
+                "input": "426",
+                "output": "CDXXVII"
             }
         ],
         "tests": [
@@ -778,6 +1082,38 @@ data = [
                 "output": "37"
             }
         ],
+        "inaccurate_inputs": [
+            {
+                "input": [
+                    "[2, 3, 4, 5]",
+                    "['+', '*', '-']"
+                ],
+                "output": "15"
+            },
+            {
+                "input": [
+                    "[2, 3, 4, 5]",
+                    "['**', '*', '+']"
+                ],
+                "output": "37"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": [
+                    "(2, 3, 4, 5)",
+                    "(+, *, -)"
+                ],
+                "output": "9"
+            },
+            {
+                "input": [
+                    "(2, 3, 4, 5)",
+                    "(**, *, +)"
+                ],
+                "output": "37"
+            }
+        ],
         "tests": [
             {
                 "inputs": [[2, 3, 4, 5], ['+', '*', '-']],
@@ -819,6 +1155,18 @@ data = [
             {
                 "input": "Hello world",
                 "output": "3e25960a79dbc69b674cd4ec67a72c62"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "Hello world",
+                "output": "0027cecd99a68653ef66259ca9572276153dad298fe359eed389bee679d864e6"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "'Hello world'",
+                "output": "'3e25960a79dbc69b674cd4ec67a72c62'"
             }
         ],
         "tests": [
