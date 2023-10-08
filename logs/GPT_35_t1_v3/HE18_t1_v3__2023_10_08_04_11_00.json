@@ -1,1 +1,5 @@
-{"prompt": "For two given strings, write a function to count how many times the second string can be found in the first string, incluing overlapping cases. The function must receive two strings as inputs and return an integer.\n\nExamples:\n\nInput: ['', 'a']\nOutput: 0\n\nInput: ('aaa', 'a')\nOutput: 3\n\nInput: ['aaa', 'aa']\nOutput: 2", "response": "def count_string_occurrence(first_string, second_string):\n    count = 0\n    index = 0\n    while index <= len(first_string) - len(second_string):\n        if first_string[index:index+len(second_string)] == second_string:\n            count += 1\n        index += 1\n    return count"}
+{
+    "prompt": "For two given strings, write a function to count how many times the second string can be found in the first string, incluing overlapping cases. The function must receive two strings as inputs and return an integer.\n\nExamples:\n\nInput: ['', 'a']\nOutput: 0\n\nInput: ('aaa', 'a')\nOutput: 3\n\nInput: ['aaa', 'aa']\nOutput: 2",
+    "response": "def count_string_occurrence(first_string, second_string):\n    count = 0\n    index = 0\n    while index <= len(first_string) - len(second_string):\n        if first_string[index:index+len(second_string)] == second_string:\n            count += 1\n        index += 1\n    return count",
+    "test_results": "Tests passed successfully"
+}

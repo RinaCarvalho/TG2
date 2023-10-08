@@ -1,1 +1,5 @@
-{"prompt": "For a given number n, write a function to determine the n-th Fibonacci number, starting from 1 and 1. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 10\nOutput: '55'\n\nInput: 1\nOutput: '1", "response": "def fibonacci(n):\n    if n <= 0:\n        return 0\n    elif n == 1:\n        return 1\n    else:\n        a = 1\n        b = 1\n        for i in range(2, n):\n            temp = a + b\n            a = b\n            b = temp\n        return b"}
+{
+    "prompt": "For a given number n, write a function to determine the n-th Fibonacci number, starting from 1 and 1. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 10\nOutput: '55'\n\nInput: 1\nOutput: '1",
+    "response": "def fibonacci(n):\n    if n <= 0:\n        return 0\n    elif n == 1:\n        return 1\n    else:\n        a = 1\n        b = 1\n        for i in range(2, n):\n            temp = a + b\n            a = b\n            b = temp\n        return b",
+    "test_results": "Tests passed successfully"
+}
