@@ -1,4 +1,6 @@
+import csv
 import json
+import os
 import re
 from problems import data
 
@@ -12,6 +14,10 @@ def write_to_jsonl():
             json_str = json.dumps(problem_data)
             # Write the JSON string as a line in the JSONL file
             jsonl_file.write(json_str + "\n")
+
+
+def extract_problem_id(log_file):
+    return log_file.split("_")[0]
 
 
 def extract_prompt_from_problem(problem_id, prompt_type):
@@ -66,3 +72,40 @@ def write_test_results_to_log(log_filepath, results):
 
     with open(log_filepath, "w") as log:
         log.write(json.dumps(data, indent = 4))
+
+
+def compile_results(logs_dir):
+    results = {}
+
+    for subdir in os.listdir(logs_dir):
+        subdir_path = os.path.join(logs_dir, subdir)
+        results[subdir] = {}
+        for log_file in os.listdir(subdir_path):
+            log_file_path = os.path.join(subdir_path, log_file)
+            with open(log_file_path, 'r') as f:
+                log_data = json.load(f)
+                problem_id = extract_problem_id(log_file)
+                if problem_id not in results[subdir]:
+                    results[subdir][problem_id] = 0
+                if log_data['test_results'] == "Tests passed successfully":
+                    results[subdir][problem_id] += 1
+    return results
+
+
+def write_results_to_csv(results, csv_file):
+    with open(csv_file, 'w', newline='') as csvfile:
+        csv_writer = csv.writer(csvfile)
+
+        header = ['Problem'] + list(results.keys())
+        csv_writer.writerow(header)
+
+        for problem_id in set(problem for problems in results.values() for problem in problems.keys()):
+            row = [problem_id]
+            for subdir in results.keys():
+                if problem_id in results[subdir]:
+                    row.append(results[subdir][problem_id])
+                else:
+                    row.append("-")
+            csv_writer.writerow(row)
+
+    print(f"Results have been saved to {csv_file}")
