@@ -1187,5 +1187,66 @@ data = [
                 "output": "c6ebb6c8a0c55764f1e4e1703e8482cb"
             }
         ]
+    },
+    {
+        "problem_id": "MBPP12",
+        "problem_description": "Write a function to sort a given matrix in ascending order according to the sum of its rows.",
+        "prompts": [
+            {
+                "0-shot": "For a given matrix, write a function that sorts the matrix in ascending order, according to the sum of its rows. The function must receive an array of arrays as input and return an array of arrays."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "[[1, 2, 3], [2, 4, 5], [1, 1, 1]]",
+                "output": "[[1, 1, 1], [1, 2, 3], [2, 4, 5]]"
+            },
+            {
+                "input": "[[1, -2, 0, 0], [-2, -3, 1, 1], [3, 4, 1, 4], [1, 0, -1, 0]]",
+                "output": "[[-2, -3, 1, 1], [1, -2, 0, 0], [1, 0, -1, 0], [3, 4, 1, 4]]"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "[[1, 2, 3], [2, 4, 5], [1, 1, 1]]",
+                "output": "[[1, 2, 3], [2, 4, 5], [1, 1, 1]]"
+            },
+            {
+                "input": "[[1, -2, 0, 0], [-2, -3, 1, 1], [3, 4, 1, 4], [1, 0, -1, 0]]",
+                "output": "[[-2, 0, 1, 0], [-3, 1, -2, 1], [4, 1, 3, 4], [0, -1, 1, 0]]"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "[[1, 2, 3], [2, 4, 5], [1, 1, 1]]",
+                "output": "([1, 1, 1], [1, 2, 3], [2, 4, 5])"
+            },
+            {
+                "input": "[[1, -2, 0, 0], [-2, -3, 1, 1], [3, 4, 1, 4], [1, 0, -1, 0]]",
+                "output": "([-2, -3, 1, 1], [1, -2, 0, 0], [1, 0, -1, 0], [3, 4, 1, 4])"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [[[1, 2, 3], [2, 4, 5], [1, 1, 1]]],
+                "output": [[1, 1, 1], [1, 2, 3], [2, 4, 5]]
+            },
+            {
+                "inputs": [[[1, 2, 3], [-2, 4, -5], [1, -1, 1]]],
+                "output": [[-2, 4, -5], [1, -1, 1], [1, 2, 3]]
+            },
+            {
+                "inputs": [[[5,8,9],[6,4,3],[2,1,4]]],
+                "output": [[2, 1, 4], [6, 4, 3], [5, 8, 9]]
+            },
+            {
+                "inputs": [[[1, -2, 0, 0], [-2, -3, 1, 1], [3, 4, 1, 4], [1, 0, -1, 0]]],
+                "output": [[-2, -3, 1, 1], [1, -2, 0, 0], [1, 0, -1, 0], [3, 4, 1, 4]]
+            },
+            {
+                "inputs": [[[-1, -1.2], [-3.2, 0]]],
+                "output": [[-3.2, 0], [-1, -1.2]]
+            }
+        ]
     }
 ]
