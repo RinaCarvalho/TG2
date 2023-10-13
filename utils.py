@@ -92,8 +92,8 @@ def compile_results(logs_dir):
     return results
 
 
-def write_results_to_csv(results, csv_file):
-    with open(csv_file, 'w', newline='') as csvfile:
+def write_results_to_csv(results):
+    with open("result_compilation.csv", 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
 
         header = ['Problem'] + list(results.keys())
@@ -108,4 +108,4 @@ def write_results_to_csv(results, csv_file):
                     row.append("-")
             csv_writer.writerow(row)
 
-    print(f"Results have been saved to {csv_file}")
+    print("Results have been saved.")
