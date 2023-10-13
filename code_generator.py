@@ -16,7 +16,7 @@ class CodeGenerator:
 
     def _log_api_call(self, prompt_series, prompt, response, log_path):
         now = datetime.now()
-        timestamp = now.strftime("%Y_%m_%d_%H_%M_%S")
+        timestamp = now.strftime("%Y_%m_%d_%H_%M_%S_%f")[:-3]
         log_file = f"{prompt_series}__{timestamp}.json"
         log_filepath = os.path.join(log_path, log_file)
 
