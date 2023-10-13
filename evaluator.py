@@ -2,17 +2,13 @@ import json
 import os
 import re
 import timeout_decorator
-from utils import write_test_results_to_log
+from utils import write_test_results_to_log, extract_problem_id
 
 class Evaluator:
     def __init__(self, log_file, log_directory):
         self.log_file = log_file
         self.log_filepath = os.path.join(log_directory, log_file)
-        self.problem_id = self._extract_problem_id()
-
-
-    def _extract_problem_id(self):
-        return self.log_file.split("_")[0]
+        self.problem_id = extract_problem_id(self.log_file)
 
 
     def _extract_generated_code(self):
