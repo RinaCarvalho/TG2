@@ -1248,5 +1248,554 @@ data = [
                 "output": [[-3.2, 0], [-1, -1.2]]
             }
         ]
-    }
+    },
+    {
+        "problem_id": "MBPP59",
+        "problem_description": "Write a function to find the nth octagonal number.",
+        "prompts": [
+            {
+                "0-shot": "For a given integer n, write a function that returns the nth octagonal number. The function must receive an integer as input and return an integer."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "1",
+                "output": "1"
+            },
+            {
+                "input": "2",
+                "output": "8"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "1",
+                "output": "8"
+            },
+            {
+                "input": "2",
+                "output": "21"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "1",
+                "output": "'1'"
+            },
+            {
+                "input": "2",
+                "output": "'8'"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [1],
+                "output": 1
+            },
+            {
+                "inputs": [2],
+                "output": 12
+            },
+            {
+                "inputs": [5],
+                "output": 65
+            },
+            {
+                "inputs": [10],
+                "output": 280
+            },
+            {
+                "inputs": [15],
+                "output": 645
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP65",
+        "problem_description": "Write a function to flatten a list and sum all of its elements.",
+        "prompts": [
+            {
+                "0-shot": "For a given list, write a function to flatten the list and add all of its elements. The function must receive a list as input and return a number."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "[1, 2, [3, 4]]",
+                "output": "10"
+            },
+            {
+                "input": "[[[3], 4]]",
+                "output": "7"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "[1, 2, [3, 4]]",
+                "output": "3"
+            },
+            {
+                "input": "[[[3], 4]]",
+                "output": "0"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "[1, 2, [3, 4]",
+                "output": "10"
+            },
+            {
+                "input": "[[[3 4]]]",
+                "output": "7"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [[1, 2, [3, 4]]],
+                "output": 10
+            },
+            {
+                "inputs": [[[3], 4]],
+                "output": 7
+            },
+            {
+                "inputs": [[7, 10, [15,14],[19,41]]],
+                "output": 106
+            },
+            {
+                "inputs": [[10, 20, [30,40],[50,60]]],
+                "output": 210
+            },
+            {
+                "inputs": [[-2, 5, [0.5], -0.2]],
+                "output": 3.3
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP72",
+        "problem_description": "Write a function to check whether the given number can be represented as the difference of two squares or not.",
+        "prompts": [
+            {
+                "0-shot": "For a given number, write a function to check whether the number can be represented as the difference of two squares. The function must receive an integer as input and return a boolean."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "5",
+                "output": "True"
+            },
+            {
+                "input": "10",
+                "output": "False"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "2",
+                "output": "True"
+            },
+            {
+                "input": "5",
+                "output": "True"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "5.0",
+                "output": "True"
+            },
+            {
+                "input": "10.0",
+                "output": "False"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [5],
+                "output": True
+            },
+            {
+                "inputs": [10],
+                "output": False
+            },
+            {
+                "inputs": [15],
+                "output": True
+            },
+            {
+                "inputs": [20],
+                "output": True
+            },
+            {
+                "inputs": [1],
+                "output": True
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP103",
+        "problem_description": "Write a function to find the Eulerian number A(n,k).",
+        "prompts": [
+            {
+                "0-shot": "For two given integers n and k, write a function to find the Eulerian number A(n, k). The function must receive two integers as inputs and return an integer."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": ["3", "1"],
+                "output": "4"
+            },
+            {
+                "input": ["4", "1"],
+                "output": "11"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": ["3", "1"],
+                "output": "3"
+            },
+            {
+                "input": ["4", "1"],
+                "output": "9"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": ["3", "1", "0"],
+                "output": "4"
+            },
+            {
+                "input": ["4", "1", "0"],
+                "output": "11"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [3, 1],
+                "output": 4
+            },
+            {
+                "inputs": [4, 1],
+                "output": 11
+            },
+            {
+                "inputs": [5, 3],
+                "output": 26
+            },
+            {
+                "inputs": [6, 1],
+                "output": 57
+            },
+            {
+                "inputs": [9, 2],
+                "output": 14608
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP124",
+        "problem_description": "Write a function to get the angle of a complex number.",
+        "prompts": [
+            {
+                "0-shot": "For a given complex number, write a function to get the angle (in radians) of the number. The function must receive a complex number as input and return a float, with three precision points."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "1j",
+                "output": "1.571"
+            },
+            {
+                "input": "2 + 1j",
+                "output": "0.464"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "1j",
+                "output": "90"
+            },
+            {
+                "input": "1 + 1j",
+                "output": "45"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": ["0", "1j"],
+                "output": "1.571"
+            },
+            {
+                "input": ["2", "1j"],
+                "output": "0.464"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [1j],
+                "output": 1.571
+            },
+            {
+                "inputs": [2 + 1j],
+                "output": 0.464
+            },
+            {
+                "inputs": [0 + 2j],
+                "output": 1.571
+            },
+            {
+                "inputs": [0],
+                "output": 0
+            },
+            {
+                "inputs": [1 + 1j],
+                "output": 0.785
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP129",
+        "problem_description": "Write a function to check whether the matrix is a magic square.",
+        "prompts": [
+            {
+                "0-shot": "For a given matrix, write a function to check if the matrix is a magic square. The function must receive a list of lists and return a boolean."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "[[2, 7, 6], [9, 5, 1], [4, 3, 8]]",
+                "output": "True"
+            },
+            {
+                "input": "[[2, 7, 6], [9, 5, 1], [4, 3, 7]]",
+                "output": "False"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "[[2, 7, 6], [9, 5, 1], [4, 3, 7]]",
+                "output": "True"
+            },
+            {
+                "input": "[[2, 7, 6], [9, 5, 1], [4, 3, 8]]",
+                "output": "False"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": ["[2, 7, 6]", "[9, 5, 1]", "[4, 3, 8]"],
+                "output": "True"
+            },
+            {
+                "input": ["[2, 7, 6]", "[9, 5, 1]", "[4, 3, 7]"],
+                "output": "False"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [[[2, 7, 6], [9, 5, 1], [4, 3, 8]]],
+                "output": True
+            },
+            {
+                "inputs": [[2, 7, 6], [9, 5, 1], [4, 3, 7]],
+                "output": False
+            },
+            {
+                "inputs": [[[7, 12, 1, 14], [2, 13, 8, 11], [16, 3, 10, 5], [9, 6, 15, 4]]],
+                "output": True
+            },
+            {
+                "inputs": [[[4, 9, 2], [3, 5, 7], [8, 1, 6]]],
+                "output": True
+            },
+            {
+                "inputs": [[[2, 7, 6], [9, 5, 1], [4, 3, 8]]],
+                "output": True
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP160",
+        "problem_description": "Write a function that finds a solution to ax + by = n.",
+        "prompts": [
+            {
+                "0-shot": "For three given integers a, b and n, write a function that returns integers x and y that satisfy ax + by = n. The function must receive three integers as inputs and return a tuple of integers, if there is a solution, or None otherwise."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": ["2", "3", "7"],
+                "output": "(2, 1)"
+            },
+            {
+                "input": ["4", "2", "7"],
+                "output": "None"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": ["3", "2", "7"],
+                "output": "None"
+            },
+            {
+                "input": ["4", "2", "7"],
+                "output": "(1, 2)"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": ["2", "3", "7"],
+                "output": "[2, 1]"
+            },
+            {
+                "input": ["4", "2", "7"],
+                "output": "[]"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [2, 3, 7],
+                "output": (2, 1)
+            },
+            {
+                "inputs": [3, 2, 7],
+                "output": (1, 2)
+            },
+            {
+                "inputs": [4, 2, 7],
+                "output": None
+            },
+            {
+                "inputs": [1, 13, 17],
+                "output": (4, 1)
+            },
+            {
+                "inputs": [1, 13, 11],
+                "output": (-2, 1)
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP163",
+        "problem_description": "Write a function to calculate the area of a regular polygon.",
+        "prompts": [
+            {
+                "0-shot": "For two given integers l and n, write a function to calculate the area of a regular polygon with l as the length of its sides and n as the number of its sides. The function must receive two integers as inputs and return a number with three precision points."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": ["20", "4"],
+                "output": "400.000"
+            },
+            {
+                "input": ["15", "10"],
+                "output": "1731.197"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": ["4", "20"],
+                "output": "400.000"
+            },
+            {
+                "input": ["10", "15"],
+                "output": "1731.197"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": ["20", "4"],
+                "output": "400"
+            },
+            {
+                "input": ["15", "10"],
+                "output": "1731.197"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [20, 4],
+                "output": 400.000
+            },
+            {
+                "inputs": [15, 10],
+                "output": 1731.197
+            },
+            {
+                "inputs": [7, 9],
+                "output": 302.909
+            },
+            {
+                "inputs": [2, 3],
+                "output": 1.732
+            },
+            {
+                "inputs": [1, 4],
+                "output": 4
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP311",
+        "problem_description": "Write a function to set the left most unset bit.",
+        "prompts": [
+            {
+                "0-shot": "For a given integer, write a function to set its leftmost unset bit. The function must receive an integer as input and return an integer."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "10",
+                "output": "14"
+            },
+            {
+                "input": "12",
+                "output": "14"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "10",
+                "output": "1"
+            },
+            {
+                "input": "12",
+                "output": "4"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "10",
+                "output": "1110"
+            },
+            {
+                "input": "12",
+                "output": "1110"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [10],
+                "output": 14
+            },
+            {
+                "inputs": [12],
+                "output": 14
+            },
+            {
+                "inputs": [14],
+                "output": 15
+            },
+            {
+                "inputs": [15],
+                "output": 15
+            },
+            {
+                "inputs": [0],
+                "output": 1
+            }
+        ]
+    },
 ]
