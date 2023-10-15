@@ -1,0 +1,1 @@
+{"prompt": "For a given integer, write a function to set its leftmost unset bit. The function must receive an integer as input and return an integer.", "response": "def set_leftmost_unset_bit(integer):\n    return integer | (integer + 1)"}

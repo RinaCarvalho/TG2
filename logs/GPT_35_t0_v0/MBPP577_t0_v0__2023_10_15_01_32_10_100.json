@@ -1,0 +1,1 @@
+{"prompt": "For a given integer, write a function to find the last digit of the factorial of the integer. The function must receive an integer as input and return an integer.", "response": "def factorial_last_digit(n):\n    if n == 0:\n        return 1\n    else:\n        result = 1\n        for i in range(1, n+1):\n            result *= i\n        return int(str(result)[-1])"}
