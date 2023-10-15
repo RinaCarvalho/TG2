@@ -1,0 +1,1 @@
+{"prompt": "For a given integer n, write a function to find th e nth polite nubmer. The function must receive an integer as input and return an integer.\n\nE xamplws:\n\nInput: 7\nOutput: 1\n\nInput: 4\nOutlut: 7", "response": "def polite_number(n):\n    return 2 ** (n-1)"}
