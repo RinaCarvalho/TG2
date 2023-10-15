@@ -1,0 +1,1 @@
+{"prompt": "For two given integers n and k, write a function to find the Eulerian number A(n, k). The function must receive two integers as inputs and return an integer.\n\nExamples:\n\nInput: ['3', '1']\nOutput: 3\n\nInput: ['4', '1']\nOutput: 9", "response": "import math\n\ndef eulerian_number(n, k):\n    return math.comb(n+1, k) * math.factorial(n-k)\n\neulerian_number(3, 1)"}
