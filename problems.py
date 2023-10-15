@@ -1493,67 +1493,67 @@ data = [
             }
         ]
     },
-    {
-        "problem_id": "MBPP124",
-        "problem_description": "Write a function to get the angle of a complex number.",
-        "prompts": [
-            {
-                "0-shot": "For a given complex number, write a function to get the angle (in radians) of the number. The function must receive a complex number as input and return a float, with three precision points."
-            }
-        ],
-        "input_examples": [
-            {
-                "input": "1j",
-                "output": "1.571"
-            },
-            {
-                "input": "2 + 1j",
-                "output": "0.464"
-            }
-        ],
-        "inaccurate_inputs": [
-            {
-                "input": "1j",
-                "output": "90"
-            },
-            {
-                "input": "1 + 1j",
-                "output": "45"
-            }
-        ],
-        "misformatted_inputs": [
-            {
-                "input": ["0", "1j"],
-                "output": "1.571"
-            },
-            {
-                "input": ["2", "1j"],
-                "output": "0.464"
-            }
-        ],
-        "tests": [
-            {
-                "inputs": [1j],
-                "output": 1.571
-            },
-            {
-                "inputs": [2 + 1j],
-                "output": 0.464
-            },
-            {
-                "inputs": [0 + 2j],
-                "output": 1.571
-            },
-            {
-                "inputs": [0],
-                "output": 0
-            },
-            {
-                "inputs": [1 + 1j],
-                "output": 0.785
-            }
-        ]
-    },
+    # {
+    #     "problem_id": "MBPP124",
+    #     "problem_description": "Write a function to get the angle of a complex number.",
+    #     "prompts": [
+    #         {
+    #             "0-shot": "For a given complex number, write a function to get the angle (in radians) of the number. The function must receive a complex number as input and return a float, with three precision points."
+    #         }
+    #     ],
+    #     "input_examples": [
+    #         {
+    #             "input": "1j",
+    #             "output": "1.571"
+    #         },
+    #         {
+    #             "input": "2 + 1j",
+    #             "output": "0.464"
+    #         }
+    #     ],
+    #     "inaccurate_inputs": [
+    #         {
+    #             "input": "1j",
+    #             "output": "90"
+    #         },
+    #         {
+    #             "input": "1 + 1j",
+    #             "output": "45"
+    #         }
+    #     ],
+    #     "misformatted_inputs": [
+    #         {
+    #             "input": ["0", "1j"],
+    #             "output": "1.571"
+    #         },
+    #         {
+    #             "input": ["2", "1j"],
+    #             "output": "0.464"
+    #         }
+    #     ],
+    #     "tests": [
+    #         {
+    #             "inputs": [1j],
+    #             "output": 1.571
+    #         },
+    #         {
+    #             "inputs": [2 + 1j],
+    #             "output": 0.464
+    #         },
+    #         {
+    #             "inputs": [0 + 2j],
+    #             "output": 1.571
+    #         },
+    #         {
+    #             "inputs": [0],
+    #             "output": 0
+    #         },
+    #         {
+    #             "inputs": [1 + 1j],
+    #             "output": 0.785
+    #         }
+    #     ]
+    # },
     {
         "problem_id": "MBPP129",
         "problem_description": "Write a function to check whether the matrix is a magic square.",
@@ -1798,4 +1798,549 @@ data = [
             }
         ]
     },
+    {
+        "problem_id": "MBPP390",
+        "problem_description": "Write a function to apply a given format string to all elements in a list.",
+        "prompts": [
+            {
+                "0-shot": "For a given list and a given format string, write a function to apply the format string to all elements in the list. The function must receive a list and a string as inputs and return a list."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": ["[1, 2, 3, 4]", "temp{0}"],
+                "output": "['temp1', 'temp2', 'temp3', 'temp4']"
+            },
+            {
+                "input": ["['a', 'b', 'c', 'd']", "python{0}"],
+                "output": "['pythona', 'pythonb', 'pythonc', 'pythond']"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": ["[1, 2, 3, 4]", "temp{0}"],
+                "output": "['temp1234']"
+            },
+            {
+                "input": ["['a', 'b', 'c', 'd']", "python{0}"],
+                "output": "['pythonabcd']"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": ["[1, 2, 3, 4]", "temp{0}"],
+                "output": "'temp1', 'temp2', 'temp3', 'temp4'"
+            },
+            {
+                "input": ["['a', 'b', 'c', 'd']", "python{0}"],
+                "output": "'pythona', 'pythonb', 'pythonc', 'pythond'"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [[1, 2, 3, 4], "temp{0}"],
+                "output": ["temp1", "temp2", "temp3", "temp4"]
+            },
+            {
+                "inputs": [['a', 'b', 'c', 'd'], "python{0}"],
+                "output": ["pythona", "pythonb", "pythonc", "pythond"]
+            },
+            {
+                "inputs": [[5, 6, 7], "string{0}"],
+                "output": ["string5", "string6", "string7"]
+            },
+            {
+                "inputs": [[0, 1, 2], "{0}-day"],
+                "output": ["0-day", "1-day", "2-day"]
+            },
+            {
+                "inputs": [['always', 'seldom', 'often', 'never'], "frequency: {0}"],
+                "output": ["frequency: always", "frequency: seldom", "frequency: often", "frequency: never"]
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP392",
+        "problem_description": "Write a function to calculate according to the equation.",
+        "prompts": [
+            {
+                "0-shot": "For a given integer n, write a function to find the maximum sum possible according to the equation: f(n) = max( (f(n/2) + f(n/3) + f(n/4) + f(n/5)), n). The function must receive an integer as input and return an integer."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "2",
+                "output": "2"
+            },
+            {
+                "input": "10",
+                "output": "12"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "2",
+                "output": "2"
+            },
+            {
+                "input": "10",
+                "output": "11"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "2",
+                "output": "2.0"
+            },
+            {
+                "input": "10",
+                "output": "11.0"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [2],
+                "output": 2
+            },
+            {
+                "inputs": [10],
+                "output": 12
+            },
+            {
+                "inputs": [60],
+                "output": 106
+            },
+            {
+                "inputs": [3],
+                "output": 3
+            },
+            {
+                "inputs": [6],
+                "output": 7
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP428",
+        "problem_description": "Write a function to sort using shell sort.",
+        "prompts": [
+            {
+                "0-shot": "For a given array, write a function to sort it using shell sort. The function must receive an array as input and return an array."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "[12, 23, 4, 5, 3, 2, 12, 81, 56, 95]",
+                "output": "[2, 3, 4, 5, 12, 12, 23, 56, 81, 95]"
+            },
+            {
+                "input": "[24, 22, 39, 34, 87, 73, 68]",
+                "output": "[22, 24, 34, 39, 68, 73, 87]"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "[12, 23, 4, 5, 3, 2, 12, 81, 56, 95]",
+                "output": "[95, 81, 56, 23, 12, 12, 5, 4, 3, 2]"
+            },
+            {
+                "input": "[24, 22, 39, 34, 87, 73, 68]",
+                "output": "[87, 73, 68, 39, 34, 24, 22]"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "[12, 23, 4, 5, 3, 2, 12, 81, 56, 95]",
+                "output": "[2, 3, 4, 5, 12, 23, 56, 81, 95]"
+            },
+            {
+                "input": "[24, 22, 39, 34, 87, 73, 68]",
+                "output": "[22, 24, 34, 39, 68, 73, 87]"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [[12, 23, 4, 5, 3, 2, 12, 81, 56, 95]],
+                "output": [2, 3, 4, 5, 12, 12, 23, 56, 81, 95]
+            },
+            {
+                "inputs": [[24, 22, 39, 34, 87, 73, 68]],
+                "output": [22, 24, 34, 39, 68, 73, 87]
+            },
+            {
+                "inputs": [[32, 30, 16, 96, 82, 83, 74]],
+                "output": [16, 30, 32, 74, 82, 83, 96]
+            },
+            {
+                "inputs": [[11, 10, 9, 0, -1, -2]],
+                "output": [-2, -1, 0, 9, 10, 11]
+            },
+            {
+                "inputs": [[-1, 0, 1, 2, 3]],
+                "output": [-1, 0, 1, 2, 3]
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP577",
+        "problem_description": "Write a function to find the last digit of the factorial of a given number.",
+        "prompts": [
+            {
+                "0-shot": "For a given integer, write a function to find the last digit of the factorial of the integer. The function must receive an integer as input and return an integer."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "4",
+                "output": "4"
+            },
+            {
+                "input": "21",
+                "output": "0"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "4",
+                "output": "24"
+            },
+            {
+                "input": "0",
+                "output": "1"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "0",
+                "output": "True"
+            },
+            {
+                "input": "21",
+                "output": "False"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [4],
+                "output": 4
+            },
+            {
+                "inputs": [0],
+                "output": 1
+            },
+            {
+                "inputs": [21],
+                "output": 0
+            },
+            {
+                "inputs": [30],
+                "output": 0
+            },
+            {
+                "inputs": [3],
+                "output": 6
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP603",
+        "problem_description": "Write a function to get all ludic numbers smaller than or equal to a given integer.",
+        "prompts": [
+            {
+                "0-shot": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "10",
+                "output": "[1, 2, 3, 5, 7]"
+            },
+            {
+                "input": "25",
+                "output": "[1, 2, 3, 5, 7, 11, 13, 17, 23, 25]"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "10",
+                "output": "[2, 3, 5, 7]"
+            },
+            {
+                "input": "25",
+                "output": "[2, 3, 5, 7, 11, 13, 17, 19, 23]"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "10",
+                "output": "(1, 2, 3, 5, 7)"
+            },
+            {
+                "input": "25",
+                "output": "(1, 2, 3, 5, 7, 11, 13, 17, 23, 25)"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [10],
+                "output": [1, 2, 3, 5, 7]
+            },
+            {
+                "inputs": [25],
+                "output": [1, 2, 3, 5, 7, 11, 13, 17, 23, 25]
+            },
+            {
+                "inputs": [45],
+                "output": [1, 2, 3, 5, 7, 11, 13, 17, 23, 25, 29, 37, 41, 43]
+            },
+            {
+                "inputs": [1],
+                "output": [1]
+            },
+            {
+                "inputs": [7],
+                "output": [1, 2, 3, 5, 7]
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP626",
+        "problem_description": "Write a function to find the area of the largest triangle that can be inscribed in a semicircle.",
+        "prompts": [
+            {
+                "0-shot": "For a given number r, write a function to find the area of the largest triangle that can be inscribed in a semicircle with radius r. The function must receive a number r and return a number, or None."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "-1",
+                "output": "None"
+            },
+            {
+                "input": "2",
+                "output": "4"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "0",
+                "output": "None"
+            },
+            {
+                "input": "2",
+                "output": "4"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "-1",
+                "output": "0"
+            },
+            {
+                "input": "2",
+                "output": "4.0"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [-1],
+                "output": None
+            },
+            {
+                "inputs": [0],
+                "output": 0
+            },
+            {
+                "inputs": [2],
+                "output": 4
+            },
+            {
+                "inputs": [1.5],
+                "output": 2.25
+            },
+            {
+                "inputs": [10],
+                "output": 100
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP721",
+        "problem_description": "Write a function to calculate the path of most cost.",
+        "prompts": [
+            {
+                "0-shot": "For a given matrix, where each cell is associated with a cost, write a function to find the average cost of the path with the maximum average over all existing paths. A path is defined as a sequence of cells that starts from the top-left cell, moving only right or down, and ending on the bottom right cell. The average is computed as the total cost divided by the number of cells visited in the path. The function must receive a list of lists as input and return a number."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "[[1, 2, 3], [6, 5, 4], [7, 3, 9]]",
+                "output": "5.2"
+            },
+            {
+                "input": "[[2, 3, 4], [7, 6, 5], [8, 4, 10]]",
+                "output": "6.2"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "[[1, 2, 3], [6, 5, 4], [7, 3, 9]]",
+                "output": "26"
+            },
+            {
+                "input": "[[2, 3, 4], [7, 6, 5], [8, 4, 10]]",
+                "output": "31"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": ["[1, 2, 3]", "[6, 5, 4]", "[7, 3, 9]"],
+                "output": "5.2"
+            },
+            {
+                "input": ["[2, 3, 4]", "[7, 6, 5]", "[8, 4, 10]"],
+                "output": "6.2"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [[[1, 2, 3], [6, 5, 4], [7, 3, 9]]],
+                "output": 5.2
+            },
+            {
+                "inputs": [[[2, 3, 4], [7, 6, 5], [8, 4, 10]]],
+                "output": 6.2
+            },
+            {
+                "inputs": [[[3, 4, 5], [8, 7, 6], [9, 5, 11]]],
+                "output": 7.2
+            },
+            {
+                "inputs": [[[1, 2, 3], [4, 5, 6], [7, 8, 9]]],
+                "output": 5.8
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP765",
+        "problem_description": "Write a function to find nth polite number.",
+        "prompts": [
+            {
+                "0-shot": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "7",
+                "output": "11"
+            },
+            {
+                "input": "4",
+                "output": "7"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "1",
+                "output": "1"
+            },
+            {
+                "input": "5",
+                "output": "7"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "7",
+                "output": "[3, 5, 6, 7, 9, 10, 11]"
+            },
+            {
+                "input": "4",
+                "output": "[3, 5, 6, 7]"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [7],
+                "output": 11
+            },
+            {
+                "inputs": [4],
+                "output": 7
+            },
+            {
+                "inputs": [1],
+                "output": 3
+            },
+            {
+                "inputs": [9],
+                "output": 13
+            },
+            {
+                "inputs": [16],
+                "output": 21
+            }
+        ]
+    },
+    {
+        "problem_id": "MBPP783",
+        "problem_description": "Write a function to convert rgb to hsv.",
+        "prompts": [
+            {
+                "0-shot": "For a given rgb value, write a function to convert the rgb color to hsv color. The function must receive three integers as inputs and return a tuple with three floats up to one decimal place."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": ["255", "255", "255"],
+                "output": "(0.0, 0.0, 100.0)"
+            },
+            {
+                "input": ["0", "215", "0"],
+                "output": "(120.0, 100.0, 84.3)"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": ["255", "255", "255"],
+                "output": "(0.0, 0.0, 0.0)"
+            },
+            {
+                "input": ["0", "215", "0"],
+                "output": "(120.0, 100.0, 84)"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "[255, 255, 255]",
+                "output": "[0.0, 0.0, 100.0]"
+            },
+            {
+                "input": "[0, 215, 0]",
+                "output": "[120.0, 100.0, 84.3]"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [255, 255, 255],
+                "output": (0.0, 0.0, 100.0)
+            },
+            {
+                "inputs": [0, 215, 0],
+                "output": (120.0, 100.0, 84.3)
+            },
+            {
+                "inputs": [10, 215, 110],
+                "output": (149.3, 95.3, 84.3)
+            },
+            {
+                "inputs": [0, 0, 0],
+                "output": (0.0, 0.0, 0.0)
+            },
+            {
+                "inputs": [128, 0, 150],
+                "output": (291, 100, 58.8)
+            }
+        ]
+    }
 ]
