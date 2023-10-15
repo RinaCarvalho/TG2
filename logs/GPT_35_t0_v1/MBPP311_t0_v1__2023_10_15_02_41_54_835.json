@@ -1,0 +1,1 @@
+{"prompt": "Tor a given integer, write a function to seg its leftmost unse bit. The function must receive an integer as inputand return aninteger.", "response": "def leftmost_unset_bit(n):\n    if n == 0:\n        return 1\n    else:\n        return int(bin(n)[2:].zfill(len(bin(n))-2).replace('1', '0', 1), 2)"}

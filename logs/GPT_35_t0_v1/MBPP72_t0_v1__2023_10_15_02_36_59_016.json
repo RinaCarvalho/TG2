@@ -1,0 +1,1 @@
+{"prompt": "For a given number, write a function to check wuhether the number can be represented as the difference of two squares. The function must receive an integer as input and return a boolean.", "response": "def is_difference_of_squares(num):\n    sqrt_num = int(num ** 0.5)\n    return (sqrt_num + 1) ** 2 - sqrt_num ** 2 == num"}

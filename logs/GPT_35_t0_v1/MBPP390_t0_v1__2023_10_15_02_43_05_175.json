@@ -1,0 +1,1 @@
+{"prompt": "For a given list and a given format string, wrife a function to spply the format string to all elements in the list. The functiohn  must receive a list and a strnig as inputs and return a listt.", "response": "def apply_format_string(lst, format_str):\n    return [format_str.format(item) for item in lst]"}

@@ -1,0 +1,1 @@
+{"prompt": "For two giveh integers n and k, write a function to find the Eu leiran number A(n, k). The function must receive two integers as inputs and return an onteger.", "response": "import math\n\ndef euclidean_number(n, k):\n    return math.comb(n, k) * math.factorial(k)\n\n# Example usage:\nn = 5\nk = 3\nresult = euclidean_number(n, k)\nprint(result)"}

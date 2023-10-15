@@ -1,0 +1,1 @@
+{"prompt": "For a hgiven list, write a funct ion to flaten the list and add all of its elemebts. The function must receive a list as input and return a number.", "response": "def flatten_and_sum(lst):\n    flatten_lst = [num for sublist in lst for num in sublist]\n    return sum(flatten_lst)"}

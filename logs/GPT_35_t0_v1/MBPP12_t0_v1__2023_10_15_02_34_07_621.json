@@ -1,0 +1,1 @@
+{"prompt": "For a given matrix, write a function thatsorts the matrix in ascending order, according to the sum of its rows. The function must receive an array of arrays as inpput and return an array of arrays.", "response": "\ndef sort_matrix(matrix):\n    return sorted(matrix, key=lambda x: sum(x))\n"}
