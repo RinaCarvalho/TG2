@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 7\nOutput: [3, 5, 6, 7, 9, 10, 11]\n\nInput: 4\nOutput: [3, 5, 6, 7]", "response": "def find_nth_polite_number(n):\n    polite_numbers = []\n    current_number = 3\n    \n    while len(polite_numbers) < n:\n        if current_number % 2 == 1:\n            polite_numbers.append(current_number)\n        elif current_number % 4 == 0:\n            polite_numbers.append(current_number)\n        current_number += 1\n    \n    return polite_numbers"}
+{
+    "prompt": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 7\nOutput: [3, 5, 6, 7, 9, 10, 11]\n\nInput: 4\nOutput: [3, 5, 6, 7]",
+    "response": "def find_nth_polite_number(n):\n    polite_numbers = []\n    current_number = 3\n    \n    while len(polite_numbers) < n:\n        if current_number % 2 == 1:\n            polite_numbers.append(current_number)\n        elif current_number % 4 == 0:\n            polite_numbers.append(current_number)\n        current_number += 1\n    \n    return polite_numbers",
+    "test_results": "Test failed: result [3, 4, 5, 7, 8, 9, 11] != 11 (expected)"
+}

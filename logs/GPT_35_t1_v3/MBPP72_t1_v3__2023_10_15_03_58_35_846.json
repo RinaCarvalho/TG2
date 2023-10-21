@@ -1,1 +1,5 @@
-{"prompt": "For a given number, write a function to check whether the number can be represented as the difference of two squares. The function must receive an integer as input and return a boolean.\n\nExamples:\n\nInput: 5.0\nOutput: True\n\nInput: 10.0\nOutput: False", "response": "import math\n\ndef is_difference_of_squares(num):\n    if num < 0:\n        return False\n    sqrt_num = math.isqrt(num)\n    return num == sqrt_num**2 + (sqrt_num + 1)**2\n\nis_difference_of_squares(5.0)"}
+{
+    "prompt": "For a given number, write a function to check whether the number can be represented as the difference of two squares. The function must receive an integer as input and return a boolean.\n\nExamples:\n\nInput: 5.0\nOutput: True\n\nInput: 10.0\nOutput: False",
+    "response": "import math\n\ndef is_difference_of_squares(num):\n    if num < 0:\n        return False\n    sqrt_num = math.isqrt(num)\n    return num == sqrt_num**2 + (sqrt_num + 1)**2\n\nis_difference_of_squares(5.0)",
+    "test_results": "Test failed: 'float' object cannot be interpreted as an integer"
+}
