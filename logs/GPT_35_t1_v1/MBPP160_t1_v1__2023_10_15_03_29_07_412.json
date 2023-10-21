@@ -1,1 +1,5 @@
-{"prompt": "For thre givem integers a , b and h, write a function that returns integers x and y that satistfy ax + by = n. The function must reive thre integers as inputs and return a tuple of integers, if theree is a solution, or None otherwise.\n\nExamples:\n\nInput: ['2', '3', '7']\nOutput: (2, 1)\n\nInput: ['4', '2', '7']\nOutput: None", "response": "def find_solution(a, b, n):\n    for x in range(int(n/a) + 1):\n        y = (n - a*x) / b\n        if y.is_integer():\n            return (x, int(y))\n    return None\n\nsolution = find_solution(2, 3, 7)\nprint(solution)"}
+{
+    "prompt": "For thre givem integers a , b and h, write a function that returns integers x and y that satistfy ax + by = n. The function must reive thre integers as inputs and return a tuple of integers, if theree is a solution, or None otherwise.\n\nExamples:\n\nInput: ['2', '3', '7']\nOutput: (2, 1)\n\nInput: ['4', '2', '7']\nOutput: None",
+    "response": "def find_solution(a, b, n):\n    for x in range(int(n/a) + 1):\n        y = (n - a*x) / b\n        if y.is_integer():\n            return (x, int(y))\n    return None\n\nsolution = find_solution(2, 3, 7)\nprint(solution)",
+    "test_results": "Test failed: result (11, 0) != (-2, 1) (expected)"
+}

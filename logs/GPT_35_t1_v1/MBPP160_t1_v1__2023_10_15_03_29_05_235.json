@@ -1,1 +1,5 @@
-{"prompt": "For thre givem integers a , b and h, write a function that returns integers x and y that satistfy ax + by = n. The function must reive thre integers as inputs and return a tuple of integers, if theree is a solution, or None otherwise.\n\nExamples:\n\nInput: ['2', '3', '7']\nOutput: (2, 1)\n\nInput: ['4', '2', '7']\nOutput: None", "response": "def solve_equation(a, b, n):\n    for x in range(n + 1):\n        for y in range(n + 1):\n            if a * x + b * y == n:\n                return (x, y)\n    return None\n\n# Test cases\nprint(solve_equation(2, 3, 7))\nprint(solve_equation(4, 2, 7))"}
+{
+    "prompt": "For thre givem integers a , b and h, write a function that returns integers x and y that satistfy ax + by = n. The function must reive thre integers as inputs and return a tuple of integers, if theree is a solution, or None otherwise.\n\nExamples:\n\nInput: ['2', '3', '7']\nOutput: (2, 1)\n\nInput: ['4', '2', '7']\nOutput: None",
+    "response": "def solve_equation(a, b, n):\n    for x in range(n + 1):\n        for y in range(n + 1):\n            if a * x + b * y == n:\n                return (x, y)\n    return None\n\n# Test cases\nprint(solve_equation(2, 3, 7))\nprint(solve_equation(4, 2, 7))",
+    "test_results": "Test failed: result (11, 0) != (-2, 1) (expected)"
+}

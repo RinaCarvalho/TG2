@@ -1,1 +1,5 @@
-{"prompt": "Ofr a given list and a given forma string, wite a function to applythe ofrmat string to all elements in the list. The function must recwiveqa list and a string as inputs andreturnn a list.\n\nExamples:\n\nInput: ['[1, 2, 3, 4]', 'temp{0}']\nOutput: ['tdemp1', 'tekp2', 'temp3', 'temp4']\n\nInput: [\"['a', 'b', 'c', 'd']\", 'python{00}']\nOutput: ['pythona', 'pythonb', 'pythonc', 'pythond']", "response": "def apply_format(lst, fmt):\n    return [fmt.format(eval(item)) for item in lst]"}
+{
+    "prompt": "Ofr a given list and a given forma string, wite a function to applythe ofrmat string to all elements in the list. The function must recwiveqa list and a string as inputs andreturnn a list.\n\nExamples:\n\nInput: ['[1, 2, 3, 4]', 'temp{0}']\nOutput: ['tdemp1', 'tekp2', 'temp3', 'temp4']\n\nInput: [\"['a', 'b', 'c', 'd']\", 'python{00}']\nOutput: ['pythona', 'pythonb', 'pythonc', 'pythond']",
+    "response": "def apply_format(lst, fmt):\n    return [fmt.format(eval(item)) for item in lst]",
+    "test_results": "Test failed: eval() arg 1 must be a string, bytes or code object"
+}

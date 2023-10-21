@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to find th e nth polite nubmer. The function must receive an integer as input and return an integer.\n\nE xamplws:\n\nInput: 7\nOutput: 1\n\nInput: 4\nOutlut: 7", "response": "def find_nth_polite_number(n):\n    polite_numbers = [1]\n    while len(polite_numbers) < n:\n        next_number = polite_numbers[-1] + 1\n        if all(next_number % num != 0 for num in polite_numbers):\n            polite_numbers.append(next_number)\n    return polite_numbers[n-1]"}
+{
+    "prompt": "For a given integer n, write a function to find th e nth polite nubmer. The function must receive an integer as input and return an integer.\n\nE xamplws:\n\nInput: 7\nOutput: 1\n\nInput: 4\nOutlut: 7",
+    "response": "def find_nth_polite_number(n):\n    polite_numbers = [1]\n    while len(polite_numbers) < n:\n        next_number = polite_numbers[-1] + 1\n        if all(next_number % num != 0 for num in polite_numbers):\n            polite_numbers.append(next_number)\n    return polite_numbers[n-1]",
+    "test_results": "Test failed: 'Timed Out'"
+}

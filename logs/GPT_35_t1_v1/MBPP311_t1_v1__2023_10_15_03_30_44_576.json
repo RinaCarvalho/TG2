@@ -1,1 +1,5 @@
-{"prompt": "For a given integer, write a function to set its leftmost unset bit. The funcytion must receive an integwer as input ahd return ahitneger.\n\nExamples:\n\nInput: 10\nOutput: 14\n\nInput: 12\nOutput: 14", "response": "def set_leftmost_unset_bit(num):\n    return num | num + 1"}
+{
+    "prompt": "For a given integer, write a function to set its leftmost unset bit. The funcytion must receive an integwer as input ahd return ahitneger.\n\nExamples:\n\nInput: 10\nOutput: 14\n\nInput: 12\nOutput: 14",
+    "response": "def set_leftmost_unset_bit(num):\n    return num | num + 1",
+    "test_results": "Test failed: result 11 != 14 (expected)"
+}

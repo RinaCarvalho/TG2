@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to find th e nth polite nubmer. The function must receive an integer as input and return an integer.\n\nE xamplws:\n\nInput: 7\nOutput: 1\n\nInput: 4\nOutlut: 7", "response": "def nth_polite_number(n):\n    return 2 * n + 1\n\n# Test cases\nprint(nth_polite_number(7))\nprint(nth_polite_number(4))"}
+{
+    "prompt": "For a given integer n, write a function to find th e nth polite nubmer. The function must receive an integer as input and return an integer.\n\nE xamplws:\n\nInput: 7\nOutput: 1\n\nInput: 4\nOutlut: 7",
+    "response": "def nth_polite_number(n):\n    return 2 * n + 1\n\n# Test cases\nprint(nth_polite_number(7))\nprint(nth_polite_number(4))",
+    "test_results": "Test failed: result 15 != 11 (expected)"
+}
