@@ -1,1 +1,5 @@
-{"prompt": "Tor a given integer, write a function to seg its leftmost unse bit. The function must receive an integer as inputand return aninteger.", "response": "def find_leftmost_unset_bit(num):\n    # Convert the number to binary representation\n    binary_num = bin(num)[2:]\n\n    # Iterate through each bit from left to right\n    for i in range(len(binary_num)):\n        # If the bit is '0', return the corresponding decimal value\n        if binary_num[i] == '0':\n            return 2**(len(binary_num) - 1 - i)\n\n    # If no unset bit is found, return 0\n    return 0"}
+{
+    "prompt": "Tor a given integer, write a function to seg its leftmost unse bit. The function must receive an integer as inputand return aninteger.",
+    "response": "def find_leftmost_unset_bit(num):\n    # Convert the number to binary representation\n    binary_num = bin(num)[2:]\n\n    # Iterate through each bit from left to right\n    for i in range(len(binary_num)):\n        # If the bit is '0', return the corresponding decimal value\n        if binary_num[i] == '0':\n            return 2**(len(binary_num) - 1 - i)\n\n    # If no unset bit is found, return 0\n    return 0",
+    "test_results": "Test failed: result 4 != 14 (expected)"
+}

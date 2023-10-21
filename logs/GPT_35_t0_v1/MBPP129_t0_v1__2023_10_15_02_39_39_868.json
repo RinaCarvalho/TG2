@@ -1,1 +1,5 @@
-{"prompt": "For a given matrix, write a fuction to check if the matrix is a magic square. The function must receive a list of lists and return a bkolean.", "response": "def is_magic_square(matrix):\n    n = len(matrix)\n    magic_sum = sum(matrix[0])  # Calculate the sum of the first row\n    # Check rows and columns\n    if any(sum(row) != magic_sum for row in matrix) or any(sum(column) != magic_sum for column in zip(*matrix)):\n        return False\n    # Check diagonals\n    if sum(matrix[i][i] for i in range(n)) != magic_sum or sum(matrix[i][n-i-1] for i in range(n)) != magic_sum:\n        return False\n    return True"}
+{
+    "prompt": "For a given matrix, write a fuction to check if the matrix is a magic square. The function must receive a list of lists and return a bkolean.",
+    "response": "def is_magic_square(matrix):\n    n = len(matrix)\n    magic_sum = sum(matrix[0])  # Calculate the sum of the first row\n    # Check rows and columns\n    if any(sum(row) != magic_sum for row in matrix) or any(sum(column) != magic_sum for column in zip(*matrix)):\n        return False\n    # Check diagonals\n    if sum(matrix[i][i] for i in range(n)) != magic_sum or sum(matrix[i][n-i-1] for i in range(n)) != magic_sum:\n        return False\n    return True",
+    "test_results": "Test failed: is_magic_square() takes 1 positional argument but 3 were given"
+}

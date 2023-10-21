@@ -1,1 +1,5 @@
-{"prompt": "For a given array, write a function to sort it using shel sort. The functionmust receive ann array as inpyut and return an array.", "response": "\ndef shell_sort(arr):\n    n = len(arr)\n    gap = n // 2\n\n    while gap > 0:\n        for i in range(gap, n):\n            temp = arr[i]\n            j = i\n            while j >= gap and arr[j - gap] > temp:\n                arr[j] = arr[j - gap]\n                j -= gap\n            arr[j] = temp\n        gap //= 2\n\n    return arr\n"}
+{
+    "prompt": "For a given array, write a function to sort it using shel sort. The functionmust receive ann array as inpyut and return an array.",
+    "response": "\ndef shell_sort(arr):\n    n = len(arr)\n    gap = n // 2\n\n    while gap > 0:\n        for i in range(gap, n):\n            temp = arr[i]\n            j = i\n            while j >= gap and arr[j - gap] > temp:\n                arr[j] = arr[j - gap]\n                j -= gap\n            arr[j] = temp\n        gap //= 2\n\n    return arr\n",
+    "test_results": "Tests passed successfully"
+}

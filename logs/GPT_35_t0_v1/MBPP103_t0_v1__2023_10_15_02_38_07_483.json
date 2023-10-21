@@ -1,1 +1,5 @@
-{"prompt": "For two giveh integers n and k, write a function to find the Eu leiran number A(n, k). The function must receive two integers as inputs and return an onteger.", "response": "def eu_leiran_number(n, k):\n    def factorial(num):\n        if num <= 1:\n            return 1\n        else:\n            return num * factorial(num - 1)\n\n    return factorial(n) // (factorial(k) * factorial(n - k))\n\n# Test the function\nprint(eu_leiran_number(5, 2))"}
+{
+    "prompt": "For two giveh integers n and k, write a function to find the Eu leiran number A(n, k). The function must receive two integers as inputs and return an onteger.",
+    "response": "def eu_leiran_number(n, k):\n    def factorial(num):\n        if num <= 1:\n            return 1\n        else:\n            return num * factorial(num - 1)\n\n    return factorial(n) // (factorial(k) * factorial(n - k))\n\n# Test the function\nprint(eu_leiran_number(5, 2))",
+    "test_results": "Test failed: result 3 != 4 (expected)"
+}

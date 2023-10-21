@@ -1,1 +1,5 @@
-{"prompt": "Tor a given integer, write a function to seg its leftmost unse bit. The function must receive an integer as inputand return aninteger.", "response": "\ndef find_leftmost_unset_bit(n):\n    mask = 1\n    while n & mask:\n        mask <<= 1\n    return mask\n"}
+{
+    "prompt": "Tor a given integer, write a function to seg its leftmost unse bit. The function must receive an integer as inputand return aninteger.",
+    "response": "\ndef find_leftmost_unset_bit(n):\n    mask = 1\n    while n & mask:\n        mask <<= 1\n    return mask\n",
+    "test_results": "Test failed: result 1 != 14 (expected)"
+}

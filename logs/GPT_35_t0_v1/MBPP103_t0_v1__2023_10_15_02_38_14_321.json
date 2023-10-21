@@ -1,1 +1,5 @@
-{"prompt": "For two giveh integers n and k, write a function to find the Eu leiran number A(n, k). The function must receive two integers as inputs and return an onteger.", "response": "import math\n\ndef euclidean_number(n, k):\n    return math.factorial(n) // math.factorial(n - k)\n\neuclidean_number(4, 2)"}
+{
+    "prompt": "For two giveh integers n and k, write a function to find the Eu leiran number A(n, k). The function must receive two integers as inputs and return an onteger.",
+    "response": "import math\n\ndef euclidean_number(n, k):\n    return math.factorial(n) // math.factorial(n - k)\n\neuclidean_number(4, 2)",
+    "test_results": "Test failed: result 3 != 4 (expected)"
+}

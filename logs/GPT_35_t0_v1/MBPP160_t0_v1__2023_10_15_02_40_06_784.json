@@ -1,1 +1,5 @@
-{"prompt": "For three given integers a, b annd n, wrrite a function that returns integers x and y that satisfy ax + by = n. The function muat receive three integers as inputsand return a tuple of integers, if there iss a solution, or None otherwise.", "response": "def find_solution(a, b, n):\n    # Iterate through all possible values of x\n    for x in range(min(n//a, n//b)+1):\n        # Calculate y based on the given equation\n        y = (n - a*x) / b\n        # Check if x and y are integers\n        if y.is_integer():\n            return int(x), int(y)\n    return None"}
+{
+    "prompt": "For three given integers a, b annd n, wrrite a function that returns integers x and y that satisfy ax + by = n. The function muat receive three integers as inputsand return a tuple of integers, if there iss a solution, or None otherwise.",
+    "response": "def find_solution(a, b, n):\n    # Iterate through all possible values of x\n    for x in range(min(n//a, n//b)+1):\n        # Calculate y based on the given equation\n        y = (n - a*x) / b\n        # Check if x and y are integers\n        if y.is_integer():\n            return int(x), int(y)\n    return None",
+    "test_results": "Test failed: result None != (4, 1) (expected)"
+}

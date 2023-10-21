@@ -1,1 +1,5 @@
-{"prompt": "For a given number, write a function to check wuhether the number can be represented as the difference of two squares. The function must receive an integer as input and return a boolean.", "response": "def check_difference_of_squares(num):\n    sqrt_num = int(num ** 0.5)\n    if sqrt_num * sqrt_num == num:\n        return True\n    else:\n        return False"}
+{
+    "prompt": "For a given number, write a function to check wuhether the number can be represented as the difference of two squares. The function must receive an integer as input and return a boolean.",
+    "response": "def check_difference_of_squares(num):\n    sqrt_num = int(num ** 0.5)\n    if sqrt_num * sqrt_num == num:\n        return True\n    else:\n        return False",
+    "test_results": "Test failed: result False != True (expected)"
+}

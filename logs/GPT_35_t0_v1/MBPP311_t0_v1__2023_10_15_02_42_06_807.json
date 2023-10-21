@@ -1,1 +1,5 @@
-{"prompt": "Tor a given integer, write a function to seg its leftmost unse bit. The function must receive an integer as inputand return aninteger.", "response": "def leftmost_unset_bit(num):\n    return num & -num"}
+{
+    "prompt": "Tor a given integer, write a function to seg its leftmost unse bit. The function must receive an integer as inputand return aninteger.",
+    "response": "def leftmost_unset_bit(num):\n    return num & -num",
+    "test_results": "Test failed: result 2 != 14 (expected)"
+}

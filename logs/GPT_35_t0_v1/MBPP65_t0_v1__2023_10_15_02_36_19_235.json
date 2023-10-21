@@ -1,1 +1,5 @@
-{"prompt": "For a hgiven list, write a funct ion to flaten the list and add all of its elemebts. The function must receive a list as input and return a number.", "response": "def flatten_and_sum(lst):\n    flattened = [item for sublist in lst for item in sublist]\n    return sum(flattened)"}
+{
+    "prompt": "For a hgiven list, write a funct ion to flaten the list and add all of its elemebts. The function must receive a list as input and return a number.",
+    "response": "def flatten_and_sum(lst):\n    flattened = [item for sublist in lst for item in sublist]\n    return sum(flattened)",
+    "test_results": "Test failed: 'int' object is not iterable"
+}
