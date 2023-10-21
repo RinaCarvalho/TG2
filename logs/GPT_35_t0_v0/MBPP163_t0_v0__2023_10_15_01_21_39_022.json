@@ -1,1 +1,5 @@
-{"prompt": "For two given integers l and n, write a function to calculate the area of a regular polygon with l as the length of its sides and n as the number of its sides. The function must receive two integers as inputs and return a number with three precision points.", "response": "def calculate_area(l, n):\n    import math\n    area = (n * l ** 2) / (4 * math.tan(math.pi / n))\n    return round(area, 3)"}
+{
+    "prompt": "For two given integers l and n, write a function to calculate the area of a regular polygon with l as the length of its sides and n as the number of its sides. The function must receive two integers as inputs and return a number with three precision points.",
+    "response": "def calculate_area(l, n):\n    import math\n    area = (n * l ** 2) / (4 * math.tan(math.pi / n))\n    return round(area, 3)",
+    "test_results": "Test failed: result 1.0 != 4 (expected)"
+}

@@ -1,1 +1,5 @@
-{"prompt": "For three given integers a, b and n, write a function that returns integers x and y that satisfy ax + by = n. The function must receive three integers as inputs and return a tuple of integers, if there is a solution, or None otherwise.", "response": "def solve_linear_equation(a, b, n):\n    for x in range(n+1):\n        for y in range(n+1):\n            if a*x + b*y == n:\n                return (x, y)\n    return None"}
+{
+    "prompt": "For three given integers a, b and n, write a function that returns integers x and y that satisfy ax + by = n. The function must receive three integers as inputs and return a tuple of integers, if there is a solution, or None otherwise.",
+    "response": "def solve_linear_equation(a, b, n):\n    for x in range(n+1):\n        for y in range(n+1):\n            if a*x + b*y == n:\n                return (x, y)\n    return None",
+    "test_results": "Test failed: result (11, 0) != (-2, 1) (expected)"
+}

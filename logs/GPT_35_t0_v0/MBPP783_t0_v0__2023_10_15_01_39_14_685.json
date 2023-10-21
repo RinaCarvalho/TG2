@@ -1,1 +1,5 @@
-{"prompt": "For a given rgb value, write a function to convert the rgb color to hsv color. The function must receive three integers as inputs and return a tuple with three floats up to one decimal place.", "response": "import colorsys\n\ndef rgb_to_hsv(red, green, blue):\n    hsv = colorsys.rgb_to_hsv(red/255, green/255, blue/255)\n    return round(hsv[0], 1), round(hsv[1], 1), round(hsv[2], 1)"}
+{
+    "prompt": "For a given rgb value, write a function to convert the rgb color to hsv color. The function must receive three integers as inputs and return a tuple with three floats up to one decimal place.",
+    "response": "import colorsys\n\ndef rgb_to_hsv(red, green, blue):\n    hsv = colorsys.rgb_to_hsv(red/255, green/255, blue/255)\n    return round(hsv[0], 1), round(hsv[1], 1), round(hsv[2], 1)",
+    "test_results": "Test failed: result (0.0, 0.0, 1.0) != (0.0, 0.0, 100.0) (expected)"
+}

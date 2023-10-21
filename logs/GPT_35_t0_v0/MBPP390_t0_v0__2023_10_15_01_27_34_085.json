@@ -1,1 +1,5 @@
-{"prompt": "For a given list and a given format string, write a function to apply the format string to all elements in the list. The function must receive a list and a string as inputs and return a list.", "response": "def apply_format(format_string, lst):\n    return [format_string.format(elem) for elem in lst]"}
+{
+    "prompt": "For a given list and a given format string, write a function to apply the format string to all elements in the list. The function must receive a list and a string as inputs and return a list.",
+    "response": "def apply_format(format_string, lst):\n    return [format_string.format(elem) for elem in lst]",
+    "test_results": "Test failed: 'list' object has no attribute 'format'"
+}

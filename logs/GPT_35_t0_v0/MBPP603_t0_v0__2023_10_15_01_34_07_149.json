@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.", "response": "def get_ludic_numbers(n):\n    ludic_numbers = [1]\n\n    def is_prime(num):\n        for i in range(2, int(num ** 0.5) + 1):\n            if num % i == 0:\n                return False\n        return True\n\n    i = 2\n    while i <= n:\n        if is_prime(i):\n            ludic_numbers.append(i)\n        i += 1\n\n    return ludic_numbers"}
+{
+    "prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.",
+    "response": "def get_ludic_numbers(n):\n    ludic_numbers = [1]\n\n    def is_prime(num):\n        for i in range(2, int(num ** 0.5) + 1):\n            if num % i == 0:\n                return False\n        return True\n\n    i = 2\n    while i <= n:\n        if is_prime(i):\n            ludic_numbers.append(i)\n        i += 1\n\n    return ludic_numbers",
+    "test_results": "Test failed: result [1, 2, 3, 5, 7, 11, 13, 17, 19, 23] != [1, 2, 3, 5, 7, 11, 13, 17, 23, 25] (expected)"
+}

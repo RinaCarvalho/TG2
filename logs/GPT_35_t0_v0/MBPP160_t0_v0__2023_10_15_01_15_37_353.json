@@ -1,1 +1,5 @@
-{"prompt": "For three given integers a, b and n, write a function that returns integers x and y that satisfy ax + by = n. The function must receive three integers as inputs and return a tuple of integers, if there is a solution, or None otherwise.", "response": "def extended_gcd(a, b):\n    if b == 0:\n        return a, 1, 0\n    else:\n        d, x, y = extended_gcd(b, a % b)\n        return d, y, x - (a // b) * y\n\ndef solve_diophantine_equation(a, b, n):\n    gcd, x, y = extended_gcd(a, b)\n    if n % gcd == 0:\n        x = x * (n // gcd)\n        y = y * (n // gcd)\n        return x, y\n    else:\n        return None"}
+{
+    "prompt": "For three given integers a, b and n, write a function that returns integers x and y that satisfy ax + by = n. The function must receive three integers as inputs and return a tuple of integers, if there is a solution, or None otherwise.",
+    "response": "def extended_gcd(a, b):\n    if b == 0:\n        return a, 1, 0\n    else:\n        d, x, y = extended_gcd(b, a % b)\n        return d, y, x - (a // b) * y\n\ndef solve_diophantine_equation(a, b, n):\n    gcd, x, y = extended_gcd(a, b)\n    if n % gcd == 0:\n        x = x * (n // gcd)\n        y = y * (n // gcd)\n        return x, y\n    else:\n        return None",
+    "test_results": "Test failed: extended_gcd() takes 2 positional arguments but 3 were given"
+}
