@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.\n\nExamples:\n\nInput: 10\nOutput: [1, 2, 3, 5, 7]\n\nInput: 25\nOutput: [1, 2, 3, 5, 7, 11, 13, 17, 23, 25]", "response": "def ludic_numbers(n):\n  ludic_nums = [False] * (n + 1)\n  ludic_nums[1] = True\n  nums = [1]\n  i = 2\n  \n  while i <= n:\n    j = 1\n    while j <= i:\n      if ludic_nums[j] and i % j == 0:\n        ludic_nums[i] = True\n        nums.append(i)\n        break\n      j += 1\n    i += 1\n    \n  return nums"}
+{
+    "prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.\n\nExamples:\n\nInput: 10\nOutput: [1, 2, 3, 5, 7]\n\nInput: 25\nOutput: [1, 2, 3, 5, 7, 11, 13, 17, 23, 25]",
+    "response": "def ludic_numbers(n):\n  ludic_nums = [False] * (n + 1)\n  ludic_nums[1] = True\n  nums = [1]\n  i = 2\n  \n  while i <= n:\n    j = 1\n    while j <= i:\n      if ludic_nums[j] and i % j == 0:\n        ludic_nums[i] = True\n        nums.append(i)\n        break\n      j += 1\n    i += 1\n    \n  return nums",
+    "test_results": "Test failed: result [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] != [1, 2, 3, 5, 7] (expected)"
+}

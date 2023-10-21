@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to find the maximum sum possible according to the equation: f(n) = max( (f(n/2) + f(n/3) + f(n/4) + f(n/5)), n). The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 2\nOutput: 2\n\nInput: 10\nOutput: 12", "response": "\ndef max_sum(n):\n    if n <= 1:\n        return n\n    else:\n        return max(max_sum(n//2) + max_sum(n//3) + max_sum(n//4) + max_sum(n//5), n)\n"}
+{
+    "prompt": "For a given integer n, write a function to find the maximum sum possible according to the equation: f(n) = max( (f(n/2) + f(n/3) + f(n/4) + f(n/5)), n). The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 2\nOutput: 2\n\nInput: 10\nOutput: 12",
+    "response": "\ndef max_sum(n):\n    if n <= 1:\n        return n\n    else:\n        return max(max_sum(n//2) + max_sum(n//3) + max_sum(n//4) + max_sum(n//5), n)\n",
+    "test_results": "Tests passed successfully"
+}

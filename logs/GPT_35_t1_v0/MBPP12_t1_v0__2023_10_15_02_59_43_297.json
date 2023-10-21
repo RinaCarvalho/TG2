@@ -1,1 +1,5 @@
-{"prompt": "For a given matrix, write a function that sorts the matrix in ascending order, according to the sum of its rows. The function must receive an array of arrays as input and return an array of arrays.\n\nExamples:\n\nInput: [[1, 2, 3], [2, 4, 5], [1, 1, 1]]\nOutput: [[1, 1, 1], [1, 2, 3], [2, 4, 5]]\n\nInput: [[1, -2, 0, 0], [-2, -3, 1, 1], [3, 4, 1, 4], [1, 0, -1, 0]]\nOutput: [[-2, -3, 1, 1], [1, -2, 0, 0], [1, 0, -1, 0], [3, 4, 1, 4]]", "response": "def sort_matrix(matrix):\n    return sorted(matrix, key=lambda row: sum(row))"}
+{
+    "prompt": "For a given matrix, write a function that sorts the matrix in ascending order, according to the sum of its rows. The function must receive an array of arrays as input and return an array of arrays.\n\nExamples:\n\nInput: [[1, 2, 3], [2, 4, 5], [1, 1, 1]]\nOutput: [[1, 1, 1], [1, 2, 3], [2, 4, 5]]\n\nInput: [[1, -2, 0, 0], [-2, -3, 1, 1], [3, 4, 1, 4], [1, 0, -1, 0]]\nOutput: [[-2, -3, 1, 1], [1, -2, 0, 0], [1, 0, -1, 0], [3, 4, 1, 4]]",
+    "response": "def sort_matrix(matrix):\n    return sorted(matrix, key=lambda row: sum(row))",
+    "test_results": "Tests passed successfully"
+}

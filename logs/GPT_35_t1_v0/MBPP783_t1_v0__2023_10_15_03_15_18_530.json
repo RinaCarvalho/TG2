@@ -1,1 +1,5 @@
-{"prompt": "For a given rgb value, write a function to convert the rgb color to hsv color. The function must receive three integers as inputs and return a tuple with three floats up to one decimal place.\n\nExamples:\n\nInput: ['255', '255', '255']\nOutput: (0.0, 0.0, 100.0)\n\nInput: ['0', '215', '0']\nOutput: (120.0, 100.0, 84.3)", "response": "import colorsys\n\ndef convert_rgb_to_hsv(rgb):\n    r = int(rgb[0])\n    g = int(rgb[1])\n    b = int(rgb[2])\n    \n    hsv = colorsys.rgb_to_hsv(r/255, g/255, b/255)\n    hsv = tuple(round(value * 100, 1) for value in hsv)\n    \n    return hsv"}
+{
+    "prompt": "For a given rgb value, write a function to convert the rgb color to hsv color. The function must receive three integers as inputs and return a tuple with three floats up to one decimal place.\n\nExamples:\n\nInput: ['255', '255', '255']\nOutput: (0.0, 0.0, 100.0)\n\nInput: ['0', '215', '0']\nOutput: (120.0, 100.0, 84.3)",
+    "response": "import colorsys\n\ndef convert_rgb_to_hsv(rgb):\n    r = int(rgb[0])\n    g = int(rgb[1])\n    b = int(rgb[2])\n    \n    hsv = colorsys.rgb_to_hsv(r/255, g/255, b/255)\n    hsv = tuple(round(value * 100, 1) for value in hsv)\n    \n    return hsv",
+    "test_results": "Test failed: convert_rgb_to_hsv() takes 1 positional argument but 3 were given"
+}
