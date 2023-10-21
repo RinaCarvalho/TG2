@@ -2342,5 +2342,66 @@ data = [
                 "output": (291, 100, 58.8)
             }
         ]
+    },
+    {
+        "problem_id": "CC1575A",
+        "problem_description": "Asc-desc-ending sorting.",
+        "prompts": [
+            {
+                "0-shot": "Ally and Billy were given an assignment to tidy up their bookshelf of n books. Each book is represented by the book title — a string s_i numbered from 1 to n, each with length m. Ally really wants to sort the book lexicographically ascending, while Billy wants to sort it lexicographically descending.\n\nSettling their fight, they decided to combine their idea and sort it asc-desc-endingly, where the odd-indexed characters will be compared ascendingly, and the even-indexed characters will be compared descendingly.\n\nA string a occurs before a string b in asc-desc-ending order if and only if in the first position where a and b differ, the following holds:\n\n  * if it is an odd position, the string a has a letter that appears earlier in the alphabet than the corresponding letter in b; \n  * if it is an even position, the string a has a letter that appears later in the alphabet than the corresponding letter in b. Write a function to perform the aforementioned asc-desc-ending sorting. The function must receive a multiline string as input and return a string. \n\nInput\n\nThe first line contains two integers n and m (1 ≤ n ⋅ m ≤ 10^6).\n\nThe i-th of the next n lines contains a string s_i consisting of m uppercase Latin letters — the book title. The strings are pairwise distinct.\n\nOutput\n\nOutput n integers — the indices of the strings, starting at 1, after they are sorted asc-desc-endingly, separated by a space."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "5 2\nAA\nAB\nBB\nBA\nAZ\n",
+                "output": "5 2 1 3 4"
+            },
+            {
+                "input": "5 2\nAA\nAB\nCB\nBA\nAZ\n",
+                "output": "5 2 1 4 3"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "5 2\nAA\nAB\nBB\nBA\nAZ\n",
+                "output": "5 2 1 4 3"
+            },
+            {
+                "input": "5 2\nAA\nAB\nCB\nBA\nAZ\n",
+                "output": "5 2 1 3 4"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "[5, 2, AA, AB, BB, BA, AZ]",
+                "output": "[5, 2, 1, 3, 4]"
+            },
+            {
+                "input": "[5, 2, AA, AB, CB, BA, AZ]",
+                "output": "[5, 2, 1, 4, 3]"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": ["5 2\nAA\nAB\nBB\nBA\nAZ\n"],
+                "output": "5 2 1 3 4"
+            },
+            {
+                "inputs": ["5 2\nAA\nAB\nCB\nBA\nAZ\n"],
+                "output": "5 2 1 4 3"
+            },
+            {
+                "inputs": ["6 6\nAbacus\nOrange\nAvians\nOyster\nBigger\nBandie\n"],
+                "output": "3 1 5 6 4 2"
+            },
+            {
+                "inputs": ["4 3\nAAA\nAZA\nAAZ\nAZZ"],
+                "output": "2 4 1 3"
+            },
+            {
+                "inputs": ["5 2\nAA\nAB\nBB\nBA\nZA\n"],
+                "output": "2 1 3 4 5"
+            }
+        ]
     }
 ]
