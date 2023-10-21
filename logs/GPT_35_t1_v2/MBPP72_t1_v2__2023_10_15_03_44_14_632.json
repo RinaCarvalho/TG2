@@ -1,1 +1,5 @@
-{"prompt": "For a given number, write a function to check whether the number can be represented as the difference of two squares. The function must receive an integer as input and return a boolean.\n\nExamples:\n\nInput: 2\nOutput: True\n\nInput: 5\nOutput: True", "response": "import math\n\ndef is_difference_of_squares(number):\n    square_root = math.isqrt(number)\n    if square_root ** 2 == number:\n        return True\n    else:\n        for i in range(square_root, 0, -1):\n            if i ** 2 - (number - i ** 2) == number:\n                return True\n    return False"}
+{
+    "prompt": "For a given number, write a function to check whether the number can be represented as the difference of two squares. The function must receive an integer as input and return a boolean.\n\nExamples:\n\nInput: 2\nOutput: True\n\nInput: 5\nOutput: True",
+    "response": "import math\n\ndef is_difference_of_squares(number):\n    square_root = math.isqrt(number)\n    if square_root ** 2 == number:\n        return True\n    else:\n        for i in range(square_root, 0, -1):\n            if i ** 2 - (number - i ** 2) == number:\n                return True\n    return False",
+    "test_results": "Test failed: result False != True (expected)"
+}

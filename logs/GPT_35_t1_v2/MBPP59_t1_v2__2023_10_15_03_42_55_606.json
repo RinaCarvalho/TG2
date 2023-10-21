@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function that returns the nth octagonal number. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 1\nOutput: 8\n\nInput: 2\nOutput: 21", "response": "def nth_octagonal_number(n):\n    return 3*n*(n-1) + 2"}
+{
+    "prompt": "For a given integer n, write a function that returns the nth octagonal number. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 1\nOutput: 8\n\nInput: 2\nOutput: 21",
+    "response": "def nth_octagonal_number(n):\n    return 3*n*(n-1) + 2",
+    "test_results": "Test failed: result 2 != 1 (expected)"
+}

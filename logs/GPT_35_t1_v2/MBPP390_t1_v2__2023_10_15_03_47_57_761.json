@@ -1,1 +1,5 @@
-{"prompt": "For a given list and a given format string, write a function to apply the format string to all elements in the list. The function must receive a list and a string as inputs and return a list.\n\nExamples:\n\nInput: ['[1, 2, 3, 4]', 'temp{0}']\nOutput: ['temp1234']\n\nInput: [\"['a', 'b', 'c', 'd']\", 'python{0}']\nOutput: ['pythonabcd']", "response": "def apply_format_string(lst, format_string):\n    formatted_list = []\n    for element in lst:\n        formatted_list.append(format_string.format(eval(element)))\n    return formatted_list"}
+{
+    "prompt": "For a given list and a given format string, write a function to apply the format string to all elements in the list. The function must receive a list and a string as inputs and return a list.\n\nExamples:\n\nInput: ['[1, 2, 3, 4]', 'temp{0}']\nOutput: ['temp1234']\n\nInput: [\"['a', 'b', 'c', 'd']\", 'python{0}']\nOutput: ['pythonabcd']",
+    "response": "def apply_format_string(lst, format_string):\n    formatted_list = []\n    for element in lst:\n        formatted_list.append(format_string.format(eval(element)))\n    return formatted_list",
+    "test_results": "Test failed: eval() arg 1 must be a string, bytes or code object"
+}
