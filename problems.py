@@ -2465,5 +2465,92 @@ data = [
                 "output": [0, 1, 2, 5, -1, -1, -1, -1]
             }
         ]
+    },
+    {
+        "problem_id": "CC1580B",
+        "problem_description": "Mathematics Curriculum.",
+        "prompts": [
+            {
+                "0-shot": "Let c_1, c_2, …, c_n be a permutation of integers 1, 2, …, n. Consider all subsegments of this permutation containing an integer x. Given an integer m, we call the integer x good if there are exactly m different values of maximum on these subsegments. A permutation is an array consisting of n distinct integers from 1 to n in arbitrary order. For example, [2,3,1,5,4] is a permutation, but [1,2,2] is not a permutation (2 appears twice in the array) and [1,3,4] is also not a permutation (n=3 but there is 4 in the array). A sequence a is a subsegment of a sequence b if a can be obtained from b by deletion of several (possibly, zero or all) elements from the beginning and several (possibly, zero or all) elements from the end. Given four integers n, m, k and p, write a function to count the number of permutations of length n with exactly k good numbers, modulo p. The function must receive four integers n, m, k and p and return an integer."
+            }
+            # Context for CoT:
+            # Lets think step by step. For n=4, take permutation [1, 3, 2, 4] as an example. For number 1, all subsegments containing it are: [1], [1, 3], [1, 3, 2] and [1, 3, 2, 4], and there are three different maxima: 1, 3 and 4. Similarly, for number 3, there are two different maxima 3 and 4. For number 2, there are three different maxima 2, 3 and 4. And for number 4, there is only one, which is 4 itself. Given m=3 and k=2, which corresponds to a permutation with 2 numbers having three different maxima each, the permutation [1, 3, 2, 4] should be included in our count, given numbers 1 and 2 have three different maxima each.
+        ],
+        "input_examples": [
+            {
+                "input": ["4", "3", "2", "10007"],
+                "output": "4"
+            },
+            {
+                "input": ["6", "4", "1", "769626776"],
+                "output": "472"
+            },
+            {
+                "input": ["66", "11", "9", "786747482"],
+                "output": "206331312"
+            },
+            {
+                "input": ["99", "30", "18", "650457567"],
+                "output": "77365367"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": ["4", "3", "2", "10007"],
+                "output": "4"
+            },
+            {
+                "input": ["6", "4", "1", "769626776"],
+                "output": "472"
+            },
+            {
+                "input": ["66", "11", "9", "6747482"],
+                "output": "206331312"
+            },
+            {
+                "input": ["99", "30", "18", "457567"],
+                "output": "77365367"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "4 3 2 10007",
+                "output": "4"
+            },
+            {
+                "input": "6 4 1 769626776",
+                "output": "472"
+            },
+            {
+                "input": "66 11 9 786747482",
+                "output": "206331312"
+            },
+            {
+                "input": "99 30 18 650457567",
+                "output": "77365367"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [4, 3, 2, 10007],
+                "output": 4
+            },
+            {
+                "inputs": [6, 4, 1, 769626776],
+                "output": 472
+            },
+            {
+                "inputs": [66, 11, 9, 786747482],
+                "output": 206331312
+            },
+            {
+                "inputs": [99, 30, 18, 650457567],
+                "output": 77365367
+            },
+            {
+                "inputs": [9, 4, 1, 765062520],
+                "output": 66112
+            }
+        ]
     }
 ]
