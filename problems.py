@@ -2357,8 +2357,8 @@ data = [
                 "output": "[5, 2, 1, 3, 4]"
             },
             {
-                "input": "[5, 2, [AA, AB, CB, BA, AZ]]",
-                "output": "[5, 2, 1, 4, 3]"
+                "input": "[4, 3, [AAA, AZA, AAZ, AZZ]]",
+                "output": "[2, 4, 1, 3]"
             }
         ],
         "inaccurate_inputs": [
