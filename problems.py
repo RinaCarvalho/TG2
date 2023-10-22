@@ -2404,5 +2404,66 @@ data = [
                 "output": [2, 1, 3, 4, 5]
             }
         ]
+    },
+    {
+        "problem_id": "CC1575H",
+        "problem_description": "Holiday Wall Ornaments.",
+        "prompts": [
+            {
+                "0-shot": "The Winter holiday will be here soon. Mr. Chanek wants to decorate his house's wall with ornaments. The wall can be represented as a binary string a of length n. His favorite nephew has another binary string b of length m (m ≤ n).\n\nMr. Chanek's nephew loves the non-negative integer k. His nephew wants exactly k occurrences of b as substrings in a. \n\nHowever, Mr. Chanek does not know the value of k. So, for each k (0 ≤ k ≤ n - m + 1), find the minimum number of elements in a that have to be changed such that there are exactly k occurrences of b in a.\n\nA string s occurs exactly k times in t if there are exactly k different pairs (p,q) such that we can obtain s by deleting p characters from the beginning and q characters from the end of t. Write a function to determine the minimum number of elements needed to be changed for each k. The function must receive two integers n and m, and two binary strings a and b, of lengths n and m. The function must return a list with (n - m + 2) integers, where the (k+1)-th integer denotes the minimal number of elements in a that must be changed so there are exactly k occurrences of b as substrings in a. If no amount of changes is capable of satisfying k occurrences, the (k+1)-th integer must be -1."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": ["9", "3", "100101011", "101"],
+                "output": "[1, 1, 0, 1, 6, -1, -1, -1]"
+            },
+            {
+                "input": ["9", "3", "101101011", "111"],
+                "output": "[0, 2, 1, 3, 2, 2, 4, 3]"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": ["9", "3", "100101011", "101"],
+                "output": "[0, 2, 1, 3, 2, 2, 4, 3]"
+            },
+            {
+                "input": ["9", "3", "101101011", "111"],
+                "output": "[1, 1, 0, 1, 6, -1, -1, -1]"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": ["9", "3", "100101011", "101"],
+                "output": "1 1 0 1 6 -1 -1 -1"
+            },
+            {
+                "input": ["9", "3", "101101011", "111"],
+                "output": "0 2 1 3 2 2 4 3"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [1, 1, "1", "1"],
+                "output": [1, 0]
+            },
+            {
+                "inputs": [1, 1, "1", "0"],
+                "output": [0, 1]
+            },
+            {
+                "inputs": [9, 3, "100101011", "101"],
+                "output": [1, 1, 0, 1, 6, -1, -1, -1]
+            },
+            {
+                "inputs": [9, 3, "101101011", "111"],
+                "output": [0, 2, 1, 3, 2, 2, 4, 3]
+            },
+            {
+                "inputs": [9, 3, "100101011", "110"],
+                "output": [0, 1, 2, 5, -1, -1, -1, -1]
+            }
+        ]
     }
 ]
