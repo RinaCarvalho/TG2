@@ -2942,5 +2942,82 @@ data = [
                 "output": "aba"
             }
         ]
+    },
+    {
+        "problem_id": "CC1619B",
+        "problem_description": "Squares and Cubes",
+        "prompts": [
+            {
+                "0-shot": "Polycarp likes squares and cubes of positive integers. Here is the beginning of the sequence of numbers he likes: 1, 4, 8, 9, .... For a given number n, write a function to count the number of integers from 1 to n that Polycarp likes. In other words, find the number of such x that x is a square of a positive integer number or a cube of a positive integer number (or both a square and a cube simultaneously). The function must receive an integer n, and return an integer."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "10",
+                "output": "4"
+            },
+            {
+                "input": "1",
+                "output": "1"
+            },
+            {
+                "input": "25",
+                "output": "6"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "10",
+                "output": "4"
+            },
+            {
+                "input": "2",
+                "output": "1"
+            },
+            {
+                "input": "25",
+                "output": "5"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "10",
+                "output": "[1, 4, 8, 9]"
+            },
+            {
+                "input": "1",
+                "output": "[1]"
+            },
+            {
+                "input": "25",
+                "output": "[1, 4, 8, 9, 16, 25]"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [10],
+                "output": 4
+            },
+            {
+                "inputs": [1],
+                "output": 1
+            },
+            {
+                "inputs": [25],
+                "output": 6
+            },
+            {
+                "inputs": [1000000000],
+                "output": 32591
+            },
+            {
+                "inputs": [999999999],
+                "output": 32590
+            },
+            {
+                "inputs": [500000000],
+                "output": 23125
+            }
+        ]
     }
 ]
