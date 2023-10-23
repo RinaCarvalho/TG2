@@ -2552,5 +2552,66 @@ data = [
                 "output": 66112
             }
         ]
+    },
+    {
+        "problem_id": "CC1582A",
+        "problem_description": "Luntik and Concerts.",
+        "prompts": [
+            {
+                "0-shot": "Luntik has decided to try singing. He has a one-minute songs, b two-minute songs and c three-minute songs. He wants to distribute all songs into two concerts such that every song should be included to exactly one concert. The duration of the concert is the sum of durations of all songs in that concert. Write a function to find the minimal possible difference in minutes between the concerts durations. The function must receive three integers a, b and c, and return an integer."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": ["1", "1", "1"],
+                "output": "0"
+            },
+            {
+                "input": ["2", "1", "3"],
+                "output": "1"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": ["1", "1", "1"],
+                "output": "1"
+            },
+            {
+                "input": ["2", "1", "3"],
+                "output": "0"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "1 1 1",
+                "output": "0"
+            },
+            {
+                "input": "2 1 3",
+                "output": "1"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [1, 1, 1],
+                "output": 0
+            },
+            {
+                "inputs": [2, 1, 3],
+                "output": 1
+            },
+            {
+                "inputs": [5, 5, 5],
+                "output": 0
+            },
+            {
+                "inputs": [1, 1, 2],
+                "output": 1
+            },
+            {
+                "inputs": [3, 8, 5],
+                "output": 0
+            }
+        ]
     }
 ]
