@@ -2674,5 +2674,66 @@ data = [
                 "output": [0]
             }
         ]
+    },
+    {
+        "problem_id": "CC1586F",
+        "problem_description": "Defender of Childhood Dreams",
+        "prompts": [
+            {
+                "0-shot": "Consider a directed graph containing n nodes, labeled from 1 to n. There is a directed edge from node a to node b if and only if a < b. A path between nodes a and b is defined as a sequence of edges such that you can start at a, travel along all of these edges in the corresponding direction, and end at b. The length of a path is defined by the number of edges. A rainbow path of length x is defined as a path in the graph such that there exists at least 2 distinct colors among the set of x edges. Considering it is possible to label each edge with a color, write a function to determine the minimum number of colors needed to ensure that all paths of length k or longer are rainbow paths. The function must receive two integers, n and k, as inputs, and return an integer - the minimum number of colors needed."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": ["5", "3"],
+                "output": "2"
+            },
+            {
+                "input": ["5", "2"],
+                "output": "3"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": ["5", "3"],
+                "output": "3"
+            },
+            {
+                "input": ["5", "2"],
+                "output": "4"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "5 3",
+                "output": "2"
+            },
+            {
+                "input": "5 2",
+                "output": "4"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [5, 3],
+                "output": 2
+            },
+            {
+                "inputs": [5, 2],
+                "output": 4
+            },
+            {
+                "inputs": [8, 7],
+                "output": 2
+            },
+            {
+                "inputs": [3, 2],
+                "output": 2
+            },
+            {
+                "inputs": [9, 2],
+                "output": 4
+            }
+        ]
     }
 ]
