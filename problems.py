@@ -2654,23 +2654,23 @@ data = [
         ],
         "tests": [
             {
-                "inputs": [4, 2, 2, 4],
+                "inputs": [[4, 2, 2, 4]],
                 "output": [0, 2, 4, 6]
             },
             {
-                "inputs": [1, 0, 1, 7, 12, 5, 3, 2],
+                "inputs": [[1, 0, 1, 7, 12, 5, 3, 2]],
                 "output": [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13]
             },
             {
-                "inputs": [2, 1, 4, 2, 4],
+                "inputs": [[2, 1, 4, 2, 4]],
                 "output": [0, 1, 2, 3, 4, 5, 6, 7]
             },
             {
-                "inputs": [5000],
+                "inputs": [[5000]],
                 "output": [0, 5000]
             },
             {
-                "inputs": [0],
+                "inputs": [[0]],
                 "output": [0]
             }
         ]
@@ -2776,23 +2776,23 @@ data = [
         ],
         "tests": [
             {
-                "inputs": [5],
+                "inputs": [[5]],
                 "output": "Alice"
             },
             {
-                "inputs": [5, 4, 5],
+                "inputs": [[5, 4, 5]],
                 "output": "Alice"
             },
             {
-                "inputs": [5, 8, 2, 1, 10, 9],
+                "inputs": [[5, 8, 2, 1, 10, 9]],
                 "output": "Bob"
             },
             {
-                "inputs": [5, 6, 5],
+                "inputs": [[5, 6, 5]],
                 "output": "Bob"
             },
             {
-                "inputs": [5, 4, 2, 1, 10, 9],
+                "inputs": [[5, 4, 2, 1, 10, 9]],
                 "output": "Alice"
             }
         ]
@@ -2849,23 +2849,23 @@ data = [
         ],
         "tests": [
             {
-                "inputs": [1, 2, 3, 4, 5],
+                "inputs": [[1, 2, 3, 4, 5]],
                 "output": 2
             },
             {
-                "inputs": [10, 5, 15],
+                "inputs": [[10, 5, 15]],
                 "output": 0
             },
             {
-                "inputs": [100, 10, 200],
+                "inputs": [[100, 10, 200]],
                 "output": 20
             },
             {
-                "inputs": [9, 8, 2, 6, 6, 2, 8, 6, 5, 4],
+                "inputs": [[9, 8, 2, 6, 6, 2, 8, 6, 5, 4]],
                 "output": 0
             },
             {
-                "inputs": [1, 3],
+                "inputs": [[1, 3]],
                 "output": 3
             }
         ]
