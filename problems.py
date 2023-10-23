@@ -2613,5 +2613,66 @@ data = [
                 "output": 0
             }
         ]
+    },
+    {
+        "problem_id": "CC1582F2",
+        "problem_description": "Korney Korneevich and XOR (hard version).",
+        "prompts": [
+            {
+                "0-shot": "For a given array a of length n, write a function to find all integers x >= 0 such that there exists an increasing subsequence of the array a, in which the bitwise XOR of numbers is equal to x. A sequence s is a subsequence of a sequence b if s can be obtained from b by deletion of several (possibly, zero or all) elements. A sequence s1, s2, ..., sm is called increasing if s1 < s2 < ... < sm. The function must receive a list with n integers a1, a2, ..., an - the elements of the array a. The function must return a list of integers x1, x2, ..., xk, in increasing order - the found x values."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": ["4", "2", "2", "4"],
+                "output": "[0, 2, 4, 6]"
+            },
+            {
+                "input": ["1", "0", "1", "7", "12", "5", "3", "2"],
+                "output": "[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13]"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": ["4", "2", "4"],
+                "output": "[0, 2, 4, 6]"
+            },
+            {
+                "input": ["0", "1", "7", "12", "5", "3", "2"],
+                "output": "[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13]"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "4 2 2 4",
+                "output": "[0, 2, 4, 6]"
+            },
+            {
+                "input": "1 0 1 7 12 5 3 2",
+                "output": "[0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13]"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [4, 2, 2, 4],
+                "output": [0, 2, 4, 6]
+            },
+            {
+                "inputs": [1, 0, 1, 7, 12, 5, 3, 2],
+                "output": [0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13]
+            },
+            {
+                "inputs": [2, 1, 4, 2, 4],
+                "output": [0, 1, 2, 3, 4, 5, 6, 7]
+            },
+            {
+                "inputs": [5000],
+                "output": [0, 5000]
+            },
+            {
+                "inputs": [0],
+                "output": [0]
+            }
+        ]
     }
 ]
