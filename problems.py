@@ -2735,5 +2735,66 @@ data = [
                 "output": 4
             }
         ]
+    },
+    {
+        "problem_id": "CC1600E",
+        "problem_description": "Array game",
+        "prompts": [
+            {
+                "0-shot": "Alice and Bob are playing a game. They are given an array A. The array consists of integers. They are building a sequence together. In the beginning, the sequence is empty. In one turn a player can remove a number from the left or right side of the array and append it to the sequence. The rule is that the sequence they are building must be strictly increasing. The winner is the player that makes the last move. Alice is playing first. Given the starting array, under the assumption that they both play optimally, write a function to determine the winner of the game. The function must receive a list of integers A1, A2, ..., AN, corresponding to the array A. The function must return a string corresponding to the name of the winner (either 'Alice' or 'Bob')."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "[5]",
+                "output": "Alice"
+            },
+            {
+                "input": "[5, 4, 5]",
+                "output": "Alice"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "[5]",
+                "output": "Alice"
+            },
+            {
+                "input": "[5, 4, 5]",
+                "output": "Bob"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "5",
+                "output": "Alice"
+            },
+            {
+                "input": "5 4 5",
+                "output": "Alice"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [5],
+                "output": "Alice"
+            },
+            {
+                "inputs": [5, 4, 5],
+                "output": "Alice"
+            },
+            {
+                "inputs": [5, 8, 2, 1, 10, 9],
+                "output": "Bob"
+            },
+            {
+                "inputs": [5, 6, 5],
+                "output": "Bob"
+            },
+            {
+                "inputs": [5, 4, 2, 1, 10, 9],
+                "output": "Alice"
+            }
+        ]
     }
 ]
