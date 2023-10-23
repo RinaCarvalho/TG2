@@ -2869,5 +2869,78 @@ data = [
                 "output": 3
             }
         ]
+    },
+    {
+        "problem_id": "CC1620C",
+        "problem_description": "BA-String",
+        "prompts": [
+            {
+                "0-shot": "Given an integer k and a string s, that consists only of characters 'a' and '*', each asterisk should be replaced with several (from 0 to k inclusive) lowercase Latin letters 'b'. Different asterisks can be replaced with different counts of the letter 'b'. The result of the replacement is called a BA-string. A string p is lexicographically smaller than q if and only if one of the following holds: p is a prefix of q, but p != q, or in the first position where p and q differ, the string p has a letter that appears earlier in the alphabet than the corresponding letter in q. Now consider all different BA-strings and write a function to find the x-th lexicographically smallest of them. The function must receive two integers k and x, and a string s. The function must return a string consisting only of 'b's and 'a's, corresponding to the  the x-th lexicographically smallest BA-string."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": ["4", "3", "a*"],
+                "output": "abb"
+            },
+            {
+                "input": ["1", "3", "a**a"],
+                "output": "abba"
+            },
+            {
+                "input": ["3", "20", "**a***"],
+                "output": "babbbbbbbbb"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": ["4", "3", "a*"],
+                "output": "abbb"
+            },
+            {
+                "input": ["1", "3", "a**a"],
+                "output": "abbba"
+            },
+            {
+                "input": ["3", "20", "**a***"],
+                "output": "babbbbbbbbbb"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "4 3 a*",
+                "output": "abb"
+            },
+            {
+                "input": "1 3 a**a",
+                "output": "abba"
+            },
+            {
+                "input": "3 20 **a***",
+                "output": "babbbbbbbbb"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [4, 3, "a*"],
+                "output": "abb"
+            },
+            {
+                "inputs": [1, 3, "a**a"],
+                "output": "abba"
+            },
+            {
+                "inputs": [3, 20, "**a***"],
+                "output": "babbbbbbbbbb"
+            },
+            {
+                "inputs": [4, 2, "a**"],
+                "output": "ab"
+            },
+            {
+                "inputs": [2, 2, "a**a"],
+                "output": "aba"
+            }
+        ]
     }
 ]
