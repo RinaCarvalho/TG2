@@ -7,7 +7,7 @@ from utils import extract_prompt_from_problem, write_to_jsonl
 
 model = "gpt-3.5-turbo"
 language = "Python"
-problem_id = "CC1580B"
+problem_id = "CC1582A"
 prompt_type = "0-shot"
 log_path = "logs/GPT_35_t1_v3"
 
