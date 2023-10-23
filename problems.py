@@ -2796,5 +2796,78 @@ data = [
                 "output": "Alice"
             }
         ]
+    },
+    {
+        "problem_id": "CC1618C",
+        "problem_description": "Paint the Array",
+        "prompts": [
+            {
+                "0-shot": "Consider a given array consisting of positive integers. Upon selecting a positive integer d, all elements of the array which are divisible by d will be painted red, and all other elements will be painted blue. The coloring is called beautiful if there are no pairs of adjacent elements with the same color in the array. Write a function to find the smallest value of d which yields a beautiful coloring, or report that it is impossible. The function must receive a list of integers - the elements of the array - as input, and return a positive integer d, or 0, if there is no value of d that yields a beautiful coloring."
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "[1, 2, 3, 4, 5]",
+                "output": "2"
+            },
+            {
+                "input": "[10, 5, 15]",
+                "output": "0"
+            },
+            {
+                "input": "[100, 10, 200]",
+                "output": "100"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "[1, 2, 3, 4, 5]",
+                "output": "4"
+            },
+            {
+                "input": "[10, 5, 15]",
+                "output": "0"
+            },
+            {
+                "input": "[100, 10, 200]",
+                "output": "0"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "[1, 2, 3, 4, 5]",
+                "output": "2"
+            },
+            {
+                "input": "[10, 5, 15]",
+                "output": "-1"
+            },
+            {
+                "input": "[100, 10, 200]",
+                "output": "100"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": [1, 2, 3, 4, 5],
+                "output": 2
+            },
+            {
+                "inputs": [10, 5, 15],
+                "output": 0
+            },
+            {
+                "inputs": [100, 10, 200],
+                "output": 20
+            },
+            {
+                "inputs": [9, 8, 2, 6, 6, 2, 8, 6, 5, 4],
+                "output": 0
+            },
+            {
+                "inputs": [1, 3],
+                "output": 3
+            }
+        ]
     }
 ]
