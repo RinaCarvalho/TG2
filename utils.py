@@ -92,7 +92,9 @@ def compile_results(logs_dir):
     return results
 
 
-def write_results_to_csv(results):
+def write_results_to_csv(logs_dir):
+    results = compile_results(logs_dir)
+
     with open("result_compilation.csv", 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
 
