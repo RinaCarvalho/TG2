@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given list and a given format string, write a function to apply the format string to all elements in the list. The function must receive a list and a string as inputs and return a list.\n\nExamples:\n\nInput: ['[1, 2, 3, 4]', 'temp{0}']\nOutput: ['temp1', 'temp2', 'temp3', 'temp4']\n\nInput: [\"['a', 'b', 'c', 'd']\", 'python{0}']\nOutput: ['pythona', 'pythonb', 'pythonc', 'pythond']",
+    "response": "def apply_format(lst, fmt):\n    return [fmt.format(eval(e)) for e in lst]\n\nlst = ['[1, 2, 3, 4]', 'temp{0}']\nfmt = \"{0}\"\nprint(apply_format(lst, fmt))\n\nlst = [\"['a', 'b', 'c', 'd']\", 'python{0}']\nfmt = \"{0}\"\nprint(apply_format(lst, fmt))",
+    "test_results": "Test failed: invalid syntax (<string>, line 1)"
+}
