@@ -3019,5 +3019,78 @@ data = [
                 "output": 23125
             }
         ]
+    },
+    {
+        "problem_id": "YTDL1",
+        "problem_description": "Base url util",
+        "prompts": [
+            {
+                "0-shot": 'The following `base_url` function and docstring refer to a utility function to extract the base url given a url, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```import re\n\ndef base_url(url):\n    """ Returns the base url given a full url\n    """\n    pass```. Complete the function, having it return the base url as a string.',
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "http://foo.de/",
+                "output": "http://foo.de/"
+            },
+            {
+                "input": "http://foo.de/bar/",
+                "output": "http://foo.de/bar/"
+            },
+            {
+                "input": "http://foo.de/bar",
+                "output": "http://foo.de/"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "http://foo.de/",
+                "output": "http://foo.de/"
+            },
+            {
+                "input": "http://foo.de/bar/",
+                "output": "http://foo.de/bar/"
+            },
+            {
+                "input": "http://foo.de/bar",
+                "output": "http://foo.de/bar/"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "http://foo.de/",
+                "output": "foo.de"
+            },
+            {
+                "input": "http://foo.de/bar/",
+                "output": "foo.de/bar"
+            },
+            {
+                "input": "http://foo.de/bar",
+                "output": "foo.de/bar"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": ["http://foo.de/"],
+                "output": "http://foo.de/"
+            },
+            {
+                "inputs": ["http://foo.de/bar"],
+                "output": "http://foo.de/"
+            },
+            {
+                "inputs": ["http://foo.de/bar/"],
+                "output": "http://foo.de/bar/"
+            },
+            {
+                "inputs": ["http://foo.de/bar/baz"],
+                "output": "http://foo.de/bar/"
+            },
+            {
+                "inputs": ["http://foo.de/bar/baz?x=z/x/c"],
+                "output": "http://foo.de/bar/"
+            }
+        ]
     }
 ]
