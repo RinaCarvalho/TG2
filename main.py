@@ -20,4 +20,4 @@ if __name__ == "__main__":
         prompt_series = prompt_gen.generate_prompt_series()
         prompt = prompt_gen.generate_modified_prompt()
         code_gen = CodeGenerator(model=model, language=language)
-        code_gen.generate_code(prompt_series, prompt, 1, log_path)
+        code_gen.generate_code(prompt_series, prompt, 8, log_path)
