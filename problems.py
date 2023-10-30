@@ -3092,5 +3092,70 @@ data = [
                 "output": "http://foo.de/bar/"
             }
         ]
+    },
+    {
+        "problem_id": "YTDL2",
+        "problem_description": "Determine extension util",
+        "prompts": [
+            {
+                "0-shot": 'The following `determine_ext` function and docstring refer to a utility function to determine the video extension of a given url, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```KNOWN_EXTENSIONS = (\n    \'mp4\', \'m4a\', \'m4p\', \'m4b\', \'m4r\', \'m4v\', \'aac\',\n    \'flv\', \'f4v\', \'f4a\', \'f4b\',\n    \'webm\', \'ogg\', \'ogv\', \'oga\', \'ogx\', \'spx\', \'opus\',\n    \'mkv\', \'mka\', \'mk3d\',\n    \'avi\', \'divx\',\n    \'mov\',\n    \'asf\', \'wmv\', \'wma\',\n    \'3gp\', \'3g2\',\n    \'mp3\',\n    \'flac\',\n    \'ape\',\n    \'wav\',\n    \'f4f\', \'f4m\', \'m3u8\', \'smil\')\n\ndef determine_ext(url):\n    """ Extract the video extension from a URL, returning \'None\' if no valid extension was found.\n    URLs such as \'http://example.com/foo/bar.mp4/?download\' can also have extensions extracted.\n    """\n    \n    pass```. Complete the function, having it return the video extension as a string.',
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "http://example.com/foo/bar.mp4/?download",
+                "output": "mp4"
+            },
+            {
+                "input": "http://example.com/foo/bar/?download",
+                "output": "None"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "http://example.com/foo/bar.mp4/?download",
+                "output": "mp4"
+            },
+            {
+                "input": "http://example.com/foo/bar/?download",
+                "output": "mp3"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "http://example.com/foo/bar.mp4/?download",
+                "output": "mp4"
+            },
+            {
+                "input": "http://example.com/foo/bar/?download",
+                "output": ""
+            }
+        ],
+        "tests": [
+            {
+                "inputs": ["http://example.com/foo/bar.mp4/?download"],
+                "output": "mp4"
+            },
+            {
+                "inputs": ["http://example.com/foo/bar/?download"],
+                "output": None
+            },
+            {
+                "inputs": ["http://example.com/foo/bar.nonext/?download"],
+                "output": None
+            },
+            {
+                "inputs": ["http://example.com/foo/bar/mp4?download"],
+                "output": None
+            },
+            {
+                "inputs": ["http://example.com/foo/bar.m3u8//?download"],
+                "output": "m3u8"
+            },
+            {
+                "inputs": ["foobar"],
+                "output": None
+            }
+        ]
     }
 ]
