@@ -3157,5 +3157,70 @@ data = [
                 "output": None
             }
         ]
+    },
+    {
+        "problem_id": "YTDL3",
+        "problem_description": "Escape RFC 3986 util",
+        "prompts": [
+            {
+                "0-shot": 'The following `escape_rfc3986` function and docstring refer to a utility function to escape non-ASCII characters from a given string, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```def escape_rfc3986(s):\n    """ Escape non-ASCII characters as suggested by RFC 3986.\n        The characters "!*\'();:@&=+$,/?%#[]" are reserved and aren\'t converted.\n    """\n    pass```. Complete the function, having it return the escaped string.',
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "!*\'();:@&=+$,/?%#[]",
+                "output": "!*\'();:@&=+$,/?%#[]"
+            },
+            {
+                "input": "foo bar",
+                "output": "foo%20bar"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "!*\'();:@&=+$,/?%#[]",
+                "output": "%21%2A%5C%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%25%23%5B%5D"
+            },
+            {
+                "input": "foo bar",
+                "output": "foo%20bar"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "!*\'();:@&=+$,/?%#[]",
+                "output": "%21%2A%5C%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%25%23%5B%5"
+            },
+            {
+                "input": "foo bar",
+                "output": "foo+bar"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": ["!*\'();:@&=+$,/?%#[]"],
+                "output": "!*\'();:@&=+$,/?%#[]"
+            },
+            {
+                "inputs": ["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~"],
+                "output": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~"
+            },
+            {
+                "inputs": ["foo bar"],
+                "output": "f00%20bar"
+            },
+            {
+                "inputs": ["тест"],
+                "output": "%D1%82%D0%B5%D1%81%D1%82"
+            },
+            {
+                "inputs": ["%D1%82%D0%B5%D1%81%D1%82"],
+                "output": "%D1%82%D0%B5%D1%81%D1%82"
+            },
+            {
+                "inputs": ["foo%20bar"],
+                "output": "foo%20bar"
+            }
+        ]
     }
 ]
