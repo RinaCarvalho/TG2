@@ -31,7 +31,7 @@ class Evaluator:
             return None
 
 
-    @timeout_decorator.timeout(30)
+    @timeout_decorator.timeout(10)
     def run_test(self, tests):
         generated_code = self._extract_generated_code()
 
