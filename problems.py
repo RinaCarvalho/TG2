@@ -3293,7 +3293,7 @@ data = [
         "problem_description": "Mimetype to extension util",
         "prompts": [
             {
-                "0-shot": 'The following `mimetype2ext` function and docstring refer to a utility function to convert a mimetype into its corresponding extension, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```MIMETYPE_EXTENSION_MAPPING = {\n    \'3gpp\': \'3gp\',\n    \'smptett+xml\': \'tt\',\n    \'ttaf+xml\': \'dfxp\',\n    \'ttml+xml\': \'ttml\',\n    \'x-flv\': \'flv\',\n    \'x-mp4-fragmented\': \'mp4\',\n    \'x-ms-sami\': \'sami\',\n    \'x-ms-wmv\': \'wmv\',\n    \'mpegurl\': \'m3u8\',\n    \'x-mpegurl\': \'m3u8\',\n    \'vnd.apple.mpegurl\': \'m3u8\',\n    \'dash+xml\': \'mpd\',\n    \'f4m+xml\': \'f4m\',\n    \'hds+xml\': \'f4m\',\n    \'vnd.ms-sstr+xml\': \'ism\',\n    \'quicktime\': \'mov\',\n    \'mp2t\': \'ts\',\n    \'x-wav\': \'wav\',\n}\n\ndef mimetype2ext(mt):\n    """ Converts mimetype to extension\n    \n    Specifications:\n        \'audio/mp4\': \'m4a\'\n        \'audio/mpeg\': \'mp3\' (Per RFC 3003, audio/mpeg can be .mp1, .mp2 or .mp3 - which is most popular)\n        Other extensions: refer to mimetype-extension mapping. If no corresponding extension is found,\n        returns the input mt.\n    """\n    \n    pass```. Complete the function, having it return the a string corresponding to the mimetype equivalent extension.',
+                "0-shot": 'The following `mimetype2ext` function and docstring refer to a utility function to convert a mimetype into its corresponding extension, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```MIMETYPE_EXTENSION_MAPPING = {\n    \'3gpp\': \'3gp\',\n    \'smptett+xml\': \'tt\',\n    \'ttaf+xml\': \'dfxp\',\n    \'ttml+xml\': \'ttml\',\n    \'x-flv\': \'flv\',\n    \'x-mp4-fragmented\': \'mp4\',\n    \'x-ms-sami\': \'sami\',\n    \'x-ms-wmv\': \'wmv\',\n    \'mpegurl\': \'m3u8\',\n    \'x-mpegurl\': \'m3u8\',\n    \'vnd.apple.mpegurl\': \'m3u8\',\n    \'dash+xml\': \'mpd\',\n    \'f4m+xml\': \'f4m\',\n    \'hds+xml\': \'f4m\',\n    \'vnd.ms-sstr+xml\': \'ism\',\n    \'quicktime\': \'mov\',\n    \'mp2t\': \'ts\',\n    \'x-wav\': \'wav\',\n}\n\ndef mimetype2ext(mt):\n    """ Converts mimetype to extension\n    \n    Specifications:\n        \'audio/mp4\': \'m4a\'\n        \'audio/mpeg\': \'mp3\' (Per RFC 3003, audio/mpeg can be .mp1, .mp2 or .mp3 - which is most popular)\n        Other extensions: refer to mimetype-extension mapping. If no corresponding extension is found,\n        returns the input mt.\n    """\n    \n    pass```. Complete the function, having it return the string corresponding to the mimetype equivalent extension.',
             }
         ],
         "input_examples": [
@@ -3350,6 +3350,71 @@ data = [
             {
                 "inputs": ["audio/mpeg"],
                 "output": "mp3"
+            }
+        ]
+    },
+    {
+        "problem_id": "YTDL6",
+        "problem_description": "Mimetype to extension util",
+        "prompts": [
+            {
+                "0-shot": 'The following `parse_iso8601` function and docstring refer to a utility function to convert an ISO datetime into a UNIX timestamp, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```def parse_iso8601(date_str, delimiter=\'T\', timezone=None):\n    """ Return a UNIX timestamp from the given date.\n        Delimiter corresponds to the time delimiter (e.g. 2023-10-19T00:00:00+00:00)\n    """\n\n    pass```. Complete the function, having it return a string corresponing to the UNIX timestamp if the datetime is valid, or None otherwise.',
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "2014-03-23T23:04:26+0100",
+                "output": "1395612266"
+            },
+            {
+                "input": "2014-03-23T22:04:26Z",
+                "output": "1395612266"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "2014-03-23T23:04:26+0100",
+                "output": "1395612265"
+            },
+            {
+                "input": "2014-03-23T22:04:26Z",
+                "output": "1395612265"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "2014-03-23T23:04:26+0100",
+                "output": "1395612266000"
+            },
+            {
+                "input": "2014-03-23T22:04:26Z",
+                "output": "1395612266000"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": ["2014-03-23T23:04:26+0100"],
+                "output": "1395612266"
+            },
+            {
+                "inputs": ["2014-03-23T22:04:26+0000"],
+                "output": "1395612266"
+            },
+            {
+                "inputs": ["2014-03-23T22:04:26Z"],
+                "output": "1395612266"
+            },
+            {
+                "inputs": ["2014-03-23T22:04:26.1234Z"],
+                "output": "1395612266"
+            },
+            {
+                "inputs": ["2015-09-29T08:27:31.727"],
+                "output": "1443515251"
+            },
+            {
+                "inputs": ["2015-09-29T08-27-31.727"],
+                "output": None
             }
         ]
     }
