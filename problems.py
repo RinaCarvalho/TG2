@@ -3207,7 +3207,7 @@ data = [
             },
             {
                 "inputs": ["foo bar"],
-                "output": "f00%20bar"
+                "output": "foo%20bar"
             },
             {
                 "inputs": ["тест"],
