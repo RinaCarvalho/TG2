@@ -3222,5 +3222,70 @@ data = [
                 "output": "foo%20bar"
             }
         ]
-    }
+    },
+    {
+        "problem_id": "YTDL4",
+        "problem_description": "Fix xml ampersands util",
+        "prompts": [
+            {
+                "0-shot": 'The following `fix_xml_ampersands` function and docstring refer to a utility function to replace all lone "&" characters from a given xml string by "&amp;", in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```def fix_xml_ampersands(xml_str):\n    """Replace all lone \'&\' characters by \'&amp;\' in XML"""\n    pass```. Complete the function, having it return the replaced xml string.',
+            }
+        ],
+        "input_examples": [
+            {
+                "input": '"&x=y&z=a',
+                "output": '"&amp;x=y&amp;z=a'
+            },
+            {
+                "input": "&amp;",
+                "output": "&amp;"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": '"&x=y&z=a',
+                "output": '"&amp;x=y&amp;z=a'
+            },
+            {
+                "input": "&amp;",
+                "output": "&amp;amp;"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": '&x=y&z=a',
+                "output": '"&amp;x=y&amp;z=a'
+            },
+            {
+                "input": "&amp",
+                "output": "&amp;"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": ['"&x=y&z=a'],
+                "output": '"&amp;x=y&amp;z=a'
+            },
+            {
+                "inputs": ["&amp;"],
+                "output": "&amp;"
+            },
+            {
+                "inputs": ['"&amp;x=y&wrong;&z=a'],
+                "output": '"&amp;x=y&amp;wrong;&amp;z=a'
+            },
+            {
+                "inputs": ["&amp;&apos;&gt;&lt;&quot;"],
+                "output": "&amp;&apos;&gt;&lt;&quot;"
+            },
+            {
+                "inputs": ["&#1234;&#x1abC;"],
+                "output": "&#1234;&#x1abC;"
+            },
+            {
+                "inputs": ["&#&#"],
+                "output": "&amp;#&amp;#"
+            }
+        ]
+    },
 ]
