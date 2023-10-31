@@ -3288,4 +3288,69 @@ data = [
             }
         ]
     },
+    {
+        "problem_id": "YTDL5",
+        "problem_description": "Mimetype to extension util",
+        "prompts": [
+            {
+                "0-shot": 'The following `mimetype2ext` function and docstring refer to a utility function to convert a mimetype into its corresponding extension, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```MIMETYPE_EXTENSION_MAPPING = {\n    \'3gpp\': \'3gp\',\n    \'smptett+xml\': \'tt\',\n    \'ttaf+xml\': \'dfxp\',\n    \'ttml+xml\': \'ttml\',\n    \'x-flv\': \'flv\',\n    \'x-mp4-fragmented\': \'mp4\',\n    \'x-ms-sami\': \'sami\',\n    \'x-ms-wmv\': \'wmv\',\n    \'mpegurl\': \'m3u8\',\n    \'x-mpegurl\': \'m3u8\',\n    \'vnd.apple.mpegurl\': \'m3u8\',\n    \'dash+xml\': \'mpd\',\n    \'f4m+xml\': \'f4m\',\n    \'hds+xml\': \'f4m\',\n    \'vnd.ms-sstr+xml\': \'ism\',\n    \'quicktime\': \'mov\',\n    \'mp2t\': \'ts\',\n    \'x-wav\': \'wav\',\n}\n\ndef mimetype2ext(mt):\n    """ Converts mimetype to extension\n    \n    Specifications:\n        \'audio/mp4\': \'m4a\'\n        \'audio/mpeg\': \'mp3\' (Per RFC 3003, audio/mpeg can be .mp1, .mp2 or .mp3 - which is most popular)\n        Other extensions: refer to mimetype-extension mapping. If no corresponding extension is found,\n        returns the input mt.\n    """\n    \n    pass```. Complete the function, having it return the a string corresponding to the mimetype equivalent extension.',
+            }
+        ],
+        "input_examples": [
+            {
+                "input": "video/x-flv",
+                "output": "flv"
+            },
+            {
+                "input": "application/x-mpegURL",
+                "output": "m3u8"
+            }
+        ],
+        "inaccurate_inputs": [
+            {
+                "input": "video/x-flv",
+                "output": "flv"
+            },
+            {
+                "input": "audio/mp4",
+                "output": "mp4"
+            }
+        ],
+        "misformatted_inputs": [
+            {
+                "input": "video/x-flv",
+                "output": "x-flv"
+            },
+            {
+                "input": "application/x-mpegURL",
+                "output": "x-mpegURL"
+            }
+        ],
+        "tests": [
+            {
+                "inputs": ["video/x-flv"],
+                "output": "flv"
+            },
+            {
+                "inputs": ["application/x-mpegURL"],
+                "output": "m3u8"
+            },
+            {
+                "inputs": ["text/vtt"],
+                "output": "vtt"
+            },
+            {
+                "inputs": ["text/vtt;charset=utf-8"],
+                "output": "&amp;&apos;&gt;&lt;&quot;"
+            },
+            {
+                "inputs": ["audio/mp4"],
+                "output": "m4a"
+            },
+            {
+                "inputs": ["audio/mpeg"],
+                "output": "mp3"
+            }
+        ]
+    }
 ]
