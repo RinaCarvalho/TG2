@@ -3358,7 +3358,7 @@ data = [
         "problem_description": "Mimetype to extension util",
         "prompts": [
             {
-                "0-shot": 'The following `parse_iso8601` function and docstring refer to a utility function to convert an ISO datetime into a UNIX timestamp, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```def parse_iso8601(date_str, delimiter=\'T\', timezone=None):\n    """ Return a UNIX timestamp from the given date.\n        Delimiter corresponds to the time delimiter (e.g. 2023-10-19T00:00:00+00:00)\n    """\n\n    pass```. Complete the function, having it return a string corresponing to the UNIX timestamp if the datetime is valid, or None otherwise.',
+                "0-shot": 'The following `parse_iso8601` function and docstring refer to a utility function to convert an ISO datetime into a UNIX timestamp, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```def parse_iso8601(date_str, delimiter=\'T\', timezone=None):\n    """ Return a UNIX timestamp from the given date.\n        Delimiter corresponds to the time delimiter (e.g. 2023-10-19T00:00:00+0000)\n    """\n\n    pass```. Complete the function, having it return a string corresponing to the UNIX timestamp if the datetime is valid, or None otherwise.',
             }
         ],
         "input_examples": [
