@@ -31,4 +31,3 @@ CMD ["python", "run_tests.py"]
 # CHEATSHEET
 # docker build -t test-container .
 # docker run --rm -v "C:\Users\Rina Carvalho\Documents\TG2\logs":"/app/logs" test-container
-
