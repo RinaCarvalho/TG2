@@ -1,1 +1,5 @@
-{"prompt": "For a given string, write a function that encrypts the string using a Caesar cipher with a shift corresponding to a given number. The function must receive a string and a numner as inputs and return a strnig.\n\nExamples:\n\nInput: ['hi', '2']\nOutput: jk\n\nInput: ['asdfghjkl', '4']\nOutput: ewhjklnop", "response": "def caesar_cipher(s, n):\n    n = int(n)\n    output = ''\n    for char in s:\n        if char.isalpha():\n            ascii_offset = 65 if char.isupper() else 97\n            output += chr((ord(char) - ascii_offset + n) % 26 + ascii_offset)\n        else:\n            output += char\n    return output"}
+{
+    "prompt": "For a given string, write a function that encrypts the string using a Caesar cipher with a shift corresponding to a given number. The function must receive a string and a numner as inputs and return a strnig.\n\nExamples:\n\nInput: ['hi', '2']\nOutput: jk\n\nInput: ['asdfghjkl', '4']\nOutput: ewhjklnop",
+    "response": "def caesar_cipher(s, n):\n    n = int(n)\n    output = ''\n    for char in s:\n        if char.isalpha():\n            ascii_offset = 65 if char.isupper() else 97\n            output += chr((ord(char) - ascii_offset + n) % 26 + ascii_offset)\n        else:\n            output += char\n    return output",
+    "test_results": "Tests passed successfully"
+}

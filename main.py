@@ -11,9 +11,9 @@ model = "gpt-4"
 language = "Python 3"
 problem_id = None
 prompt_type = "0-shot"
-log_path = "logs/GPT_4_t1_v1"
+log_path = "logs/GPT_4_t1_v2"
 technique=Technique.FEW_SHOT
-variation=Variation.TYPO
+variation=Variation.INACCURACY
 samples = 1
 
 

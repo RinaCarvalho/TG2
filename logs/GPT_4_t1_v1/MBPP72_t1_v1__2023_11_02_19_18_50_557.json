@@ -1,1 +1,5 @@
-{"prompt": "For a given nujmber, write a fucntion tot check w hether the number can be represented as the diftferecee of two squares. The function must recceive an integer as inut and return a boolean.\n\nExamples:\n\nInput: 5\nOutput: True\n\nInput: 10\nOutput: False", "response": "def is_diff_squares(n):\n    if n%2 == 1 or n%4 == 0:\n        return True\n    else:\n        return False"}
+{
+    "prompt": "For a given nujmber, write a fucntion tot check w hether the number can be represented as the diftferecee of two squares. The function must recceive an integer as inut and return a boolean.\n\nExamples:\n\nInput: 5\nOutput: True\n\nInput: 10\nOutput: False",
+    "response": "def is_diff_squares(n):\n    if n%2 == 1 or n%4 == 0:\n        return True\n    else:\n        return False",
+    "test_results": "Tests passed successfully"
+}
