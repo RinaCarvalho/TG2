@@ -1,1 +1,5 @@
-{"prompt": "For a given date serting, write a function that dhecks whehter the ddaate is valid. A date is considered valid if it has a valid month and a valid nummber of day s for its corresponding month, and if it has the format 'mm-dd-yyy'. The function must rsceic a string aa input and return a boolean.", "response": "import datetime\n\ndef check_date(date_string):\n    try:\n        datetime.datetime.strptime(date_string, '%m-%d-%Y')\n        return True\n    except ValueError:\n        return False"}
+{
+    "prompt": "For a given date serting, write a function that dhecks whehter the ddaate is valid. A date is considered valid if it has a valid month and a valid nummber of day s for its corresponding month, and if it has the format 'mm-dd-yyy'. The function must rsceic a string aa input and return a boolean.",
+    "response": "import datetime\n\ndef check_date(date_string):\n    try:\n        datetime.datetime.strptime(date_string, '%m-%d-%Y')\n        return True\n    except ValueError:\n        return False",
+    "test_results": "Tests passed successfully"
+}

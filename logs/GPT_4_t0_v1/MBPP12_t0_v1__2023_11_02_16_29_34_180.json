@@ -1,1 +1,5 @@
-{"prompt": "For a given matrix, write a function that sorts the matrix in aseccnding order, according to the sum of its rows. The functuion must receive an aeray of arrys as input and ereturn an array of arays.", "response": "\ndef sort_matrix(matrix):\n    return sorted(matrix, key=sum)\n"}
+{
+    "prompt": "For a given matrix, write a function that sorts the matrix in aseccnding order, according to the sum of its rows. The functuion must receive an aeray of arrys as input and ereturn an array of arays.",
+    "response": "\ndef sort_matrix(matrix):\n    return sorted(matrix, key=sum)\n",
+    "test_results": "Tests passed successfully"
+}

@@ -1,1 +1,5 @@
-{"prompt": "For a given integer, write a function to fibnd the last digit of yhe factorila of the integer. The fhunction must receive an integer as input and return an integer.", "response": "def find_last_digit(n):  \n    if n==0 or n==1:\n        return 1\n    else:\n        fact = 1\n        for i in range(2,n+1):\n            fact *= i\n        return fact%10\n\n#Test the function:\n#find_last_digit(5), it should return 0 because the last digit of 5! (i.e. 1*2*3*4*5 = 120) is 0."}
+{
+    "prompt": "For a given integer, write a function to fibnd the last digit of yhe factorila of the integer. The fhunction must receive an integer as input and return an integer.",
+    "response": "def find_last_digit(n):  \n    if n==0 or n==1:\n        return 1\n    else:\n        fact = 1\n        for i in range(2,n+1):\n            fact *= i\n        return fact%10\n\n#Test the function:\n#find_last_digit(5), it should return 0 because the last digit of 5! (i.e. 1*2*3*4*5 = 120) is 0.",
+    "test_results": "Tests passed successfully"
+}

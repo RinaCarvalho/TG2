@@ -1,1 +1,5 @@
-{"prompt": "For a given integeer n, write a function to get all ludic numbere smaler thann or equal to n. The functionmust receive an integer as inputand return a list of integefts.", "response": "def get_ludic_numbers(n):\n    numbers = list(range(2, n + 1))\n    ludic_numbers = []\n\n    while numbers:\n        ludic_numbers.append(numbers[0])\n        numbers = [num for i, num in enumerate(numbers) if (i+1) % numbers[0] != 0]\n\n    return ludic_numbers"}
+{
+    "prompt": "For a given integeer n, write a function to get all ludic numbere smaler thann or equal to n. The functionmust receive an integer as inputand return a list of integefts.",
+    "response": "def get_ludic_numbers(n):\n    numbers = list(range(2, n + 1))\n    ludic_numbers = []\n\n    while numbers:\n        ludic_numbers.append(numbers[0])\n        numbers = [num for i, num in enumerate(numbers) if (i+1) % numbers[0] != 0]\n\n    return ludic_numbers",
+    "test_results": "Test failed: 'Timed Out'"
+}

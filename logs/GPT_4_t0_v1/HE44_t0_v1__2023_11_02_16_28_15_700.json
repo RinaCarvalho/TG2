@@ -1,1 +1,5 @@
-{"prompt": "For two given numbers, convert the first number from decimal bbaee to the base represwnred y the second nuber. The function must receive two integers as inputs and return an st ring.", "response": "def convert_base(number, base):\n    alphabet = \"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\"\n    if number < base:\n        return alphabet[number]\n    else:\n        return convert_base(number // base, base) + alphabet[number % base]"}
+{
+    "prompt": "For two given numbers, convert the first number from decimal bbaee to the base represwnred y the second nuber. The function must receive two integers as inputs and return an st ring.",
+    "response": "def convert_base(number, base):\n    alphabet = \"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\"\n    if number < base:\n        return alphabet[number]\n    else:\n        return convert_base(number // base, base) + alphabet[number % base]",
+    "test_results": "Tests passed successfully"
+}

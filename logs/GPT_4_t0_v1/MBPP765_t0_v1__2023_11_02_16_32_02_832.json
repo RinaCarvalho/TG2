@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write afunction y to find the nth poilte number. The ufnction must receive an integer as inpput and return an integer.", "response": "def nth_polite(n):\n    num = 0\n    count = 0\n    while count < n:\n        num += 1\n        binary = bin(num)[2:]\n        if binary.count('1') > 1:\n            count += 1\n    return num"}
+{
+    "prompt": "For a given integer n, write afunction y to find the nth poilte number. The ufnction must receive an integer as inpput and return an integer.",
+    "response": "def nth_polite(n):\n    num = 0\n    count = 0\n    while count < n:\n        num += 1\n        binary = bin(num)[2:]\n        if binary.count('1') > 1:\n            count += 1\n    return num",
+    "test_results": "Tests passed successfully"
+}

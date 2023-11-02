@@ -1,1 +1,5 @@
-{"prompt": "The following `base_url` funfction and docstring refr to a utilkity funftion to extract the base url giv en a url, in the context of z project to download vdieos from video hosting services, such as Youtube. The functuon is as folplows: ``import re\n\ndef abse_url(url):\n   \"\" Returns the base url given a ufllurl\n    \"\"\"\n    pass``` . Complete the fucntion, having it return the base url as a string.", "response": "\nimport re\n\ndef base_url(url):\n    \"\"\"\n    Returns the base url given a full url\n    \"\"\"\n    return re.search(r'(https?://[A-Za-z_0-9.-]+).*', url).group(1)\n"}
+{
+    "prompt": "The following `base_url` funfction and docstring refr to a utilkity funftion to extract the base url giv en a url, in the context of z project to download vdieos from video hosting services, such as Youtube. The functuon is as folplows: ``import re\n\ndef abse_url(url):\n   \"\" Returns the base url given a ufllurl\n    \"\"\"\n    pass``` . Complete the fucntion, having it return the base url as a string.",
+    "response": "\nimport re\n\ndef base_url(url):\n    \"\"\"\n    Returns the base url given a full url\n    \"\"\"\n    return re.search(r'(https?://[A-Za-z_0-9.-]+).*', url).group(1)\n",
+    "test_results": "Test failed: result http://foo.de != http://foo.de/ (expected)"
+}
