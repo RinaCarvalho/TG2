@@ -1,1 +1,5 @@
-{"prompt": "For a given number, write a function to check whether the number can be represented as the difference of two squares. The function must receive an integer as input and return a boolean.\n\nExamples:\n\nInput: 5.0\nOutput: True\n\nInput: 10.0\nOutput: False", "response": "def check_difference_of_squares(num):\n    if num % 4 == 2 or num < 0:\n        return False\n    else:\n        return True"}
+{
+    "prompt": "For a given number, write a function to check whether the number can be represented as the difference of two squares. The function must receive an integer as input and return a boolean.\n\nExamples:\n\nInput: 5.0\nOutput: True\n\nInput: 10.0\nOutput: False",
+    "response": "def check_difference_of_squares(num):\n    if num % 4 == 2 or num < 0:\n        return False\n    else:\n        return True",
+    "test_results": "Tests passed successfully"
+}
