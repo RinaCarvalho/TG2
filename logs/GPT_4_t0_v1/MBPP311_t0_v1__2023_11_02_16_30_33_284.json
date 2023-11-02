@@ -1,0 +1,1 @@
+{"prompt": "For a given integer, write a functionto set its leftmost unset bit. The function must receive an integet as input and return an integer.", "response": "def find_leftmost_bit(n):\n    i=1\n    while True:\n        if n & i:\n            i = i << 1\n        else:\n            n = n|i\n            return n"}

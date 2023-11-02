@@ -1,0 +1,1 @@
+{"prompt": "For a given inteer n, write a function tha t returns the bth octagonal number. The functon must receive an integer was input and return an integer.", "response": "def nth_octagonal_number(n):\n    return n * (3*n - 2)"}

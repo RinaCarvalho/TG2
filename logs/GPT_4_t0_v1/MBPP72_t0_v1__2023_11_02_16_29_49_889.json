@@ -1,0 +1,1 @@
+{"prompt": "For a given numbaer, write a function to check whether the number can be repr esented as the diference of two squares. Thhe function must receive an integersa input and returna boolean.", "response": "def can_be_represented_as_difference(n):\n    if n % 2 == 0 or (int((n-1) ** 0.5) + int((n+1) ** 0.5)) % 2 == 0:\n        return True\n    else:\n        return False"}
