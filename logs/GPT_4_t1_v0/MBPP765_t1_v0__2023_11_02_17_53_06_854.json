@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 7\nOutput: 11\n\nInput: 4\nOutput: 7", "response": "def find_polite(n): \n    counter = 0\n    current_number = 3\n    while counter < n:\n        if bin(current_number).count('1') > 1:\n            counter += 1\n        if counter == n:\n            return current_number\n        current_number += 1"}
+{
+    "prompt": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 7\nOutput: 11\n\nInput: 4\nOutput: 7",
+    "response": "def find_polite(n): \n    counter = 0\n    current_number = 3\n    while counter < n:\n        if bin(current_number).count('1') > 1:\n            counter += 1\n        if counter == n:\n            return current_number\n        current_number += 1",
+    "test_results": "Tests passed successfully"
+}
