@@ -1,5 +1,7 @@
 # TODO: Everywhere: document methods (docstrings)
 
+import time
+
 from prompt_generator import PromptGenerator
 from prompt_constants import Technique, Variation
 from code_generator import CodeGenerator
@@ -33,5 +35,6 @@ if __name__ == "__main__":
         generate_code_for_problem(problem_id, prompt_type, technique, variation, model, language, log_path, samples)
     else:
         problem_ids = list_problem_ids()
-        for problem_id in problem_ids:
+        for problem_id in problem_ids[16:]:
             generate_code_for_problem(problem_id, prompt_type, technique, variation, model, language, log_path, samples)
+            time.sleep(20)  # For GPT-4 rate limit
