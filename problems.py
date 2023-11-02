@@ -1598,7 +1598,7 @@ data = [
                 "output": True
             },
             {
-                "inputs": [[2, 7, 6], [9, 5, 1], [4, 3, 7]],
+                "inputs": [[[2, 7, 6], [9, 5, 1], [4, 3, 7]]],
                 "output": False
             },
             {
@@ -2147,8 +2147,8 @@ data = [
                 "output": None
             },
             {
-                "inputs": [0],
-                "output": 0
+                "inputs": [1],
+                "output": 1
             },
             {
                 "inputs": [2],
