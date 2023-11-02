@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.",
+    "response": "\ndef get_ludic_numbers(n):\n    \"\"\"Generate ludic numbers smaller than or equal to n.\"\"\"\n\n    # Create initial list\n    numbers = list(range(2, n + 1))\n\n    # While list is non-empty and first element is less than n\n    while numbers and numbers[0] <= n:\n        # Yield the first number\n        yield numbers[0]\n        # Remove all numbers at positions which are multiples of the first number\n        numbers = [numbers[i] for i in range(len(numbers)) if i % numbers[0] != 0 or i == 0]\n",
+    "test_results": "Test failed: result <generator object get_ludic_numbers at 0x7f508de7a430> != [1, 2, 3, 5, 7] (expected)"
+}

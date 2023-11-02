@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer.",
+    "response": "def nth_polite(n):\n    count = 0\n    current = 1\n    while count != n:\n        if not ((current & (current - 1)) == 0): # Polite numbers are not powers of two\n            count += 1\n        current += 1\n    return current - 1",
+    "test_results": "Tests passed successfully"
+}

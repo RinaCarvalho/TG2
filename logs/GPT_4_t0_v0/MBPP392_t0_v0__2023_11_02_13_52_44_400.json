@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given integer n, write a function to find the maximum sum possible according to the equation: f(n) = max( (f(n/2) + f(n/3) + f(n/4) + f(n/5)), n). The function must receive an integer as input and return an integer.",
+    "response": "\ndef maxSum(n):\n    dp = [0] * (n+1)\n\n    # Base case\n    dp[0] = 0\n    dp[1] = 1\n\n    # Build dp table in bottom up manner\n    for i in range(2, n+1):\n        dp[i] = max(dp[i//2] + dp[i//3] + dp[i//4] + dp[i//5], i)\n\n    return dp[n]\n",
+    "test_results": "Tests passed successfully"
+}

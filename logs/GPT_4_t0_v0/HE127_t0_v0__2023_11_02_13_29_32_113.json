@@ -1,0 +1,5 @@
+{
+    "prompt": "For two given closed intervals, write a function to determine the intersection between them. The function must receive two tuples of two integers each as input and return a tuple of two integers, if the length of the intersection is larger than 1, or a single integer otherwise.",
+    "response": "def interval_intersection(interval1, interval2):\n  a, b = max(interval1[0], interval2[0]), min(interval1[1], interval2[1])\n  if a > b:\n    return None  # no intersection\n  elif a == b:\n    return a  # intersection is a single integer\n  else:\n    return a, b  # intersection is a closed interval",
+    "test_results": "Tests passed successfully"
+}

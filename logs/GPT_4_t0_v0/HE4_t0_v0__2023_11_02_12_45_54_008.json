@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given list of input numbers, write a function to calculate the Mean Absolute Deviation around the mean of the dataset. The function must receive a List of floats as input and return a float.",
+    "response": "def mean_absolute_deviation(input_list):\n    mean_value = sum(input_list) / len(input_list)\n    return sum(abs(x - mean_value) for x in input_list) / len(input_list)",
+    "test_results": "Tests passed successfully"
+}

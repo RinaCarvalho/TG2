@@ -1,0 +1,5 @@
+{
+    "prompt": "For a given integer, write a function to set its leftmost unset bit. The function must receive an integer as input and return an integer.",
+    "response": "def set_leftmost_unset_bit(n):\n    # Calculate position of first unset bit\n    position = len(bin(n)[2:])\n\n    # Left shift 1 by position and perform binary OR\n    return n | (1 << position)",
+    "test_results": "Test failed: result 26 != 14 (expected)"
+}
