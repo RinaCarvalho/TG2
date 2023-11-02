@@ -16,6 +16,15 @@ def write_to_jsonl():
             jsonl_file.write(json_str + "\n")
 
 
+def list_problem_ids():
+    problem_ids = []
+
+    for problem in data:
+        problem_ids.append(problem['problem_id'])
+
+    return problem_ids
+
+
 def extract_problem_id(log_file):
     return log_file.split("_")[0]
 
