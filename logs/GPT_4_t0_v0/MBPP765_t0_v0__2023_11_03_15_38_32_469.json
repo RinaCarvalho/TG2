@@ -1,0 +1,1 @@
+{"prompt": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer.", "response": "def find_polite(n):\n    polite = []\n    i = 1\n    while len(polite) < n:\n        binary_i = bin(i)[2:]\n        if binary_i.count('1') > 1:\n            polite.append(i)\n        i += 1\n    return polite[n-1]"}

@@ -1,6 +1,7 @@
 import os
 import openai
 import json
+import time
 
 from datetime import datetime
 from utils import remove_fluff_from_code
@@ -49,6 +50,12 @@ class CodeGenerator:
                 response = completion.choices[0].message.content
                 self._log_api_call(prompt_series, prompt, response, log_path)
 
+                print(prompt_series)
+
             except:
                 response = None
                 self._log_api_call(prompt_series, prompt, "Error generating code", log_path)
+
+            finally:
+                if self.model == 'gpt-4':
+                    time.sleep(3)  # Due to rate limit

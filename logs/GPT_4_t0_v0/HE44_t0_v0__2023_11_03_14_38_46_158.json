@@ -1,0 +1,1 @@
+{"prompt": "For two given numbers, convert the first number from decimal base to the base represented by the second number. The function must receive two integers as inputs and return an string.", "response": "def convert_base(number, base):\n    return np.base_repr(number, base=base)"}

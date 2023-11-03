@@ -1,0 +1,1 @@
+{"prompt": "For a given integer, write a function to find the last digit of the factorial of the integer. The function must receive an integer as input and return an integer.", "response": "def last_digit_factorial(n):\n    import math\n    factorial = math.factorial(n)\n    return int(str(factorial)[-1])"}

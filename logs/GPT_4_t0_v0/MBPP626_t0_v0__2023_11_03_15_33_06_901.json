@@ -1,0 +1,1 @@
+{"prompt": "For a given number r, write a function to find the area of the largest triangle that can be inscribed in a semicircle with radius r. The function must receive a number r and return a number, or None.", "response": "def inscribed_triangle_area(r):\n    try:\n        r = float(r)\n        return 0.5*r*r if r > 0 else 0\n    except ValueError:\n        return None"}

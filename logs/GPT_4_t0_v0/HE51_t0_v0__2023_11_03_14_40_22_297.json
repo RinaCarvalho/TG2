@@ -1,0 +1,1 @@
+{"prompt": "For a given string, write a function to remove the vowels from the string. The function must receive a string as input and return a string.", "response": "def remove_vowels(s):\n    vowels = 'aeiouAEIOU'\n    return ''.join([i for i in s if i not in vowels])"}

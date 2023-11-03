@@ -1,0 +1,1 @@
+{"prompt": "For a given integer, write a function to set its leftmost unset bit. The function must receive an integer as input and return an integer.", "response": "def set_leftmost_unset_bit(n):\n\n    s = bin(n)[2:]\n    index = s.rfind('0')\n\n    return n | 1 << (len(s) - 1 - index)"}
