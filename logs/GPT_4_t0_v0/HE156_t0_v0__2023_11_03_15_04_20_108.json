@@ -1,1 +1,5 @@
-{"prompt": "For a given integer, write a function to convert the number to uppercase roman numerals. The function must receive an integer as input and return a string.", "response": "def int_to_roman(input):\n    roman_numerals = {1: \"I\", 4: \"IV\", 5: \"V\", 9: \"IX\", 10: \"X\", 40: \"XL\", 50: \"L\", 90: \"XC\", 100: \"C\", 400: \"CD\", 500: \"D\", 900: \"CM\", 1000: \"M\"}\n    result = \"\"\n    for value, numeral in sorted(roman_numerals.items(), reverse=True):\n        while input >= value:\n            result += numeral\n            input -= value\n    return result"}
+{
+    "prompt": "For a given integer, write a function to convert the number to uppercase roman numerals. The function must receive an integer as input and return a string.",
+    "response": "def int_to_roman(input):\n    roman_numerals = {1: \"I\", 4: \"IV\", 5: \"V\", 9: \"IX\", 10: \"X\", 40: \"XL\", 50: \"L\", 90: \"XC\", 100: \"C\", 400: \"CD\", 500: \"D\", 900: \"CM\", 1000: \"M\"}\n    result = \"\"\n    for value, numeral in sorted(roman_numerals.items(), reverse=True):\n        while input >= value:\n            result += numeral\n            input -= value\n    return result",
+    "test_results": "Tests passed successfully"
+}

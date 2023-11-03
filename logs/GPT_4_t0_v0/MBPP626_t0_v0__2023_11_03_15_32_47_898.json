@@ -1,1 +1,5 @@
-{"prompt": "For a given number r, write a function to find the area of the largest triangle that can be inscribed in a semicircle with radius r. The function must receive a number r and return a number, or None.", "response": "def area_of_inscribed_triangle(r):\n    if r is None or r <= 0:\n        return None\n    else:\n        return (r**2) # Area = 1/2 * Base * Height = 1/2 * 2r * r = r^2 [Base is diameter of semicircle and height is radius]"}
+{
+    "prompt": "For a given number r, write a function to find the area of the largest triangle that can be inscribed in a semicircle with radius r. The function must receive a number r and return a number, or None.",
+    "response": "def area_of_inscribed_triangle(r):\n    if r is None or r <= 0:\n        return None\n    else:\n        return (r**2) # Area = 1/2 * Base * Height = 1/2 * 2r * r = r^2 [Base is diameter of semicircle and height is radius]",
+    "test_results": "Tests passed successfully"
+}

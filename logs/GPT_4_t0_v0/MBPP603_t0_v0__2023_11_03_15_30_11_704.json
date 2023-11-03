@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.", "response": "def ludic_numbers(n):\n\n    def remove_p_multiples(numbers, p):\n        return [num for i, num in enumerate(numbers) if (i+1) % p != 0]\n\n    numbers = list(range(2, n + 1))\n    ludic = []\n    \n    while numbers:\n        ludic.append(numbers.pop(0))\n        numbers = remove_p_multiples(numbers, ludic[-1])\n\n    return ludic"}
+{
+    "prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.",
+    "response": "def ludic_numbers(n):\n\n    def remove_p_multiples(numbers, p):\n        return [num for i, num in enumerate(numbers) if (i+1) % p != 0]\n\n    numbers = list(range(2, n + 1))\n    ludic = []\n    \n    while numbers:\n        ludic.append(numbers.pop(0))\n        numbers = remove_p_multiples(numbers, ludic[-1])\n\n    return ludic",
+    "test_results": "Test failed: result [2, 3, 5, 7] != [1, 2, 3, 5, 7] (expected)"
+}

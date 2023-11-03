@@ -1,1 +1,5 @@
-{"prompt": "For a given integer, write a function to convert the number to uppercase roman numerals. The function must receive an integer as input and return a string.", "response": "def integer_to_roman(integer):\n\n    num_map = [(1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'), (100, 'C'), (90, 'XC'),\n               (50, 'L'), (40, 'XL'), (10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')]\n\n    roman_numerals = ''\n\n    while integer > 0:\n        for i, numeral in num_map:\n            while integer >= i:\n                roman_numerals += numeral\n                integer -= i\n\n    return roman_numerals"}
+{
+    "prompt": "For a given integer, write a function to convert the number to uppercase roman numerals. The function must receive an integer as input and return a string.",
+    "response": "def integer_to_roman(integer):\n\n    num_map = [(1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'), (100, 'C'), (90, 'XC'),\n               (50, 'L'), (40, 'XL'), (10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')]\n\n    roman_numerals = ''\n\n    while integer > 0:\n        for i, numeral in num_map:\n            while integer >= i:\n                roman_numerals += numeral\n                integer -= i\n\n    return roman_numerals",
+    "test_results": "Tests passed successfully"
+}

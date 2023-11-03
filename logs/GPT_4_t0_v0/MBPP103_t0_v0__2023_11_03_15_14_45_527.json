@@ -1,1 +1,5 @@
-{"prompt": "For two given integers n and k, write a function to find the Eulerian number A(n, k). The function must receive two integers as inputs and return an integer.", "response": "def eulerian_number(n, k):\n    if k >= n or n == 0:\n        return 0\n    elif k == 0 or k == n - 1:\n        return 1\n    else:\n        return ((n - k) * eulerian_number(n - 1, k - 1) + \n                (k + 1) * eulerian_number(n - 1, k))"}
+{
+    "prompt": "For two given integers n and k, write a function to find the Eulerian number A(n, k). The function must receive two integers as inputs and return an integer.",
+    "response": "def eulerian_number(n, k):\n    if k >= n or n == 0:\n        return 0\n    elif k == 0 or k == n - 1:\n        return 1\n    else:\n        return ((n - k) * eulerian_number(n - 1, k - 1) + \n                (k + 1) * eulerian_number(n - 1, k))",
+    "test_results": "Tests passed successfully"
+}

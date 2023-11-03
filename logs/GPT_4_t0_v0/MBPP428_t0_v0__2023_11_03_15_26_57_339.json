@@ -1,1 +1,5 @@
-{"prompt": "For a given array, write a function to sort it using shell sort. The function must receive an array as input and return an array.", "response": "def shell_sort(arr):\n    gap = len(arr) // 2\n\n    while gap > 0:\n        for i in range(gap, len(arr)):\n            temp = arr[i]\n            j = i\n\n            while j >= gap and arr[j - gap] > temp:\n                arr[j] = arr[j - gap]\n                j -= gap\n\n            arr[j] = temp\n        gap //= 2\n\n    return arr"}
+{
+    "prompt": "For a given array, write a function to sort it using shell sort. The function must receive an array as input and return an array.",
+    "response": "def shell_sort(arr):\n    gap = len(arr) // 2\n\n    while gap > 0:\n        for i in range(gap, len(arr)):\n            temp = arr[i]\n            j = i\n\n            while j >= gap and arr[j - gap] > temp:\n                arr[j] = arr[j - gap]\n                j -= gap\n\n            arr[j] = temp\n        gap //= 2\n\n    return arr",
+    "test_results": "Tests passed successfully"
+}

@@ -1,1 +1,5 @@
-{"prompt": "For a given integer, write a function to set its leftmost unset bit. The function must receive an integer as input and return an integer.", "response": "def set_leftmost_unset_bit(n):\n    # Finding the position of most significant\n    # bit ('1') and incrementing by 1\n    set_bit = 0\n    while (n):\n        n = n >> 1\n        set_bit += 1\n  \n    # returning the value of 'n' with the \n    # bit at 'msb' set\n    return ((1 << set_bit) | n)"}
+{
+    "prompt": "For a given integer, write a function to set its leftmost unset bit. The function must receive an integer as input and return an integer.",
+    "response": "def set_leftmost_unset_bit(n):\n    # Finding the position of most significant\n    # bit ('1') and incrementing by 1\n    set_bit = 0\n    while (n):\n        n = n >> 1\n        set_bit += 1\n  \n    # returning the value of 'n' with the \n    # bit at 'msb' set\n    return ((1 << set_bit) | n)",
+    "test_results": "Test failed: result 16 != 14 (expected)"
+}

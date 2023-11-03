@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.", "response": "def get_ludic_numbers(n):\n    candidates = list(range(2, n+1))\n    ludic_numbers = []\n\n    while candidates:\n        ludic_numbers.append(candidates[0])\n        candidates = [candidates[i] for i in range(len(candidates)) if (i % candidates[0]) != 0]\n\n    return ludic_numbers"}
+{
+    "prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.",
+    "response": "def get_ludic_numbers(n):\n    candidates = list(range(2, n+1))\n    ludic_numbers = []\n\n    while candidates:\n        ludic_numbers.append(candidates[0])\n        candidates = [candidates[i] for i in range(len(candidates)) if (i % candidates[0]) != 0]\n\n    return ludic_numbers",
+    "test_results": "Test failed: result [2, 3, 5, 7] != [1, 2, 3, 5, 7] (expected)"
+}

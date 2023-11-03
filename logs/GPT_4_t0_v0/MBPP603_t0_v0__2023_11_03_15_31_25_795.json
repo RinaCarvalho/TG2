@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.", "response": "def get_ludic_numbers(n):\n    ludic = list(range(1, n+1)) \n    i = 1\n    while i < len(ludic):\n        step = ludic[i]\n        del ludic[i+step-1::step]\n        i += 1\n    return ludic"}
+{
+    "prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.",
+    "response": "def get_ludic_numbers(n):\n    ludic = list(range(1, n+1)) \n    i = 1\n    while i < len(ludic):\n        step = ludic[i]\n        del ludic[i+step-1::step]\n        i += 1\n    return ludic",
+    "test_results": "Test failed: result [1, 2, 4, 6, 8] != [1, 2, 3, 5, 7] (expected)"
+}
