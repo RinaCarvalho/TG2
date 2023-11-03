@@ -1,1 +1,5 @@
-{"prompt": "For a given integer, write a function to check if the number is a prime number. The function must receive an integer as input and return a boolean.\n\nExamples:\n\nInput: 6\nOutput: False\n\nInput: 11\nOutput: True", "response": "def is_prime(n):\n    if n <= 1:\n        return False\n    elif n <= 3:\n        return True\n    elif n % 2 == 0 or n % 3 == 0:\n        return False\n    i = 5\n    while i * i <= n:\n        if n % i == 0 or n % (i + 2) == 0:\n            return False\n        i = i + 6\n    return True"}
+{
+    "prompt": "For a given integer, write a function to check if the number is a prime number. The function must receive an integer as input and return a boolean.\n\nExamples:\n\nInput: 6\nOutput: False\n\nInput: 11\nOutput: True",
+    "response": "def is_prime(n):\n    if n <= 1:\n        return False\n    elif n <= 3:\n        return True\n    elif n % 2 == 0 or n % 3 == 0:\n        return False\n    i = 5\n    while i * i <= n:\n        if n % i == 0 or n % (i + 2) == 0:\n            return False\n        i = i + 6\n    return True",
+    "test_results": "Tests passed successfully"
+}

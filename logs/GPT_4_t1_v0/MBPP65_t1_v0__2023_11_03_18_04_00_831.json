@@ -1,1 +1,5 @@
-{"prompt": "For a given list, write a function to flatten the list and add all of its elements. The function must receive a list as input and return a number.\n\nExamples:\n\nInput: [1, 2, [3, 4]]\nOutput: 10\n\nInput: [[[3], 4]]\nOutput: 7", "response": "def flatten_and_sum(lst):\n    return sum(int(i) for i in str(lst) if i.isdigit())"}
+{
+    "prompt": "For a given list, write a function to flatten the list and add all of its elements. The function must receive a list as input and return a number.\n\nExamples:\n\nInput: [1, 2, [3, 4]]\nOutput: 10\n\nInput: [[[3], 4]]\nOutput: 7",
+    "response": "def flatten_and_sum(lst):\n    return sum(int(i) for i in str(lst) if i.isdigit())",
+    "test_results": "Test failed: result 34 != 106 (expected)"
+}

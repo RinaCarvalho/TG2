@@ -1,1 +1,5 @@
-{"prompt": "For a given string, write a function that converts the string to its md5 hash. The function must receive a string as input and return a string.\n\nExamples:\n\nInput: Hello world\nOutput: 3e25960a79dbc69b674cd4ec67a72c62", "response": "import hashlib\n\ndef string_to_md5(text):\n    m = hashlib.md5()\n    m.update(text.encode())\n    return m.hexdigest()"}
+{
+    "prompt": "For a given string, write a function that converts the string to its md5 hash. The function must receive a string as input and return a string.\n\nExamples:\n\nInput: Hello world\nOutput: 3e25960a79dbc69b674cd4ec67a72c62",
+    "response": "import hashlib\n\ndef string_to_md5(text):\n    m = hashlib.md5()\n    m.update(text.encode())\n    return m.hexdigest()",
+    "test_results": "Tests passed successfully"
+}

@@ -1,1 +1,5 @@
-{"prompt": "For a given integer, write a function to find the last digit of the factorial of the integer. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 4\nOutput: 4\n\nInput: 21\nOutput: 0", "response": "def factorial_last_digit(n):\n  # Define last digits of 0! to 10!\n  last_digits = [1, 1, 2, 6, 4, 2, 2, 4, 2, 8, 8, 6]\n\n  if n < 12:\n    return last_digits[n]\n  else:\n    return 0"}
+{
+    "prompt": "For a given integer, write a function to find the last digit of the factorial of the integer. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 4\nOutput: 4\n\nInput: 21\nOutput: 0",
+    "response": "def factorial_last_digit(n):\n  # Define last digits of 0! to 10!\n  last_digits = [1, 1, 2, 6, 4, 2, 2, 4, 2, 8, 8, 6]\n\n  if n < 12:\n    return last_digits[n]\n  else:\n    return 0",
+    "test_results": "Tests passed successfully"
+}
