@@ -1,0 +1,31 @@
+@startuml
+class PromptGenerator {
+    + prompt: string
+    + problem: string
+    + technique: int
+    + variation: int
+    + generate_prompt_series()
+    + generate_modified_prompt()
+    - generate_prompt_with_typos()
+    - generate_few_shot_prompt()
+}
+
+class CodeGenerator {
+    + model: string
+    + language: string
+    + generate_code()
+    - _log_api_call()
+}
+
+class Evaluator {
+    + log_file: string
+    + log_filepath: string
+    + problem_id: string
+    - _extract_generated_code()
+    - _extract_name_from_namespace()
+    + run_test()
+}
+
+PromptGenerator --|> CodeGenerator
+CodeGenerator --|> Evaluator
+@enduml
