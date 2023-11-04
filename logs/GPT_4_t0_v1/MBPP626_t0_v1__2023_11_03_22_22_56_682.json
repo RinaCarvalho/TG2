@@ -1,0 +1,1 @@
+{"prompt": "For a given number r, write a functiobn to find the a rea of the ages t triangle that can be inscribed in a semmicicrle with radius r. The function must recive a number r and return a number, or None.", "response": "def area_of_triangle(r):\n    if isinstance(r, (int, float)) and r > 0:\n        return (r*r)/2\n    else:\n        return None"}

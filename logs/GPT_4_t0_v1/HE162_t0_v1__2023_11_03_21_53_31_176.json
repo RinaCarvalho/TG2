@@ -1,0 +1,1 @@
+{"prompt": "For a given string, write a function that  converts the string to its md5 hash. The function must receive a string as input and return a string.", "response": "import hashlib\n\ndef get_md5_hash(input_string):\n    result = hashlib.md5(input_string.encode())\n    return result.hexdigest()"}

@@ -1,0 +1,1 @@
+{"prompt": "For two given strings, consisting onl of 0s and 1s, write a function tht performs binary XOR on the inputs. The function musf receive two strki ngs as inputs and return a string.", "response": "def binary_xor(str1, str2):\n    xor_result = int(str1, 2) ^ int(str2, 2)\n    return bin(xor_result)[2:]"}

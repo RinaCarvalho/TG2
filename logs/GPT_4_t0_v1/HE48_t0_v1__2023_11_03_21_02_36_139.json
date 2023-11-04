@@ -1,0 +1,1 @@
+{"prompt": "For a given string, write a function  tocheck whether the string is a palindrome. The functiin must receive a string as input and return a bolean.", "response": "def is_palindrome(s: str) -> bool:\n    return s == s[::-1]"}

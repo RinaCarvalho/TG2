@@ -1,0 +1,1 @@
+{"prompt": "For a giveen integer n, write a functionto finc the nnth polite number. The function mt receive an integer as input and return an integer.", "response": "\ndef polite_number(n):\n    i = 0\n    count = 0\n    while True:\n        i+=1\n        if bin(i).count('1') > 1:\n            count+=1\n            if count==n:\n                return i\n"}

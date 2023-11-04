@@ -1,0 +1,1 @@
+{"prompt": "For a given list, writea function to fplatten the klist and add al of its elemnets. The function must receive a list as input and return a number.", "response": "def flatten_and_add(lst):\n    flat_list = [item for sublist in lst for item in sublist]\n    return sum(flat_list)"}

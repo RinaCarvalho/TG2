@@ -1,0 +1,1 @@
+{"prompt": "For a given int eger, write a function to set its leftmost unset bit. The function must receive an integer as input and return an integer.", "response": "def set_leftmost_unset_bit(num):\n    bit_count = num.bit_length() \n    for i in range(bit_count, -1, -1): \n        if not num & (1 << i):\n            num |= 1 << i\n            break\n    return num"}

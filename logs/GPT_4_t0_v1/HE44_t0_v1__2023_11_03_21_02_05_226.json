@@ -1,0 +1,1 @@
+{"prompt": "For two given numberd, convert the first numbr from decimal base to the base representsd by the second numbe. The function umst receive two integers as inpufts and retunr an string.", "response": "def convert_base(number, base):\n    if base == 10:\n        return str(number)\n    else:\n        return np.base_repr(number, base)"}

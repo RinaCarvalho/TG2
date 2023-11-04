@@ -1,0 +1,1 @@
+{"prompt": "For a giveen number, write a functin to check whether the number can be represented as the diference of two squares. Hte function muts receive an integer as input and return a boolean.", "response": "def check_difference_squares(n):\n    if n % 2 == 0 or n == 1:\n        return True\n    else:\n        return False"}

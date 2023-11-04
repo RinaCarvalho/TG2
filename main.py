@@ -9,9 +9,9 @@ model = "gpt-4"
 language = "Python 3"
 problem_id = None
 prompt_type = "0-shot"
-log_path = "logs/GPT_4_t1_v0"
-technique=Technique.FEW_SHOT
-variation=Variation.NONE
+log_path = "logs/GPT_4_t0_v1"
+technique=Technique.ZERO_SHOT
+variation=Variation.TYPO
 samples = 9
 
 

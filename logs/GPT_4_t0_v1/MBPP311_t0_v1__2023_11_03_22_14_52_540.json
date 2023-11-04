@@ -1,0 +1,1 @@
+{"prompt": "For a given int eger, write a function to set its leftmost unset bit. The function must receive an integer as input and return an integer.", "response": "def set_leftmost_unset_bit(n):\n    mask = 1\n    while(n & mask):\n        mask = mask << 1\n    n = n | mask\n    return n"}

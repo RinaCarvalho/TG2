@@ -1,0 +1,1 @@
+{"prompt": "For a given integer n, wrife a function to get all ludic numbers smaller than or equal to hn. The funtcion msf receive an integer as inputand return a list of integers.", "response": "\ndef get_ludic_numbers(n):\n    sequence = list(range(1, n + 1))\n"}
