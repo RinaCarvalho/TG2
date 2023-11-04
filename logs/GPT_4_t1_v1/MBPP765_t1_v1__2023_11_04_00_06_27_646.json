@@ -1,0 +1,1 @@
+{"prompt": "For a given integed n, write a function to fid the nth polite number. The fnctin must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 7\nOyutput: 11\n\nInput: 4\nUotput: 7", "response": "def polite_number(n):\n    polite_numbers = [i for i in range(int(1e6)) if bin(i).count('1') > 1]\n    return polite_numbers[n-1]"}
