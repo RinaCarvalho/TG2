@@ -1,0 +1,1 @@
+{"prompt": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 1\nOutput: 1\n\nInput: 5\nOutput: 7", "response": "def polite_number(n):\n    count, i = 0, 0\n    while count < n:\n        i += 1\n        if i & -i != i:\n            count += 1\n    return i"}
