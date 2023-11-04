@@ -1,1 +1,5 @@
-{"prompt": "For two given strings, consisting onl of 0s and 1s, write a function tht performs binary XOR on the inputs. The function musf receive two strki ngs as inputs and return a string.", "response": "def binary_xor(s1, s2):\n    return ''.join(str(int(a) ^ int(b)) for a, b in zip(s1, s2))"}
+{
+    "prompt": "For two given strings, consisting onl of 0s and 1s, write a function tht performs binary XOR on the inputs. The function musf receive two strki ngs as inputs and return a string.",
+    "response": "def binary_xor(s1, s2):\n    return ''.join(str(int(a) ^ int(b)) for a, b in zip(s1, s2))",
+    "test_results": "Tests passed successfully"
+}

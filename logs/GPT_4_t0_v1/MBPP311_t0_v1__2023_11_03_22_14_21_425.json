@@ -1,1 +1,5 @@
-{"prompt": "For a given int eger, write a function to set its leftmost unset bit. The function must receive an integer as input and return an integer.", "response": "def set_leftmost_unset_bit(n):\n    x = 1\n\n    while(n & x):\n        x = x << 1\n    return (n | x)"}
+{
+    "prompt": "For a given int eger, write a function to set its leftmost unset bit. The function must receive an integer as input and return an integer.",
+    "response": "def set_leftmost_unset_bit(n):\n    x = 1\n\n    while(n & x):\n        x = x << 1\n    return (n | x)",
+    "test_results": "Test failed: result 11 != 14 (expected)"
+}

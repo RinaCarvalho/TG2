@@ -1,1 +1,5 @@
-{"prompt": "For a giveen integer n, write a functionto finc the nnth polite number. The function mt receive an integer as input and return an integer.", "response": "\ndef find_polite_num(n):\n    pow_of_two = 2\n    result = 3\n    count = 1\n    while count != n:\n        result += 1\n        if result == pow_of_two:\n            pow_of_two *= 2\n        else:\n            count += 1\n    return result\n"}
+{
+    "prompt": "For a giveen integer n, write a functionto finc the nnth polite number. The function mt receive an integer as input and return an integer.",
+    "response": "\ndef find_polite_num(n):\n    pow_of_two = 2\n    result = 3\n    count = 1\n    while count != n:\n        result += 1\n        if result == pow_of_two:\n            pow_of_two *= 2\n        else:\n            count += 1\n    return result\n",
+    "test_results": "Test failed: result 9 != 11 (expected)"
+}

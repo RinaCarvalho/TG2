@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a fyunction tp find the maximum sum posible acrodingto the equatin: v(n) = max( (f(n/2) + f(n/3) + f(n/4) + f(n/5)), n). The function must receive an integer as input and return an integer.", "response": "def max_sum(n, dp):\n    if n<10:\n        dp[n] = n\n        return n\n    if dp[n] != None:\n        return dp[n]\n    else:\n        dp[n] = max((max_sum(n//2, dp) + max_sum(n//3, dp)+ max_sum(n//4, dp) + max_sum(n//5, dp)), n)\n        \n    return dp[n]\n\ndef calculate(n):\n    dp = [None]*(n+1)\n    return max_sum(n, dp)"}
+{
+    "prompt": "For a given integer n, write a fyunction tp find the maximum sum posible acrodingto the equatin: v(n) = max( (f(n/2) + f(n/3) + f(n/4) + f(n/5)), n). The function must receive an integer as input and return an integer.",
+    "response": "def max_sum(n, dp):\n    if n<10:\n        dp[n] = n\n        return n\n    if dp[n] != None:\n        return dp[n]\n    else:\n        dp[n] = max((max_sum(n//2, dp) + max_sum(n//3, dp)+ max_sum(n//4, dp) + max_sum(n//5, dp)), n)\n        \n    return dp[n]\n\ndef calculate(n):\n    dp = [None]*(n+1)\n    return max_sum(n, dp)",
+    "test_results": "Test failed: max_sum() missing 1 required positional argument: 'dp'"
+}

@@ -1,1 +1,5 @@
-{"prompt": "For a giveen integer n, write a functionto finc the nnth polite number. The function mt receive an integer as input and return an integer.", "response": "def nth_polite(n):\n    polite_number = 0\n    current_polite_number = 3\n\n    while n > 0:\n        while (current_polite_number & (current_polite_number - 1)):\n            current_polite_number += 1\n        polite_number = current_polite_number\n        current_polite_number += 1\n        n -= 1\n\n    return polite_number"}
+{
+    "prompt": "For a giveen integer n, write a functionto finc the nnth polite number. The function mt receive an integer as input and return an integer.",
+    "response": "def nth_polite(n):\n    polite_number = 0\n    current_polite_number = 3\n\n    while n > 0:\n        while (current_polite_number & (current_polite_number - 1)):\n            current_polite_number += 1\n        polite_number = current_polite_number\n        current_polite_number += 1\n        n -= 1\n\n    return polite_number",
+    "test_results": "Test failed: result 256 != 11 (expected)"
+}

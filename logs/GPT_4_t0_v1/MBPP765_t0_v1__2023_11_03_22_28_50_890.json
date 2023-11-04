@@ -1,1 +1,5 @@
-{"prompt": "For a giveen integer n, write a functionto finc the nnth polite number. The function mt receive an integer as input and return an integer.", "response": "def find_polite_number(n):\n    polite_numbers = []\n    \n    while len(polite_numbers)<n:\n        temp = 0\n        for i in range(1,int(n**0.5)+1):\n            if n % i == 0:\n                if n / i == i: \n                    temp += 1\n                else : \n                    temp += 2\n        if temp == 2:\n            int(n)\n        else: \n            polite_numbers.append(n)\n        n += 1\n        \n    return polite_numbers[n-1]"}
+{
+    "prompt": "For a giveen integer n, write a functionto finc the nnth polite number. The function mt receive an integer as input and return an integer.",
+    "response": "def find_polite_number(n):\n    polite_numbers = []\n    \n    while len(polite_numbers)<n:\n        temp = 0\n        for i in range(1,int(n**0.5)+1):\n            if n % i == 0:\n                if n / i == i: \n                    temp += 1\n                else : \n                    temp += 2\n        if temp == 2:\n            int(n)\n        else: \n            polite_numbers.append(n)\n        n += 1\n        \n    return polite_numbers[n-1]",
+    "test_results": "Test failed: 'Timed Out'"
+}

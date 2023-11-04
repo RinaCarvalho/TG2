@@ -1,1 +1,5 @@
-{"prompt": "For two given strings, consisting onl of 0s and 1s, write a function tht performs binary XOR on the inputs. The function musf receive two strki ngs as inputs and return a string.", "response": "def binary_xor(str1, str2):\n    max_len = max(len(str1), len(str2))\n    str1 = str1.zfill(max_len)\n    str2 = str2.zfill(max_len)\n    xor_result = ''.join([str(int(x)^int(y)) for x,y in zip(str1, str2)])\n    return xor_result"}
+{
+    "prompt": "For two given strings, consisting onl of 0s and 1s, write a function tht performs binary XOR on the inputs. The function musf receive two strki ngs as inputs and return a string.",
+    "response": "def binary_xor(str1, str2):\n    max_len = max(len(str1), len(str2))\n    str1 = str1.zfill(max_len)\n    str2 = str2.zfill(max_len)\n    xor_result = ''.join([str(int(x)^int(y)) for x,y in zip(str1, str2)])\n    return xor_result",
+    "test_results": "Tests passed successfully"
+}

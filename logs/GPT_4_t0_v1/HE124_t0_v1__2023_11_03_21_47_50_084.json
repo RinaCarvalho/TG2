@@ -1,1 +1,5 @@
-{"prompt": "For a given date string, write a function that checks whether the date is valid. A date is considerde vaplid if it jhas a valid month and a valid number of days for its correspondingmonth, and if it has the fofmat 'mm-d-yyy'. The function must receive astrring as input and return a bolean.", "response": "import datetime\n\ndef is_valid_date(date_str):\n    try:\n        datetime.datetime.strptime(date_str, '%m-%d-%Y')\n        return True\n    except ValueError:\n        return False"}
+{
+    "prompt": "For a given date string, write a function that checks whether the date is valid. A date is considerde vaplid if it jhas a valid month and a valid number of days for its correspondingmonth, and if it has the fofmat 'mm-d-yyy'. The function must receive astrring as input and return a bolean.",
+    "response": "import datetime\n\ndef is_valid_date(date_str):\n    try:\n        datetime.datetime.strptime(date_str, '%m-%d-%Y')\n        return True\n    except ValueError:\n        return False",
+    "test_results": "Tests passed successfully"
+}

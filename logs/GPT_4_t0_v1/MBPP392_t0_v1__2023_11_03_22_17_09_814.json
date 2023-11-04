@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a fyunction tp find the maximum sum posible acrodingto the equatin: v(n) = max( (f(n/2) + f(n/3) + f(n/4) + f(n/5)), n). The function must receive an integer as input and return an integer.", "response": "def max_sum(n, memo={}):\n    if n < 6:\n        return n\n    \n    if n not in memo:\n        memo[n] = max(n, max_sum(n//2, memo) + max_sum(n//3, memo) + max_sum(n//4, memo) + max_sum(n//5, memo))\n    \n    return memo[n]"}
+{
+    "prompt": "For a given integer n, write a fyunction tp find the maximum sum posible acrodingto the equatin: v(n) = max( (f(n/2) + f(n/3) + f(n/4) + f(n/5)), n). The function must receive an integer as input and return an integer.",
+    "response": "def max_sum(n, memo={}):\n    if n < 6:\n        return n\n    \n    if n not in memo:\n        memo[n] = max(n, max_sum(n//2, memo) + max_sum(n//3, memo) + max_sum(n//4, memo) + max_sum(n//5, memo))\n    \n    return memo[n]",
+    "test_results": "Tests passed successfully"
+}

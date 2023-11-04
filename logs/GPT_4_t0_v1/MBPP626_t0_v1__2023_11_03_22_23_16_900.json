@@ -1,1 +1,5 @@
-{"prompt": "For a given number r, write a functiobn to find the a rea of the ages t triangle that can be inscribed in a semmicicrle with radius r. The function must recive a number r and return a number, or None.", "response": "def area_of_triangle_inscribed_in_semicircle(r):\n    if r is None or r < 0:\n        return None\n    else:\n        return 0.5 * r * r\n"}
+{
+    "prompt": "For a given number r, write a functiobn to find the a rea of the ages t triangle that can be inscribed in a semmicicrle with radius r. The function must recive a number r and return a number, or None.",
+    "response": "def area_of_triangle_inscribed_in_semicircle(r):\n    if r is None or r < 0:\n        return None\n    else:\n        return 0.5 * r * r\n",
+    "test_results": "Test failed: result 0.5 != 1 (expected)"
+}

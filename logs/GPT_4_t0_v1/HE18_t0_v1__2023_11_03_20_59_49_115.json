@@ -1,1 +1,5 @@
-{"prompt": "For two  given strings, write a functino to count how many times fthe second string can be found in the first string, incluing overlapping cases. The function mustreceive two strings as inputs and return an integer.", "response": "def count_substring(string, sub_string):\n    count = 0\n    for i in range(len(string) - len(sub_string) + 1):\n        if string[i:i+len(sub_string)] == sub_string:\n            count += 1\n    return count"}
+{
+    "prompt": "For two  given strings, write a functino to count how many times fthe second string can be found in the first string, incluing overlapping cases. The function mustreceive two strings as inputs and return an integer.",
+    "response": "def count_substring(string, sub_string):\n    count = 0\n    for i in range(len(string) - len(sub_string) + 1):\n        if string[i:i+len(sub_string)] == sub_string:\n            count += 1\n    return count",
+    "test_results": "Tests passed successfully"
+}

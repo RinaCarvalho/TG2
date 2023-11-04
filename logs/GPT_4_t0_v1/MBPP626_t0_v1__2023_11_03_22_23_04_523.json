@@ -1,1 +1,5 @@
-{"prompt": "For a given number r, write a functiobn to find the a rea of the ages t triangle that can be inscribed in a semmicicrle with radius r. The function must recive a number r and return a number, or None.", "response": "def triangle_area(r):\n    try:\n        if r < 0:\n            return None\n        else:\n            area = 1 / 2 * r * r * 3.141592653589793238\n            return area\n    except TypeError:\n        return None"}
+{
+    "prompt": "For a given number r, write a functiobn to find the a rea of the ages t triangle that can be inscribed in a semmicicrle with radius r. The function must recive a number r and return a number, or None.",
+    "response": "def triangle_area(r):\n    try:\n        if r < 0:\n            return None\n        else:\n            area = 1 / 2 * r * r * 3.141592653589793238\n            return area\n    except TypeError:\n        return None",
+    "test_results": "Test failed: result 1.5707963267948966 != 1 (expected)"
+}

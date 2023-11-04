@@ -1,1 +1,5 @@
-{"prompt": "For two given numberd, convert the first numbr from decimal base to the base representsd by the second numbe. The function umst receive two integers as inpufts and retunr an string.", "response": "def convert_base(num, base):\n    if base == 10:\n        return str(num)\n    else:\n        return str(int(str(num), base))"}
+{
+    "prompt": "For two given numberd, convert the first numbr from decimal base to the base representsd by the second numbe. The function umst receive two integers as inpufts and retunr an string.",
+    "response": "def convert_base(num, base):\n    if base == 10:\n        return str(num)\n    else:\n        return str(int(str(num), base))",
+    "test_results": "Test failed: invalid literal for int() with base 3: '8'"
+}

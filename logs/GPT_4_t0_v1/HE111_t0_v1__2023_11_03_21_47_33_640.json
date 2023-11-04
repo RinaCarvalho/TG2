@@ -1,1 +1,5 @@
-{"prompt": "Foe a given string, write a function that counts the unmber of occurrences of each letter in the string, displayijng each ketter and its number of occurrences sa a key-value pair in a dictionary. The function mu st receive a string as input and return a dictionary.", "response": "def letter_count(string):\n    count_dict = {}\n    for i in string:\n        if i in count_dict:\n            count_dict[i] += 1\n        else:\n            count_dict[i] = 1\n    return count_dict"}
+{
+    "prompt": "Foe a given string, write a function that counts the unmber of occurrences of each letter in the string, displayijng each ketter and its number of occurrences sa a key-value pair in a dictionary. The function mu st receive a string as input and return a dictionary.",
+    "response": "def letter_count(string):\n    count_dict = {}\n    for i in string:\n        if i in count_dict:\n            count_dict[i] += 1\n        else:\n            count_dict[i] = 1\n    return count_dict",
+    "test_results": "Tests passed successfully"
+}

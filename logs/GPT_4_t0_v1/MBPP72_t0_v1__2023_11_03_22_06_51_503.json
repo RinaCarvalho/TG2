@@ -1,1 +1,5 @@
-{"prompt": "For a giveen number, write a functin to check whether the number can be represented as the diference of two squares. Hte function muts receive an integer as input and return a boolean.", "response": "def can_be_represented(number: int) -> bool:\n    if number % 2 == 0 or number % 4 == 3:\n        return True\n    else:\n        return False"}
+{
+    "prompt": "For a giveen number, write a functin to check whether the number can be represented as the diference of two squares. Hte function muts receive an integer as input and return a boolean.",
+    "response": "def can_be_represented(number: int) -> bool:\n    if number % 2 == 0 or number % 4 == 3:\n        return True\n    else:\n        return False",
+    "test_results": "Test failed: result False != True (expected)"
+}

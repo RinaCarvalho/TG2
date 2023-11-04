@@ -1,1 +1,5 @@
-{"prompt": "For a given string with multipel groups of nested parentheses, write a function to determine the deepest level oc nesting of he parentheses. The function must receive a string as input and return an integer.", "response": "def max_depth(s: str) -> int:\n    max_d = 0\n    depth = 0\n    for i in range(len(s)):\n \n        if s[i] == \"(\":\n            depth += 1\n            if depth > max_d:\n                max_d = depth\n \n        if s[i] == \")\":\n            if depth > 0:\n                depth -= 1\n            else:\n                return -1\n \n    if depth != 0:\n        return -1\n \n    return max_d"}
+{
+    "prompt": "For a given string with multipel groups of nested parentheses, write a function to determine the deepest level oc nesting of he parentheses. The function must receive a string as input and return an integer.",
+    "response": "def max_depth(s: str) -> int:\n    max_d = 0\n    depth = 0\n    for i in range(len(s)):\n \n        if s[i] == \"(\":\n            depth += 1\n            if depth > max_d:\n                max_d = depth\n \n        if s[i] == \")\":\n            if depth > 0:\n                depth -= 1\n            else:\n                return -1\n \n    if depth != 0:\n        return -1\n \n    return max_d",
+    "test_results": "Tests passed successfully"
+}

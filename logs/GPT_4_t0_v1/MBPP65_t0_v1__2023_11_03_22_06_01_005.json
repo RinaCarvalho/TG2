@@ -1,1 +1,5 @@
-{"prompt": "For a given list, writea function to fplatten the klist and add al of its elemnets. The function must receive a list as input and return a number.", "response": "def flatten_and_sum(lst):\n    flattened_list = [item for sublist in lst for item in sublist]\n    return sum(flattened_list)"}
+{
+    "prompt": "For a given list, writea function to fplatten the klist and add al of its elemnets. The function must receive a list as input and return a number.",
+    "response": "def flatten_and_sum(lst):\n    flattened_list = [item for sublist in lst for item in sublist]\n    return sum(flattened_list)",
+    "test_results": "Test failed: 'int' object is not iterable"
+}

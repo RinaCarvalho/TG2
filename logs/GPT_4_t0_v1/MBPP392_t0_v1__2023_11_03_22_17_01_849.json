@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a fyunction tp find the maximum sum posible acrodingto the equatin: v(n) = max( (f(n/2) + f(n/3) + f(n/4) + f(n/5)), n). The function must receive an integer as input and return an integer.", "response": "def max_sum(n, memory = {}):\n    if n < 2:\n        return n\n\n    if n not in memory:\n        half = max_sum(n // 2, memory) \n        third = max_sum(n // 3, memory) \n        fourth = max_sum(n // 4, memory)\n        fifth = max_sum(n // 5, memory)\n        memory[n] = max(n, half + third + fourth + fifth)\n\n    return memory[n]"}
+{
+    "prompt": "For a given integer n, write a fyunction tp find the maximum sum posible acrodingto the equatin: v(n) = max( (f(n/2) + f(n/3) + f(n/4) + f(n/5)), n). The function must receive an integer as input and return an integer.",
+    "response": "def max_sum(n, memory = {}):\n    if n < 2:\n        return n\n\n    if n not in memory:\n        half = max_sum(n // 2, memory) \n        third = max_sum(n // 3, memory) \n        fourth = max_sum(n // 4, memory)\n        fifth = max_sum(n // 5, memory)\n        memory[n] = max(n, half + third + fourth + fifth)\n\n    return memory[n]",
+    "test_results": "Tests passed successfully"
+}

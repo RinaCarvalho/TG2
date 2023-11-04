@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, wrife a function to get all ludic numbers smaller than or equal to hn. The funtcion msf receive an integer as inputand return a list of integers.", "response": "\ndef ludic_numbers(n):\n    numbers = list(range(2, n+1))\n    ludic = []\n\n    while len(numbers) > 0:\n        ludic.append(numbers[0])\n        numbers = [numbers[i] for i in range(len(numbers)) if (i % numbers[0] != 0)]\n\n    return ludic\n"}
+{
+    "prompt": "For a given integer n, wrife a function to get all ludic numbers smaller than or equal to hn. The funtcion msf receive an integer as inputand return a list of integers.",
+    "response": "\ndef ludic_numbers(n):\n    numbers = list(range(2, n+1))\n    ludic = []\n\n    while len(numbers) > 0:\n        ludic.append(numbers[0])\n        numbers = [numbers[i] for i in range(len(numbers)) if (i % numbers[0] != 0)]\n\n    return ludic\n",
+    "test_results": "Test failed: result [2, 3, 5, 7] != [1, 2, 3, 5, 7] (expected)"
+}

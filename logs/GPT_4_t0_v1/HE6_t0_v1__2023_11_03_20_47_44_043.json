@@ -1,1 +1,5 @@
-{"prompt": "For a given string with multipel groups of nested parentheses, write a function to determine the deepest level oc nesting of he parentheses. The function must receive a string as input and return an integer.", "response": "def deepest_parentheses_level(s):\n    current_max = 0\n    count = 0\n    for char in s:\n        if char == '(':\n            count += 1\n            if count > current_max:\n                current_max = count\n        elif char == ')':\n            if count > 0:\n                count -= 1\n            else:\n                return -1\n    if count != 0:\n        return -1\n    return current_max"}
+{
+    "prompt": "For a given string with multipel groups of nested parentheses, write a function to determine the deepest level oc nesting of he parentheses. The function must receive a string as input and return an integer.",
+    "response": "def deepest_parentheses_level(s):\n    current_max = 0\n    count = 0\n    for char in s:\n        if char == '(':\n            count += 1\n            if count > current_max:\n                current_max = count\n        elif char == ')':\n            if count > 0:\n                count -= 1\n            else:\n                return -1\n    if count != 0:\n        return -1\n    return current_max",
+    "test_results": "Tests passed successfully"
+}
