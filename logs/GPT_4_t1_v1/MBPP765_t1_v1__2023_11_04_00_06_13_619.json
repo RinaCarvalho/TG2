@@ -1,1 +1,5 @@
-{"prompt": "For a given integed n, write a function to fid the nth polite number. The fnctin must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 7\nOyutput: 11\n\nInput: 4\nUotput: 7", "response": "def polite_number(n):\n    counter = 0\n    number = 0\n    while counter != n:\n        number += 1\n        binary = bin(number)[2:]\n        if binary.count('1') > 1:\n            counter += 1\n    return number\n\n# Testing the function\nprint(polite_number(7)) # Expected Output: 11\nprint(polite_number(4)) # Expected Output: 7"}
+{
+    "prompt": "For a given integed n, write a function to fid the nth polite number. The fnctin must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 7\nOyutput: 11\n\nInput: 4\nUotput: 7",
+    "response": "def polite_number(n):\n    counter = 0\n    number = 0\n    while counter != n:\n        number += 1\n        binary = bin(number)[2:]\n        if binary.count('1') > 1:\n            counter += 1\n    return number\n\n# Testing the function\nprint(polite_number(7)) # Expected Output: 11\nprint(polite_number(4)) # Expected Output: 7",
+    "test_results": "Tests passed successfully"
+}

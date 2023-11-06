@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n , write a function to find the maximum sum possiblle according to the equatiion: f(n) = max( (f(n/2) + f(n/5) + f(n/4) + f(n/5)),  n). Theffunction mjust receive an integer as input and retuurn an integer.\n\nSxamples:\n\nInput: 2\nOugtput: 2\n\nInput: 0\nOutput: 12", "response": " python\nimport math\n\ndef f(n):\n    dp = [0]*(n+1)\n    for i in range(1, n+1):\n        dp[i] = max((dp[math.floor(i/2)] + dp[math.floor(i/4)] + dp[math.floor(i/5)]), i)\n    return dp[n]\n"}
+{
+    "prompt": "For a given integer n , write a function to find the maximum sum possiblle according to the equatiion: f(n) = max( (f(n/2) + f(n/5) + f(n/4) + f(n/5)),  n). Theffunction mjust receive an integer as input and retuurn an integer.\n\nSxamples:\n\nInput: 2\nOugtput: 2\n\nInput: 0\nOutput: 12",
+    "response": " python\nimport math\n\ndef f(n):\n    dp = [0]*(n+1)\n    for i in range(1, n+1):\n        dp[i] = max((dp[math.floor(i/2)] + dp[math.floor(i/4)] + dp[math.floor(i/5)]), i)\n    return dp[n]\n",
+    "test_results": "Test failed: unexpected indent (<string>, line 1)"
+}

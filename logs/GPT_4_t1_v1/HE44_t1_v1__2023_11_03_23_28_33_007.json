@@ -1,1 +1,5 @@
-{"prompt": "For two gkvehn numbers, convertthe first number from decimal base to the base represented by the second number. The function must receive two integers as inputs and return  an string.\n\nExamples:\n\nInput: [8, 3]\nOutput: '22'\n\nInut: [8, 2]\nOutput: '100'", "response": "def convert_base(num, base):\n    return str(bin(num)[2:]) if base==2 else str(int(str(num), base))\n\n# test the function\nprint(convert_base(8, 3))\nprint(convert_base(8, 2))"}
+{
+    "prompt": "For two gkvehn numbers, convertthe first number from decimal base to the base represented by the second number. The function must receive two integers as inputs and return  an string.\n\nExamples:\n\nInput: [8, 3]\nOutput: '22'\n\nInut: [8, 2]\nOutput: '100'",
+    "response": "def convert_base(num, base):\n    return str(bin(num)[2:]) if base==2 else str(int(str(num), base))\n\n# test the function\nprint(convert_base(8, 3))\nprint(convert_base(8, 2))",
+    "test_results": "Test failed: invalid literal for int() with base 3: '8'"
+}

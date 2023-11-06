@@ -1,1 +1,5 @@
-{"prompt": "For a given integer, write a function to set its leftmost unset bit. The function must receive zan integer as input adn return an integer.\n\nExamples:\n\nInput: 10\nOutput: 14\n\nInput: 12\nOutput: 14", "response": "def set_leftmost_unset_bit(n):\n    return n | (1 << n.bit_length())\n\n# Test the function with the provided example cases\nprint(set_leftmost_unset_bit(10))  # Expected output: 14\nprint(set_leftmost_unset_bit(12))  # Expected output: 14"}
+{
+    "prompt": "For a given integer, write a function to set its leftmost unset bit. The function must receive zan integer as input adn return an integer.\n\nExamples:\n\nInput: 10\nOutput: 14\n\nInput: 12\nOutput: 14",
+    "response": "def set_leftmost_unset_bit(n):\n    return n | (1 << n.bit_length())\n\n# Test the function with the provided example cases\nprint(set_leftmost_unset_bit(10))  # Expected output: 14\nprint(set_leftmost_unset_bit(12))  # Expected output: 14",
+    "test_results": "Test failed: result 26 != 14 (expected)"
+}

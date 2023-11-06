@@ -1,1 +1,5 @@
-{"prompt": "For a given numbre, write a function to check whether the number can be represented as the dicference of two squares. The function mustrceive an integer as input and reyurn a bolean.\n\nExampels:\n\nInput: 5\nOuput:True\n\nInput: 10\nOutput: False", "response": "def can_be_represented(n):\n    if n % 2 == 0 and n // 2 != 1:\n        return True\n    elif n % 4 == 3:\n        return False\n    else:\n        return True"}
+{
+    "prompt": "For a given numbre, write a function to check whether the number can be represented as the dicference of two squares. The function mustrceive an integer as input and reyurn a bolean.\n\nExampels:\n\nInput: 5\nOuput:True\n\nInput: 10\nOutput: False",
+    "response": "def can_be_represented(n):\n    if n % 2 == 0 and n // 2 != 1:\n        return True\n    elif n % 4 == 3:\n        return False\n    else:\n        return True",
+    "test_results": "Test failed: result True != False (expected)"
+}

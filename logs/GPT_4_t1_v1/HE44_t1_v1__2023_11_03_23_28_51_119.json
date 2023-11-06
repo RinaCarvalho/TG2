@@ -1,1 +1,5 @@
-{"prompt": "For two gkvehn numbers, convertthe first number from decimal base to the base represented by the second number. The function must receive two integers as inputs and return  an string.\n\nExamples:\n\nInput: [8, 3]\nOutput: '22'\n\nInut: [8, 2]\nOutput: '100'", "response": "def convert_to_base(num, base):\n    if num == 0:\n        return '0'\n    digits = []\n    while num:\n        digits.append(int(num % base))\n        num //= base\n    return ''.join(str(x) for x in digits[::-1])\n\nprint(convert_to_base(8, 3)) # Expected output '22'\nprint(convert_to_base(8, 2)) # Expected output '100'"}
+{
+    "prompt": "For two gkvehn numbers, convertthe first number from decimal base to the base represented by the second number. The function must receive two integers as inputs and return  an string.\n\nExamples:\n\nInput: [8, 3]\nOutput: '22'\n\nInut: [8, 2]\nOutput: '100'",
+    "response": "def convert_to_base(num, base):\n    if num == 0:\n        return '0'\n    digits = []\n    while num:\n        digits.append(int(num % base))\n        num //= base\n    return ''.join(str(x) for x in digits[::-1])\n\nprint(convert_to_base(8, 3)) # Expected output '22'\nprint(convert_to_base(8, 2)) # Expected output '100'",
+    "test_results": "Tests passed successfully"
+}

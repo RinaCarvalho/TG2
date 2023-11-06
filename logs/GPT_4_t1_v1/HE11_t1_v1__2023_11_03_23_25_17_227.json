@@ -1,1 +1,5 @@
-{"prompt": "For two given strings, consisting only of 0sand1s, write a function that performs binary XOR on the inputs. The function must receivetwo strings as nputs and return a tsring.\n\nExamples:\n\nIbput: ['010', '10']\nOutput: 10\n\nInput: ['1', '0']\nOutput: 1", "response": "def binary_xor(str1, str2):\n    max_len = max(len(str1), len(str2))\n    str1 = str1.zfill(max_len)\n    str2 = str2.zfill(max_len)\n    result = ''\n    for ch1,ch2 in zip(str1,str2):\n        result += str(int(ch1)^int(ch2))\n    return result.strip('0')"}
+{
+    "prompt": "For two given strings, consisting only of 0sand1s, write a function that performs binary XOR on the inputs. The function must receivetwo strings as nputs and return a tsring.\n\nExamples:\n\nIbput: ['010', '10']\nOutput: 10\n\nInput: ['1', '0']\nOutput: 1",
+    "response": "def binary_xor(str1, str2):\n    max_len = max(len(str1), len(str2))\n    str1 = str1.zfill(max_len)\n    str2 = str2.zfill(max_len)\n    result = ''\n    for ch1,ch2 in zip(str1,str2):\n        result += str(int(ch1)^int(ch2))\n    return result.strip('0')",
+    "test_results": "Test failed: result 1 != 100 (expected)"
+}

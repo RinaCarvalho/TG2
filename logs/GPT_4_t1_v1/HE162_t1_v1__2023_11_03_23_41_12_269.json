@@ -1,1 +1,5 @@
-{"prompt": "For a given strin , wr ite a function that converts the string to its md5 hhash. The fubction must receivea string sas input and return a astring.\n\nExa mples:\n\nInput: Hello world\nOutput: 3e25960a79dbc69b674cd4ec67a72c62", "response": "import hashlib\n\ndef string_to_md5(s):\n    return hashlib.md5(s.encode()).hexdigest()"}
+{
+    "prompt": "For a given strin , wr ite a function that converts the string to its md5 hhash. The fubction must receivea string sas input and return a astring.\n\nExa mples:\n\nInput: Hello world\nOutput: 3e25960a79dbc69b674cd4ec67a72c62",
+    "response": "import hashlib\n\ndef string_to_md5(s):\n    return hashlib.md5(s.encode()).hexdigest()",
+    "test_results": "Tests passed successfully"
+}

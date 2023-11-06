@@ -1,1 +1,5 @@
-{"prompt": "For a given number r, w rite a functipon to find the area of the largest triangle that can be inscribed in a semicircle with radiyus r. The function must receivea number r and retuen a number, or None.\n\nExamples:\n\nInput: -1\nOutput: None\n\nInput:2\nOutput: 4", "response": "def largest_triangle(semi_circle_radius):\n    if semi_circle_radius <= 0:\n        return None\n    else:\n        area_largest_triangle = 0.5 * semi_circle_radius * semi_circle_radius\n        return area_largest_triangle"}
+{
+    "prompt": "For a given number r, w rite a functipon to find the area of the largest triangle that can be inscribed in a semicircle with radiyus r. The function must receivea number r and retuen a number, or None.\n\nExamples:\n\nInput: -1\nOutput: None\n\nInput:2\nOutput: 4",
+    "response": "def largest_triangle(semi_circle_radius):\n    if semi_circle_radius <= 0:\n        return None\n    else:\n        area_largest_triangle = 0.5 * semi_circle_radius * semi_circle_radius\n        return area_largest_triangle",
+    "test_results": "Test failed: result 0.5 != 1 (expected)"
+}

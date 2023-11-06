@@ -1,1 +1,5 @@
-{"prompt": "For a given string, write az function to remvoe the voweels from the string. Teh functio must receive a string as input and return a strking.\n\nExamples:\n\nInput: abcdef\nOutput: bcdf\n\nInputt: qeou\nOutput: ", "response": "def remove_vowels(s):\n    vowels = \"aeiou\"\n    return \"\".join(c for c in s if c.lower() not in vowels)"}
+{
+    "prompt": "For a given string, write az function to remvoe the voweels from the string. Teh functio must receive a string as input and return a strking.\n\nExamples:\n\nInput: abcdef\nOutput: bcdf\n\nInputt: qeou\nOutput: ",
+    "response": "def remove_vowels(s):\n    vowels = \"aeiou\"\n    return \"\".join(c for c in s if c.lower() not in vowels)",
+    "test_results": "Tests passed successfully"
+}

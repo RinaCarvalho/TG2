@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n , write a function to find the maximum sum possiblle according to the equatiion: f(n) = max( (f(n/2) + f(n/5) + f(n/4) + f(n/5)),  n). Theffunction mjust receive an integer as input and retuurn an integer.\n\nSxamples:\n\nInput: 2\nOugtput: 2\n\nInput: 0\nOutput: 12", "response": "\ndef max_sum(n):\n    dp = [0]*(n+1)  # Dynamic programming table.\n    \n    # Initialize basic cases.\n    if n > 0:\n        dp[1] = 1\n    \n    # Fill the dynamic programming table.\n    for i in range(2, n+1):\n        dp[i] = max(i, dp[i//2] + dp[i//3] + dp[i//4])\n    \n    return dp[n]\n"}
+{
+    "prompt": "For a given integer n , write a function to find the maximum sum possiblle according to the equatiion: f(n) = max( (f(n/2) + f(n/5) + f(n/4) + f(n/5)),  n). Theffunction mjust receive an integer as input and retuurn an integer.\n\nSxamples:\n\nInput: 2\nOugtput: 2\n\nInput: 0\nOutput: 12",
+    "response": "\ndef max_sum(n):\n    dp = [0]*(n+1)  # Dynamic programming table.\n    \n    # Initialize basic cases.\n    if n > 0:\n        dp[1] = 1\n    \n    # Fill the dynamic programming table.\n    for i in range(2, n+1):\n        dp[i] = max(i, dp[i//2] + dp[i//3] + dp[i//4])\n    \n    return dp[n]\n",
+    "test_results": "Test failed: result 10 != 12 (expected)"
+}

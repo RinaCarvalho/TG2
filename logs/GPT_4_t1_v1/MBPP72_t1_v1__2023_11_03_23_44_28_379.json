@@ -1,1 +1,5 @@
-{"prompt": "For a given numbre, write a function to check whether the number can be represented as the dicference of two squares. The function mustrceive an integer as input and reyurn a bolean.\n\nExampels:\n\nInput: 5\nOuput:True\n\nInput: 10\nOutput: False", "response": "def check_difference_of_squares(num):\n    for i in range(0, num//2+2):\n        j = num - i*i\n        if (j**0.5).is_integer():\n            return True\n    return False"}
+{
+    "prompt": "For a given numbre, write a function to check whether the number can be represented as the dicference of two squares. The function mustrceive an integer as input and reyurn a bolean.\n\nExampels:\n\nInput: 5\nOuput:True\n\nInput: 10\nOutput: False",
+    "response": "def check_difference_of_squares(num):\n    for i in range(0, num//2+2):\n        j = num - i*i\n        if (j**0.5).is_integer():\n            return True\n    return False",
+    "test_results": "Test failed: result True != False (expected)"
+}
