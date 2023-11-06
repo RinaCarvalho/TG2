@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.\n\nExamples:\n\nInput: 10\nOutput: (1, 2, 3, 5, 7)\n\nInput: 25\nOutput: (1, 2, 3, 5, 7, 11, 13, 17, 23, 25)", "response": "\ndef ludic_numbers(n):\n    S = list(range(2, n+1))\n    ludics = [1]\n    while S:\n        ludics.append(S[0])\n        S = [S[i] for i in range(len(S)) if (i+1) % S[0] != 0]\n    return ludics\n"}
+{
+    "prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.\n\nExamples:\n\nInput: 10\nOutput: (1, 2, 3, 5, 7)\n\nInput: 25\nOutput: (1, 2, 3, 5, 7, 11, 13, 17, 23, 25)",
+    "response": "\ndef ludic_numbers(n):\n    S = list(range(2, n+1))\n    ludics = [1]\n    while S:\n        ludics.append(S[0])\n        S = [S[i] for i in range(len(S)) if (i+1) % S[0] != 0]\n    return ludics\n",
+    "test_results": "Test failed: 'Timed Out'"
+}

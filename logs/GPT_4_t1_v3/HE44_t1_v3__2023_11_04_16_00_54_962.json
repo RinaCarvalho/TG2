@@ -1,1 +1,5 @@
-{"prompt": "For two given numbers, convert the first number from decimal base to the base represented by the second number. The function must receive two integers as inputs and return an string.\n\nExamples:\n\nInput: [8, 3]\nOutput: 22\n\nInput: [8, 2]\nOutput: 0b1000", "response": "def convert_base(num, base):\n    result = \"\"\n    if base == 2:\n        result = bin(num)\n    elif base == 8:\n        result = oct(num)\n    elif base == 16:\n        result = hex(num)\n    else:\n        while num > 0:\n            num, remainder = divmod(num, base)\n            result = str(remainder) + result\n    return result"}
+{
+    "prompt": "For two given numbers, convert the first number from decimal base to the base represented by the second number. The function must receive two integers as inputs and return an string.\n\nExamples:\n\nInput: [8, 3]\nOutput: 22\n\nInput: [8, 2]\nOutput: 0b1000",
+    "response": "def convert_base(num, base):\n    result = \"\"\n    if base == 2:\n        result = bin(num)\n    elif base == 8:\n        result = oct(num)\n    elif base == 16:\n        result = hex(num)\n    else:\n        while num > 0:\n            num, remainder = divmod(num, base)\n            result = str(remainder) + result\n    return result",
+    "test_results": "Test failed: result 0b1000 != 1000 (expected)"
+}

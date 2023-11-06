@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 7\nOutput: [3, 5, 6, 7, 9, 10, 11]\n\nInput: 4\nOutput: [3, 5, 6, 7]", "response": "def polite_number(n):\n    polite_numbers = []\n    i = 1\n    while len(polite_numbers) < n:\n        if len(bin(i)[2:].replace('0', '')) > 1:\n            polite_numbers.append(i)\n        i += 1\n    return polite_numbers\n\nprint(polite_number(7))\nprint(polite_number(4))"}
+{
+    "prompt": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 7\nOutput: [3, 5, 6, 7, 9, 10, 11]\n\nInput: 4\nOutput: [3, 5, 6, 7]",
+    "response": "def polite_number(n):\n    polite_numbers = []\n    i = 1\n    while len(polite_numbers) < n:\n        if len(bin(i)[2:].replace('0', '')) > 1:\n            polite_numbers.append(i)\n        i += 1\n    return polite_numbers\n\nprint(polite_number(7))\nprint(polite_number(4))",
+    "test_results": "Test failed: result [3, 5, 6, 7, 9, 10, 11] != 11 (expected)"
+}
