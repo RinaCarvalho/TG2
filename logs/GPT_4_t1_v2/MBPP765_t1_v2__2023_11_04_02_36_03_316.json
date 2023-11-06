@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 1\nOutput: 1\n\nInput: 5\nOutput: 7", "response": "def nth_polite_number(n):\n    polite_numbers = [1]\n    count = 2\n    while len(polite_numbers) < n:\n        binary = bin(count)\n        if binary.count('1') > 1:\n            polite_numbers.append(count)\n        count += 1\n    return polite_numbers[-1]"}
+{
+    "prompt": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer.\n\nExamples:\n\nInput: 1\nOutput: 1\n\nInput: 5\nOutput: 7",
+    "response": "def nth_polite_number(n):\n    polite_numbers = [1]\n    count = 2\n    while len(polite_numbers) < n:\n        binary = bin(count)\n        if binary.count('1') > 1:\n            polite_numbers.append(count)\n        count += 1\n    return polite_numbers[-1]",
+    "test_results": "Test failed: result 10 != 11 (expected)"
+}

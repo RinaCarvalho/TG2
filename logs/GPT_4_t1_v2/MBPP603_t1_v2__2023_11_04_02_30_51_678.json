@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.\n\nExamples:\n\nInput: 10\nOutput: [2, 3, 5, 7]\n\nInput: 25\nOutput: [2, 3, 5, 7, 11, 13, 17, 19, 23]", "response": "def get_ludic(n):\n    sequence = list(range(2, n + 1))\n    ludic = []\n    while sequence:\n        ludic.append(sequence[0])\n        sequence = [sequence[i] for i in range(len(sequence)) if (i + 1) % sequence[0] != 0]\n    return ludic"}
+{
+    "prompt": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers.\n\nExamples:\n\nInput: 10\nOutput: [2, 3, 5, 7]\n\nInput: 25\nOutput: [2, 3, 5, 7, 11, 13, 17, 19, 23]",
+    "response": "def get_ludic(n):\n    sequence = list(range(2, n + 1))\n    ludic = []\n    while sequence:\n        ludic.append(sequence[0])\n        sequence = [sequence[i] for i in range(len(sequence)) if (i + 1) % sequence[0] != 0]\n    return ludic",
+    "test_results": "Test failed: 'Timed Out'"
+}
