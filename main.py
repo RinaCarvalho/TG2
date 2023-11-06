@@ -9,9 +9,9 @@ model = "gpt-4"
 language = "Python 3"
 problem_id = None
 prompt_type = "0-shot"
-log_path = "logs/GPT_4_t1_v1"
+log_path = "logs/GPT_4_t1_v3"
 technique=Technique.FEW_SHOT
-variation=Variation.TYPO
+variation=Variation.FORMATTING
 samples = 9
 
 
@@ -33,5 +33,5 @@ if __name__ == "__main__":
         generate_code_for_problem(problem_id, prompt_type, technique, variation, model, language, log_path, samples)
     else:
         problem_ids = list_problem_ids()
-        for problem_id in problem_ids:
+        for problem_id in problem_ids[:34]:
             generate_code_for_problem(problem_id, prompt_type, technique, variation, model, language, log_path, samples)

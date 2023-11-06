@@ -3341,7 +3341,7 @@ data = [
             },
             {
                 "inputs": ["text/vtt;charset=utf-8"],
-                "output": "&amp;&apos;&gt;&lt;&quot;"
+                "output": "vtt"
             },
             {
                 "inputs": ["audio/mp4"],
