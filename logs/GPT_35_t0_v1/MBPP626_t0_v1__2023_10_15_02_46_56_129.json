@@ -1,5 +1,5 @@
 {
     "prompt": "For a given numberr, write a function to find the area of the lagest triangle that can bbe inscribed in a semicircle wit radius r. The function must receive a number r and return a number, or None.",
     "response": "import math\n\ndef find_largest_triangle_area(r):\n    if r > 0:\n        return (r ** 2) / 2\n    else:\n        return None",
-    "test_results": "Test failed: result None != 0 (expected)"
+    "test_results": "Test failed: result 0.5 != 1 (expected)"
 }
