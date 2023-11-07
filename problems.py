@@ -13,6 +13,7 @@ data = [
                 "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert abs(candidate([1.0, 2.0, 3.0]) - 2.0/3.0) < 1e-6\n    assert abs(candidate([1.0, 2.0, 3.0, 4.0]) - 1.0) < 1e-6\n    assert abs(candidate([1.0, 2.0, 3.0, 4.0, 5.0]) - 6.0/5.0) < 1e-6\n\n"
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we must calculate the average of the dataset. Then, the absolute deviation for each point in the dataset, which is equal to the distance of each point to the average must be calculated. Lastly, we must calculate the average of each absolute deviation. In the example, the average of the dataset is (1.0 + 2.0 + 3.0 + 4.0) / 4 = 2.5. Then, the absolute deviation for each point in the dataset is [1.5, 0.5, 0.5, 1.5]. Lastly, the average of each absolute deviation is equal to (1.5 + 0.5 + 0.5 + 1.5)/4 = 1.0.",
         "input_examples": [
             {
                 "input": "[1.0, 2.0, 3.0, 4.0]",
@@ -90,6 +91,7 @@ data = [
                 "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate('(()()) ((())) () ((())()())') == [2, 3, 1, 3]\n    assert candidate('() (()) ((())) (((())))') == [1, 2, 3, 4]\n    assert candidate('(()(())((())))') == [4]\n"
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "()",
@@ -157,6 +159,7 @@ data = [
                 "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate('111000', '101010') == '010010'\n    assert candidate('1', '1') == '0'\n    assert candidate('0101', '0000') == '0101'\n"
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": [
@@ -234,6 +237,7 @@ data = [
                 "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate('', 'x') == 0\n    assert candidate('xyxyxyx', 'x') == 4\n    assert candidate('cacacacac', 'cac') == 4\n    assert candidate('john doe', 'john') == 1\n"
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": [
@@ -322,6 +326,7 @@ data = [
                 "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(6) == False\n    assert candidate(101) == True\n    assert candidate(11) == True\n    assert candidate(13441) == True\n    assert candidate(61) == True\n    assert candidate(4) == False\n    assert candidate(1) == False\n    assert candidate(5) == True\n    assert candidate(11) == True\n    assert candidate(17) == True\n    assert candidate(5 * 17) == False\n    assert candidate(11 * 7) == False\n    assert candidate(13441 * 19) == False\n\n"
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "6",
@@ -405,6 +410,7 @@ data = [
                 "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(8, 3) == \"22\"\n    assert candidate(9, 3) == \"100\"\n    assert candidate(234, 2) == \"11101010\"\n    assert candidate(16, 2) == \"10000\"\n    assert candidate(8, 2) == \"1000\"\n    assert candidate(7, 2) == \"111\"\n    for x in range(2, 8):\n        assert candidate(x, x + 1) == str(x)\n\n"
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": [
@@ -478,6 +484,7 @@ data = [
                 "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate('') == True\n    assert candidate('aba') == True\n    assert candidate('aaaaa') == True\n    assert candidate('zbcd') == False\n    assert candidate('xywyx') == True\n    assert candidate('xywyz') == False\n    assert candidate('xywzx') == False\n\n"
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "abcba",
@@ -557,6 +564,7 @@ data = [
                 "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate('') == ''\n    assert candidate(\"abcdef\\nghijklm\") == 'bcdf\\nghjklm'\n    assert candidate('fedcba') == 'fdcb'\n    assert candidate('eeeee') == ''\n    assert candidate('acBAA') == 'cB'\n    assert candidate('EcBOO') == 'cB'\n    assert candidate('ybcd') == 'ybcd'\n\n"
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "abcdef",
@@ -628,6 +636,7 @@ data = [
                 "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(10) == 55\n    assert candidate(1) == 1\n    assert candidate(8) == 21\n    assert candidate(11) == 89\n    assert candidate(12) == 144\n\n"
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "10",
@@ -695,6 +704,7 @@ data = [
                 "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate('hi') == 'lm', \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate('asdfghjkl') == 'ewhjklnop', \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate('gf') == 'kj', \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate('et') == 'ix', \"This prints if this assert fails 1 (good for debugging!)\"\n\n    assert candidate('faewfawefaewg')=='jeiajeaijeiak', \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate('hellomyfriend')=='lippsqcjvmirh', \"This prints if this assert fails 2 (good for debugging!)\"\n    assert candidate('dxzdlmnilfuhmilufhlihufnmlimnufhlimnufhfucufh')=='hbdhpqrmpjylqmpyjlpmlyjrqpmqryjlpmqryjljygyjl', \"This prints if this assert fails 3 (good for debugging!)\"\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate('a')=='e', \"This prints if this assert fails 2 (also good for debugging!)\"\n\n"
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": [
@@ -768,6 +778,7 @@ data = [
                 "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate('a b b a') == {'a':2,'b': 2}, \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate('a b c a b') == {'a': 2, 'b': 2}, \"This prints if this assert fails 2 (good for debugging!)\"\n    assert candidate('a b c d g') == {'a': 1, 'b': 1, 'c': 1, 'd': 1, 'g': 1}, \"This prints if this assert fails 3 (good for debugging!)\"\n    assert candidate('r t g') == {'r': 1,'t': 1,'g': 1}, \"This prints if this assert fails 4 (good for debugging!)\"\n    assert candidate('b b b b a') == {'b': 4}, \"This prints if this assert fails 5 (good for debugging!)\"\n    assert candidate('r t g') == {'r': 1,'t': 1,'g': 1}, \"This prints if this assert fails 6 (good for debugging!)\"\n    \n    \n    # Check some edge cases that are easy to work out by hand.\n    assert candidate('') == {}, \"This prints if this assert fails 7 (also good for debugging!)\"\n    assert candidate('a') == {'a': 1}, \"This prints if this assert fails 8 (also good for debugging!)\"\n\n"
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "abc",
@@ -835,6 +846,7 @@ data = [
                 "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate('03-11-2000') == True\n\n    assert candidate('15-01-2012') == False\n\n    assert candidate('04-0-2040') == False\n\n    assert candidate('06-04-2020') == True\n\n    assert candidate('01-01-2007') == True\n\n    assert candidate('03-32-2011') == False\n\n    assert candidate('') == False\n\n    assert candidate('04-31-3000') == False\n\n    assert candidate('06-06-2005') == True\n\n    assert candidate('21-31-2000') == False\n\n    assert candidate('04-12-2003') == True\n\n    assert candidate('04122003') == False\n\n    assert candidate('20030412') == False\n\n    assert candidate('2003-04') == False\n\n    assert candidate('2003-04-12') == False\n\n    assert candidate('04-2003') == False\n"
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we must determine whether the date is formatted correctly. Then if the format is correct, we must determine whether the date exists, by verifying the number of days in a month and whether the year is a leap year or not. In the example, '03-11-2000' follows the required 'mm-dd-yyyy' format. Additionally, March 11th of the year 2000 is an existing date. Therefore, '03-11-2000' is a valid date.",
         "input_examples": [
             {
                 "input": "03-11-2000",
@@ -926,6 +938,7 @@ data = [
                 "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate((1, 2), (2, 3)) == \"NO\"\n    assert candidate((-1, 1), (0, 4)) == \"NO\"\n    assert candidate((-3, -1), (-5, 5)) == \"YES\"\n    assert candidate((-2, 2), (-4, 0)) == \"YES\"\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate((-11, 2), (-1, -1)) == \"NO\"\n    assert candidate((1, 2), (3, 5)) == \"NO\"\n    assert candidate((1, 2), (1, 2)) == \"NO\"\n    assert candidate((-2, -2), (-3, -2)) == \"NO\"\n\n"
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we must compare the start of each interval and find the maximum of the two. Let us call it a1. Then, we must compare the end of each interval and find the minimum of the two. Let us call it a2. Lastly, these values must be compared. If a1 < a2, the intersection is (a1, a2). If a1 = a2, the intersection is a1. If a1 > a2, the intersection does not exist. In the example, a1 = 2, a2 = 3. Given that a1 < a2, the intersection is (2, 3)",
         "input_examples": [
             {
                 "input": [
@@ -999,6 +1012,7 @@ data = [
                 "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate(19) == 'xix'\n    assert candidate(152) == 'clii'\n    assert candidate(251) == 'ccli'\n    assert candidate(426) == 'cdxxvi'\n    assert candidate(500) == 'd'\n    assert candidate(1) == 'i'\n    assert candidate(4) == 'iv'\n    assert candidate(43) == 'xliii'\n    assert candidate(90) == 'xc'\n    assert candidate(94) == 'xciv'\n    assert candidate(532) == 'dxxxii'\n    assert candidate(900) == 'cm'\n    assert candidate(994) == 'cmxciv'\n    assert candidate(1000) == 'm'\n\n    # Check some edge cases that are easy to work out by hand.\n    assert True\n\n"
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "19",
@@ -1066,6 +1080,7 @@ data = [
                 "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate(['**', '*', '+'], [2, 3, 4, 5]) == 37\n    assert candidate(['+', '*', '-'], [2, 3, 4, 5]) == 9\n    assert candidate(['//', '*'], [7, 3, 4]) == 8, \"This prints if this assert fails 1 (good for debugging!)\"\n\n    # Check some edge cases that are easy to work out by hand.\n    assert True, \"This prints if this assert fails 2 (also good for debugging!)\"\n\n"
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, the list of integers and the list of operands must be joined in order to form an expression. Then, the expression must be evaluated, respecting the priority of operands. In the example, the expression obtained by joining the inputs is 2 + 3 * 4 - 5 = 9.",
         "input_examples": [
             {
                 "input": [
@@ -1151,6 +1166,7 @@ data = [
                 "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    assert candidate('') == None\n    assert candidate('A B C') == '0ef78513b0cb8cef12743f5aeb35f888'\n    assert candidate('password') == '5f4dcc3b5aa765d61d8327deb882cf99'\n\n    # Check some edge cases that are easy to work out by hand.\n    assert True\n\n"
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "Hello world",
@@ -1196,6 +1212,7 @@ data = [
                 "0-shot": "For a given matrix, write a function that sorts the matrix in ascending order, according to the sum of its rows. The function must receive an array of arrays as input and return an array of arrays."
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "[[1, 2, 3], [2, 4, 5], [1, 1, 1]]",
@@ -1257,6 +1274,7 @@ data = [
                 "0-shot": "For a given integer n, write a function that returns the nth octagonal number. The function must receive an integer as input and return an integer."
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "1",
@@ -1294,7 +1312,7 @@ data = [
             },
             {
                 "inputs": [2],
-                "output": 12
+                "output": 8
             },
             {
                 "inputs": [5],
@@ -1318,6 +1336,7 @@ data = [
                 "0-shot": "For a given list, write a function to flatten the list and add all of its elements. The function must receive a list as input and return a number."
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we must check if there are any nested lists. If there are any nested lists, we must iterate over the list, looking for other nested lists. This process must be repeated until no more nested lists are found. Then, all integers inside all nested lists must be added. In the example, first, we must check the list [3, 4]. Since there are no nested lists inside this list, we can add 3 + 4 = 7 as an intermediate result. Lastly, returning to the original list, since there are no additional lists, the sum of all elements must be 1 + 2 + 7 = 10.",
         "input_examples": [
             {
                 "input": "[1, 2, [3, 4]]",
@@ -1379,6 +1398,7 @@ data = [
                 "0-shot": "For a given number, write a function to check whether the number can be represented as the difference of two squares. The function must receive an integer as input and return a boolean."
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "5",
@@ -1440,6 +1460,7 @@ data = [
                 "0-shot": "For two given integers n and k, write a function to find the Eulerian number A(n, k). The function must receive two integers as inputs and return an integer."
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": ["3", "1"],
@@ -1562,6 +1583,7 @@ data = [
                 "0-shot": "For a given matrix, write a function to check if the matrix is a magic square. The function must receive a list of lists and return a boolean."
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "[[2, 7, 6], [9, 5, 1], [4, 3, 8]]",
@@ -1623,6 +1645,7 @@ data = [
                 "0-shot": "For three given integers a, b and n, write a function that returns integers x and y that satisfy ax + by = n. The function must receive three integers as inputs and return a tuple of integers, if there is a solution, or None otherwise."
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": ["2", "3", "7"],
@@ -1671,8 +1694,8 @@ data = [
                 "output": (4, 1)
             },
             {
-                "inputs": [1, 13, 11],
-                "output": (-2, 1)
+                "inputs": [1, 10, 11],
+                "output": (1, 1)
             }
         ]
     },
@@ -1684,6 +1707,7 @@ data = [
                 "0-shot": "For two given integers l and n, write a function to calculate the area of a regular polygon with l as the length of its sides and n as the number of its sides. The function must receive two integers as inputs and return a number with three precision points."
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": ["20", "4"],
@@ -1733,7 +1757,7 @@ data = [
             },
             {
                 "inputs": [1, 4],
-                "output": 4
+                "output": 1.000
             }
         ]
     },
@@ -1745,6 +1769,7 @@ data = [
                 "0-shot": "For a given integer, write a function to set its leftmost unset bit. The function must receive an integer as input and return an integer."
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we must convert the input to a binary number. Then, we must locate the leftmost unset bit (0) in the binary string, and set it (change it to 1). Lastly, we must convert the binary number back to decimal. In the example, 10 (in decimal) is converted to b'1010' (in binary). Then, by setting the leftmost unset bit, we have b'1110'. Lastly, converting it back to decimal base, we have 14.",
         "input_examples": [
             {
                 "input": "10",
@@ -1806,6 +1831,7 @@ data = [
                 "0-shot": "For a given list and a given format string, write a function to apply the format string to all elements in the list. The function must receive a list and a string as inputs and return a list."
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": ["[1, 2, 3, 4]", "temp{0}"],
