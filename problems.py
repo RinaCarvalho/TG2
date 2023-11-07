@@ -13,7 +13,7 @@ data = [
                 "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert abs(candidate([1.0, 2.0, 3.0]) - 2.0/3.0) < 1e-6\n    assert abs(candidate([1.0, 2.0, 3.0, 4.0]) - 1.0) < 1e-6\n    assert abs(candidate([1.0, 2.0, 3.0, 4.0, 5.0]) - 6.0/5.0) < 1e-6\n\n"
             }
         ],
-        "chain_of_thought": "Let's think step by step. First, we must calculate the average of the dataset. Then, the absolute deviation for each point in the dataset, which is equal to the distance of each point to the average must be calculated. Lastly, we must calculate the average of each absolute deviation. In the example, the average of the dataset is (1.0 + 2.0 + 3.0 + 4.0) / 4 = 2.5. Then, the absolute deviation for each point in the dataset is [1.5, 0.5, 0.5, 1.5]. Lastly, the average of each absolute deviation is equal to (1.5 + 0.5 + 0.5 + 1.5)/4 = 1.0.",
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "[1.0, 2.0, 3.0, 4.0]",
@@ -413,27 +413,21 @@ data = [
         "chain_of_thought": "",
         "input_examples": [
             {
-                "input": [
-                    8,
-                    3
-                ],
-                "output": "'22'"
+                "input": "[8, 3]",
+                "output": "22"
             },
             {
-                "input": [
-                    8,
-                    2
-                ],
-                "output": "'1000'"
+                "input": "[8, 2]",
+                "output": "1000"
             }
         ],
         "inaccurate_inputs": [
             {
-                "input": [8, 3],
+                "input": "[8, 3]",
                 "output": "3"
             },
             {
-                "input": [8, 2],
+                "input": "[8, 2]",
                 "output": "2"
             }
         ],
@@ -444,7 +438,7 @@ data = [
             },
             {
                 "input": [8, 2],
-                "output": "0b1000"
+                "output": "1000"
             }
         ],
         "tests": [
@@ -501,12 +495,8 @@ data = [
                 "output": "True"
             },
             {
-                "input": "abcBa",
-                "output": "True"
-            },
-            {
                 "input": "zbcd",
-                "output": "False"
+                "output": "True"
             }
         ],
         "misformatted_inputs": [
@@ -545,8 +535,8 @@ data = [
                 "output": False
             },
             {
-                "inputs": ["Abcba"],
-                "output": False
+                "inputs": ["abcba"],
+                "output": True
             }
         ]
     },
