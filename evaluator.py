@@ -50,9 +50,13 @@ class Evaluator:
             result = test_function(*test["inputs"])
 
             if self.problem_id == "MBPP160":
-                x, y = result
-                a, b, n = test["inputs"]
-                assert a*x + b*y == n, f"result {result} is not a valid tuple"
+                if result is not None:
+                    x, y = result
+                    a, b, n = test["inputs"]
+                    assert type(result) == tuple, f"result is not a tuple"
+                    assert a*x + b*y == n, f"result {result} is not a valid tuple"
+                else:
+                    assert result == test["output"], f"result {result} != {test['output']} (expected)"
             elif self.problem_id == "YTDL1":
                 assert result == test["output"] or result == test["output"][:-1], f"result {result} != {test['output']} (expected)"
             else:
