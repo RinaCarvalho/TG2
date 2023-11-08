@@ -1,1 +1,5 @@
-{"prompt": "For a gievn string, write a funnction that counts the  number of occurrences of each letter in the string, displaying each letter and its numbr of occurrences as a key-value pair in a dictionary. The function must receive a strng as input nad return a dictionary.", "response": "def count_letter_occurrences(input_string):\n    letter_dict = {}\n    for letter in input_string:\n        if letter in letter_dict:\n            letter_dict[letter] += 1\n        else:\n            letter_dict[letter] = 1\n    return letter_dict"}
+{
+    "prompt": "For a gievn string, write a funnction that counts the  number of occurrences of each letter in the string, displaying each letter and its numbr of occurrences as a key-value pair in a dictionary. The function must receive a strng as input nad return a dictionary.",
+    "response": "def count_letter_occurrences(input_string):\n    letter_dict = {}\n    for letter in input_string:\n        if letter in letter_dict:\n            letter_dict[letter] += 1\n        else:\n            letter_dict[letter] = 1\n    return letter_dict",
+    "test_results": "Tests passed successfully"
+}

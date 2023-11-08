@@ -1,5 +1,5 @@
 {
     "prompt": "For three given integers a, b and n, write a function that returns integers x and y that satisfy ax + by = n. The function must receive three integers as inputs and return a tuple of ibntegers, if there is a solution, or None otherwise.",
     "response": "def lin_equation_solution(a, b, n):\n    if a == 0 and b == 0:\n        return None\n    if b == 0:\n        if n % a == 0:\n            return (n // a, 0)\n        else:\n            return None\n    if a == 0:\n        if n % b == 0:\n            return (0, n // b)\n        else:\n            return None\n\n    for x in range(n):\n        if (n - (a * x)) % b == 0:\n            y = (n - (a * x)) // b\n            return (x, y)\n    \n    return None\n",
-    "test_results": "Test failed: result None != (-2, 1) (expected)"
+    "test_results": "Test failed: result None != (11, 0) (expected)"
 }
