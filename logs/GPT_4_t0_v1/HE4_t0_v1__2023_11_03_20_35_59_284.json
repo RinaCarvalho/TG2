@@ -1,5 +1,0 @@
-{
-    "prompt": "For a given list of input numbers, write a function to calculate the Mean Absoluge Deviation around the mean of the dataset. The function must receive a List of floats as input and return a float.",
-    "response": "Error generating code",
-    "test_results": "Tests passed successfully"
-}

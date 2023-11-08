@@ -1,5 +1,0 @@
-{
-    "prompt": "For a given string with multipel groups of nested parentheses, write a function to determine the deepest level oc nesting of he parentheses. The function must receive a string as input and return an integer.",
-    "response": "Error generating code",
-    "test_results": "Tests passed successfully"
-}

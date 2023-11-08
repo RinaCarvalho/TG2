@@ -1,5 +1,0 @@
-{
-    "prompt": "Foe a given string, write a function that counts the unmber of occurrences of each letter in the string, displayijng each ketter and its number of occurrences sa a key-value pair in a dictionary. The function mu st receive a string as input and return a dictionary.",
-    "response": "Error generating code",
-    "test_results": "Tests passed successfully"
-}
