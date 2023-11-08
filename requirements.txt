@@ -1,4 +1,3 @@
 openai
-# pyarrow   # only needed for parquet parsing
 google-generativeai
 typo
