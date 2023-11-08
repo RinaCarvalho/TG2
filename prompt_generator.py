@@ -1,7 +1,7 @@
 import typo
 import random
 from prompt_constants import Technique, Variation, TYPO_LIST
-from utils import extract_examples_from_problem
+from utils import extract_examples_from_problem, extract_chain_of_thought_from_problem
 
 class PromptGenerator:
     def __init__(self, prompt, problem, technique = Technique.ZERO_SHOT, variation = Variation.NONE):
@@ -27,6 +27,9 @@ class PromptGenerator:
 
                     if self.variation == Variation.TYPO.value:
                         self.prompt = self._generate_prompt_with_typos(self.prompt)
+
+            case Technique.CHAIN_OF_THOUGHT.value:
+                self.prompt = self._generate_chain_of_thought_prompt(self.prompt)
             
             case default:
                 if self.variation == Variation.TYPO.value:
@@ -56,4 +59,14 @@ class PromptGenerator:
             prompt += f"\n\nInput: {example['input']}"
             prompt += f"\nOutput: {example['output']}"
          
+        return prompt
+
+    def _generate_chain_of_thought_prompt(self, prompt):
+        prompt += "\n\nExample:"
+        example = extract_examples_from_problem(self.problem, 'input_examples')[0]
+        prompt += f"\nInput: {example['input']}"
+        cot = extract_chain_of_thought_from_problem(self.problem)
+        prompt += f"\n{cot}"
+        prompt += f"\nOutput: {example['output']}"
+
         return prompt
