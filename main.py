@@ -7,12 +7,12 @@ from utils import extract_prompt_from_problem, write_to_jsonl, list_problem_ids
 
 model = "gpt-3.5-turbo"
 language = "Python 3"
-problem_id = "HE44"
+problem_id = "YTDL3"
 prompt_type = "0-shot"
-log_path = "logs/GPT_35_t1_v0_i4"
-technique=Technique.FEW_SHOT
-variation=Variation.NONE
-samples = 1
+log_path = "logs/GPT_4_t0_v1_i2"
+technique=Technique.ZERO_SHOT
+variation=Variation.TYPO
+samples = 10
 
 
 def generate_code_for_problem(problem_id, prompt_type, technique, variation, model, language, log_path, samples):
