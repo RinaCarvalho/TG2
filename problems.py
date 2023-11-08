@@ -1326,7 +1326,7 @@ data = [
                 "0-shot": "For a given list, write a function to flatten the list and add all of its elements. The function must receive a list as input and return a number."
             }
         ],
-        "chain_of_thought": "Let's think step by step. First, we must check if there are any nested lists. If there are any nested lists, we must iterate over the list, looking for other nested lists. This process must be repeated until no more nested lists are found. Then, all integers inside all nested lists must be added. In the example, first, we must check the list [3, 4]. Since there are no nested lists inside this list, we can add 3 + 4 = 7 as an intermediate result. Lastly, returning to the original list, since there are no additional lists, the sum of all elements must be 1 + 2 + 7 = 10.",
+        "chain_of_thought": "Let's think step by step. First, we must check if there are any nested lists among the elements of the list. If there are any nested lists, we must iterate over the nested list, looking for other nested lists. This process must be repeated until no more nested lists are found. Then, all integers inside all nested lists must be added. In the example, first, we must check the list [3, 4]. Since there are no nested lists inside this list, we can add 3 + 4 = 7 as an intermediate result. Lastly, returning to the original list, since there are no additional lists, the sum of all elements must be 1 + 2 + 7 = 10.",
         "input_examples": [
             {
                 "input": "[1, 2, [3, 4]]",
@@ -1388,7 +1388,7 @@ data = [
                 "0-shot": "For a given number, write a function to check whether the number can be represented as the difference of two squares. The function must receive an integer as input and return a boolean."
             }
         ],
-        "chain_of_thought": "Let's think step by step. An integer can be expressed as the difference between two squares only if it is not of the form 4k + 2. Then, the number's remainder modulo 4 must be tested. In the example, 5 modulo 4 = 1, which means it can be represented as the difference between two squares.",
+        "chain_of_thought": "Let's think step by step. An integer can be expressed as the difference between two squares only if it is not of the form 4k + 2. So, the number's remainder modulo 4 must be tested. In the example, 5 modulo 4 = 1, which means it can be represented as the difference between two squares.",
         "input_examples": [
             {
                 "input": "5",
@@ -1684,8 +1684,8 @@ data = [
                 "output": (4, 1)
             },
             {
-                "inputs": [1, 10, 11],
-                "output": (1, 1)
+                "inputs": [1, 13, 11],
+                "output": (11, 0)
             }
         ]
     },
@@ -1883,6 +1883,7 @@ data = [
                 "0-shot": "For a given integer n, write a function to find the maximum sum possible according to the equation: f(n) = max( (f(n/2) + f(n/3) + f(n/4) + f(n/5)), n). The function must receive an integer as input and return an integer."
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, by analyzing the equation, we notice the initial values are f(0) = 0, f(1) = max(f(0) + f(0) + f(0) + f(0), 1) = 1, and so on. Then, we must store these values in memory and recursively determine the value of the equation for different values of n, by successively calculating the floor of the division of n by 2, 3, 4 and 5, and comparing f(n//2) + f(n//3) + f(n//4) + f(n//5) with n, and finally extracting the maximum. In the example, f(2) = max(f(1) + f(0) + f(0) + f(0), 2) = max(1, 2) = 2.",
         "input_examples": [
             {
                 "input": "2",
@@ -1944,6 +1945,7 @@ data = [
                 "0-shot": "For a given array, write a function to sort it using shell sort. The function must receive an array as input and return an array."
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "[12, 23, 4, 5, 3, 2, 12, 81, 56, 95]",
@@ -2005,6 +2007,7 @@ data = [
                 "0-shot": "For a given integer, write a function to find the last digit of the factorial of the integer. The function must receive an integer as input and return an integer."
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "4",
@@ -2066,6 +2069,7 @@ data = [
                 "0-shot": "For a given integer n, write a function to get all ludic numbers smaller than or equal to n. The function must receive an integer as input and return a list of integers."
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we include 1 to the list of ludic numbers. Then, we must write a list of numbers starting from 2. The first number of the list (2) must be popped and included to the list of ludic numbers. Then, every 2nd number must be removed from the list. We then move on to the new first number of the list, 3. This number must be popped and included to the list of ludic numbers. Next, every 3rd number must be removed from the list. This process is then repeated until all ludic numbers smaller than or equal to n are found. In the example, we first include 1 to the list of ludic numbers. Then, we write a list of numbers starting from 2: [2, 3, 4, 5, 6, 7, 8, 9, 10, ...]. We pop 2 from the list, include it to the ludic numbers list and remove every 2nd number: [3, 5, 7, 9, ...]. We then pop 3 from the list, include it to the ludic numbers list, and remove every third number: [5, 7, ...]. Since n = 10, the last two ludic numbers smaller than 10 will be 5 and 7, leaving us with the list of ludic numbers: [1, 2, 3, 5, 7].",
         "input_examples": [
             {
                 "input": "10",
@@ -2127,6 +2131,7 @@ data = [
                 "0-shot": "For a given number r, write a function to find the area of the largest triangle that can be inscribed in a semicircle with radius r. The function must receive a number r and return a number, or None."
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "-1",
@@ -2188,6 +2193,7 @@ data = [
                 "0-shot": "For a given matrix, where each cell is associated with a cost, write a function to find the average cost of the path with the maximum average over all existing paths. A path is defined as a sequence of cells that starts from the top-left cell, moving only right or down, and ending on the bottom right cell. The average is computed as the total cost divided by the number of cells visited in the path. The function must receive a list of lists as input and return a number."
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "[[1, 2, 3], [6, 5, 4], [7, 3, 9]]",
@@ -2245,6 +2251,7 @@ data = [
                 "0-shot": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer."
             }
         ],
+        "chain_of_thought": "Let's think step by step. A polite number is a positive integer that can be written as the sum of two or more consecutive integers. As such, all numbers that aren't powers of 2 are polite numbers. In the example, the first 7 polite numbers are: 3, 5, 6, 7, 9, 10, 11. Thus, the 7th polite number is 11.",
         "input_examples": [
             {
                 "input": "7",
@@ -2306,6 +2313,7 @@ data = [
                 "0-shot": "For a given rgb value, write a function to convert the rgb color to hsv color. The function must receive three integers as inputs and return a tuple with three floats up to one decimal place."
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": ["255", "255", "255"],
@@ -2355,7 +2363,7 @@ data = [
             },
             {
                 "inputs": [128, 0, 150],
-                "output": (291, 100, 58.8)
+                "output": (291.2, 100.0, 58.8)
             }
         ]
     },
@@ -2368,6 +2376,7 @@ data = [
                 "simplified": "For a given list of strings, the 'asc-desc-ending' sort is defined as a sorting strategy in which a string 'a' occurs before a string 'b' if and only if in the first position where 'a' and 'b' differ, the following holds: if the position has an odd index, the letter in 'a' must appaear earlier in the alphabet than the corresponding letter in 'b'; if the position has an even index, the letter in 'b' must appear earlier in the alphabet than the corresponding letter in 'a'. Write a function to perform 'asc-desc-ending' sorting. The function must receive two integers n and m, as well as a list, with n strings of length m. The function must return a list of integers, corresponing to the indices of the strings, starting at 1, after they are sorted."
             }
         ],
+        "chain_of_thought": "Let's think step by step. Considering indexes start at 1, first the strings must be ordered lexicographically ascending according to their first letter. Then, for strings with the same first letter, we must analyze the second letter of each string, and then order them in descending order. This process of grouping and ordering strings ascendingly for odd indexes and descendingly for even indexes must be repeated until all strings have been ordered. In the example, we are given the list [AA, AB, BB, BA, AZ]. We must first order the strings ascendingly according to their first letter, thus giving us the intermediate list [AA, AB, AZ, BB, BA]. Then, for each group of strings with the same first letter, we must order their second letters descendingly. Given the strings AA, AB and AZ all start with 'A', ordering their second letters descendingly gives us [AZ, AB, AA]. Similarly for the group of strings starting with the letter 'B', we obtain [BB, BA]. Thus, our asc-desc-ending sorted list is [AZ, AB, AA, BB, BA]. Extracting the original indices of each string, we obtain [5, 2, 1, 3, 4].",
         "input_examples": [
             {
                 "input": "[5, 2, [AA, AB, BB, BA, AZ]]",
@@ -2429,6 +2438,7 @@ data = [
                 "0-shot": "The Winter holiday will be here soon. Mr. Chanek wants to decorate his house's wall with ornaments. The wall can be represented as a binary string a of length n. His favorite nephew has another binary string b of length m (m ≤ n).\n\nMr. Chanek's nephew loves the non-negative integer k. His nephew wants exactly k occurrences of b as substrings in a. \n\nHowever, Mr. Chanek does not know the value of k. So, for each k (0 ≤ k ≤ n - m + 1), find the minimum number of elements in a that have to be changed such that there are exactly k occurrences of b in a.\n\nA string s occurs exactly k times in t if there are exactly k different pairs (p,q) such that we can obtain s by deleting p characters from the beginning and q characters from the end of t. Write a function to determine the minimum number of elements needed to be changed for each k. The function must receive two integers n and m, and two binary strings a and b, of lengths n and m. The function must return a list with (n - m + 2) integers, where the (k+1)-th integer denotes the minimal number of elements in a that must be changed so there are exactly k occurrences of b as substrings in a. If no amount of changes is capable of satisfying k occurrences, the (k+1)-th integer must be -1."
             }
         ],
+        "chain_of_thought": "Let's think step by step. Given m and n, we can determine k will range from 0 to n - m + 1. For each k, we must change 0s and 1s in the string a in order to have the substring b appear k times, and we wish to find the minimum number of changes in order to accomplish so. In the example, for k = 0, we wish for the substring '101' never to appear. This can be accomplished in one change by replacing the 6th character in our string a, so that it becomes '10010011'. For k = 1, only one change is needed in order for '101' to appear only once, and that can be to change a to '100001011'. For k = 2, no changes are needed, since '101' already appears twice. This process is repeated until k = n - m + 1, which yields the list of changes for each k: [1, 1, 0, 1, 6, -1, -1, -1].",
         "input_examples": [
             {
                 "input": ["9", "3", "100101011", "101"],
@@ -2489,9 +2499,8 @@ data = [
             {
                 "0-shot": "Let c_1, c_2, …, c_n be a permutation of integers 1, 2, …, n. Consider all subsegments of this permutation containing an integer x. Given an integer m, we call the integer x good if there are exactly m different values of maximum on these subsegments. A permutation is an array consisting of n distinct integers from 1 to n in arbitrary order. For example, [2,3,1,5,4] is a permutation, but [1,2,2] is not a permutation (2 appears twice in the array) and [1,3,4] is also not a permutation (n=3 but there is 4 in the array). A sequence a is a subsegment of a sequence b if a can be obtained from b by deletion of several (possibly, zero or all) elements from the beginning and several (possibly, zero or all) elements from the end. Given four integers n, m, k and p, write a function to count the number of permutations of length n with exactly k good numbers, modulo p. The function must receive four integers n, m, k and p and return an integer."
             }
-            # Context for CoT:
-            # Lets think step by step. For n=4, take permutation [1, 3, 2, 4] as an example. For number 1, all subsegments containing it are: [1], [1, 3], [1, 3, 2] and [1, 3, 2, 4], and there are three different maxima: 1, 3 and 4. Similarly, for number 3, there are two different maxima 3 and 4. For number 2, there are three different maxima 2, 3 and 4. And for number 4, there is only one, which is 4 itself. Given m=3 and k=2, which corresponds to a permutation with 2 numbers having three different maxima each, the permutation [1, 3, 2, 4] should be included in our count, given numbers 1 and 2 have three different maxima each.
         ],
+        "chain_of_thought": "Lets think step by step. In the example, for n=4, take permutation [1, 3, 2, 4] for instance. For number 1, all subsegments containing it are: [1], [1, 3], [1, 3, 2] and [1, 3, 2, 4], and there are three different maxima: 1, 3 and 4. Similarly, for number 3, there are two different maxima 3 and 4. For number 2, there are three different maxima 2, 3 and 4. And for number 4, there is only one, which is 4 itself. Given m=3 and k=2, which corresponds to a permutation with 2 numbers having three different maxima each, the permutation [1, 3, 2, 4] should be included in our count, given numbers 1 and 2 have three different maxima each. Repeating this analysis for all permutations of numbers 1 to 4, we find that permutations [1, 3, 2, 4], [2, 3, 1, 4], [4, 1, 3, 2] and [4, 2, 3, 1] have 2 good numbers each, which brings us to a total of 4 permutations.",
         "input_examples": [
             {
                 "input": ["4", "3", "2", "10007"],
@@ -2577,6 +2586,7 @@ data = [
                 "0-shot": "Luntik has decided to try singing. He has a one-minute songs, b two-minute songs and c three-minute songs. He wants to distribute all songs into two concerts such that every song should be included to exactly one concert. The duration of the concert is the sum of durations of all songs in that concert. Write a function to find the minimal possible difference in minutes between the concerts durations. The function must receive three integers a, b and c, and return an integer."
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": ["1", "1", "1"],
@@ -2638,6 +2648,7 @@ data = [
                 "0-shot": "For a given array a of length n, write a function to find all integers x >= 0 such that there exists an increasing subsequence of the array a, in which the bitwise XOR of numbers is equal to x. A sequence s is a subsequence of a sequence b if s can be obtained from b by deletion of several (possibly, zero or all) elements. A sequence s1, s2, ..., sm is called increasing if s1 < s2 < ... < sm. The function must receive a list with n integers a1, a2, ..., an - the elements of the array a. The function must return a list of integers x1, x2, ..., xk, in increasing order - the found x values."
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we must determine the largest possible bitwise XOR that can be obtained from an increasing subsequence of the array a. Then for each integer x ranging from 0 to this result, we must test whether there is an increasing subsequence of the array a whose bitwise XOR of its elements is equal to x, and, if so, add it to a list to be returned. In the example, for x = 0, it is possible to choose the empty subsequence []. For x = 2, it is possible to choose the subsequence [2]. For x = 4, we can choose the subsequence [4]. Lastly, for x = 6, we can choose subsequence [2, 4], given that 2 ^ 4 = b'10' ^ b'100' = b'110' = 6. Therefore, we end up with the list [0, 2, 4, 6].",
         "input_examples": [
             {
                 "input": ["4", "2", "2", "4"],
@@ -2699,6 +2710,7 @@ data = [
                 "0-shot": "Consider a directed graph containing n nodes, labeled from 1 to n. There is a directed edge from node a to node b if and only if a < b. A path between nodes a and b is defined as a sequence of edges such that you can start at a, travel along all of these edges in the corresponding direction, and end at b. The length of a path is defined by the number of edges. A rainbow path of length x is defined as a path in the graph such that there exists at least 2 distinct colors among the set of x edges. Considering it is possible to label each edge with a color, write a function to determine the minimum number of colors needed to ensure that all paths of length k or longer are rainbow paths. The function must receive two integers, n and k, as inputs, and return an integer - the minimum number of colors needed."
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, given the number of nodes and the path length, we must list all edges, given that an edge from node a to node b exists only if a < b. Then, we must find all valid paths with length k or longer. We must then compare these paths with each other, looking for edges in common, and determine which edges appear more frequently in all paths, in order to paint some of them, in a way that guarantees each path is a rainbow path. In the example, we have the following valid paths of length 3 or longer: (1, 2, 3), (1, 2, 4), (1, 2, 5), (2, 3, 4), (2, 3, 5), (2, 4, 5), (3, 4, 5), (1, 2, 3, 4), (1, 2, 3, 5), (1, 2, 4, 5), (2, 3, 4, 5), (1, 2, 3, 4, 5). Given these paths, and the edges belonging to them, we can make every path a rainbow path by coloring the edges (1,2), (3,4), (3,5) and (4,5). Thus, we only need 2 different colors in this example.",
         "input_examples": [
             {
                 "input": ["5", "3"],
@@ -2760,6 +2772,7 @@ data = [
                 "0-shot": "Alice and Bob are playing a game. They are given an array A. The array consists of integers. They are building a sequence together. In the beginning, the sequence is empty. In one turn a player can remove a number from the left or right side of the array and append it to the sequence. The rule is that the sequence they are building must be strictly increasing. The winner is the player that makes the last move. Alice is playing first. Given the starting array, under the assumption that they both play optimally, write a function to determine the winner of the game. The function must receive a list of integers A1, A2, ..., AN, corresponding to the array A. The function must return a string corresponding to the name of the winner (either 'Alice' or 'Bob')."
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we must define the optimal strategy for the game, which, for both players, consists of removing the largest number from the array and appending it to the sequence, as long as it is larger than the last appended value (otherwise the game is already over). Then, we must take turns playing as Alice and as Bob, until the numbers on the left and right side of the array are both smaller than the last value added to sequence, or when the array is empty, at which point no more moves can be made. Then, we determine the winner, which is the last player to have appended a number to the sequence. In the example, there is only one number to remove from the array and append to the sequence. Therefore, given that the first player is Alice, and after her move the array is then empty, the winner is Alice.",
         "input_examples": [
             {
                 "input": "[5]",
@@ -2821,6 +2834,7 @@ data = [
                 "0-shot": "Consider a given array consisting of positive integers. Upon selecting a positive integer d, all elements of the array which are divisible by d will be painted red, and all other elements will be painted blue. The coloring is called beautiful if there are no pairs of adjacent elements with the same color in the array. Write a function to find the smallest value of d which yields a beautiful coloring, or report that it is impossible. The function must receive a list of integers - the elements of the array - as input, and return a positive integer d, or 0, if there is no value of d that yields a beautiful coloring."
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we must analyze the divisors of each number of the list. If there are one or more divisors belonging to interspersed elements of the array, then we must return the smallest of these divisors. Otherwise the problem has no solution. In the example, the elements 2 and 4 have 2 as a common divisor, which also isn't a divisor for any other elements of the array. Therefore, the smallest value which returns a beautiful coloring is 2.",
         "input_examples": [
             {
                 "input": "[1, 2, 3, 4, 5]",
@@ -2891,9 +2905,10 @@ data = [
         "problem_description": "BA-String",
         "prompts": [
             {
-                "0-shot": "Given an integer k and a string s, that consists only of characters 'a' and '*', each asterisk should be replaced with several (from 0 to k inclusive) lowercase Latin letters 'b'. Different asterisks can be replaced with different counts of the letter 'b'. The result of the replacement is called a BA-string. A string p is lexicographically smaller than q if and only if one of the following holds: p is a prefix of q, but p != q, or in the first position where p and q differ, the string p has a letter that appears earlier in the alphabet than the corresponding letter in q. Now consider all different BA-strings and write a function to find the x-th lexicographically smallest of them. The function must receive two integers k and x, and a string s. The function must return a string consisting only of 'b's and 'a's, corresponding to the  the x-th lexicographically smallest BA-string."
+                "0-shot": "Given an integer k and a string s, that consists only of characters 'a' and '*', each asterisk should be replaced with several (from 0 to k inclusive) lowercase Latin letters 'b'. Different asterisks can be replaced with different counts of the letter 'b'. The result of the replacement is called a BA-string. A string p is lexicographically smaller than q if and only if one of the following holds: p is a prefix of q, but p != q, or in the first position where p and q differ, the string p has a letter that appears earlier in the alphabet than the corresponding letter in q. Now consider all different BA-strings and write a function to find the x-th lexicographically smallest of them. The function must receive two integers k and x, and a string s. The function must return a string consisting only of 'b's and 'a's, corresponding to the x-th lexicographically smallest BA-string."
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we must create a list of all possible strings we can obtain by replacing asterisks by 'b's from 0 to k times. Then, we must list these strings in lexicographically ascending order. Then, given x, we can find the x-th smallest BA-string. In the example, the strings we can obtain by replacing '*' with 'b' up to 4 times are: 'a', 'ab', 'abb', 'abbb' and 'abbbb', in lexicographically ascending order. Thus, the third smallest BA-string is 'abb'.",
         "input_examples": [
             {
                 "input": ["4", "3", "a*"],
@@ -2967,6 +2982,7 @@ data = [
                 "0-shot": "Polycarp likes squares and cubes of positive integers. Here is the beginning of the sequence of numbers he likes: 1, 4, 8, 9, .... For a given number n, write a function to count the number of integers from 1 to n that Polycarp likes. In other words, find the number of such x that x is a square of a positive integer number or a cube of a positive integer number (or both a square and a cube simultaneously). The function must receive an integer n, and return an integer."
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we must determine the square root of n. Then, for each number k smaller than or equal to the square root of n, we must add k^2 to the list of numbers Polycarp likes. Additionally, if k^3 is smaller than n, it must also be added to list. Finally, the number of integers from 1 to n that Polycarp likes will be given by the length of the list. In the example, we first calculate the floor of the square root of 10, which is 3. Then, we iterate over k from 1 to 3. For k = 1, we add it to the list. For k = 2, we add both 2^2 = 4 and 2^3 = 8 to the list. Lastly, for k = 3, we add 3^2 = 9 to the list, totalling 4 numbers.",
         "input_examples": [
             {
                 "input": "10",
@@ -3044,6 +3060,7 @@ data = [
                 "0-shot": 'The following `base_url` function and docstring refer to a utility function to extract the base url given a url, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```import re\n\ndef base_url(url):\n    """ Returns the base url given a full url\n    """\n    pass```. Complete the function, having it return the base url as a string.',
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "http://foo.de/",
@@ -3117,6 +3134,7 @@ data = [
                 "0-shot": 'The following `determine_ext` function and docstring refer to a utility function to determine the video extension of a given url, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```KNOWN_EXTENSIONS = (\n    \'mp4\', \'m4a\', \'m4p\', \'m4b\', \'m4r\', \'m4v\', \'aac\',\n    \'flv\', \'f4v\', \'f4a\', \'f4b\',\n    \'webm\', \'ogg\', \'ogv\', \'oga\', \'ogx\', \'spx\', \'opus\',\n    \'mkv\', \'mka\', \'mk3d\',\n    \'avi\', \'divx\',\n    \'mov\',\n    \'asf\', \'wmv\', \'wma\',\n    \'3gp\', \'3g2\',\n    \'mp3\',\n    \'flac\',\n    \'ape\',\n    \'wav\',\n    \'f4f\', \'f4m\', \'m3u8\', \'smil\')\n\ndef determine_ext(url):\n    """ Extract the video extension from a URL, returning \'None\' if no valid extension was found.\n    URLs such as \'http://example.com/foo/bar.mp4/?download\' can also have extensions extracted.\n    """\n    \n    pass```. Complete the function, having it return the video extension as a string.',
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we need to parse the input url and remove the base URL. Then, we need to search the remaining string for one of the extensions in the list of known extensions followed by a dot, such as '.wav', and return it if it exists. In the example, parsing the url results in '/foo/bar.mp4/'. If we then perform a search for an extension followed by '.', we are able to extract the '.mp4' extension.",
         "input_examples": [
             {
                 "input": "http://example.com/foo/bar.mp4/?download",
@@ -3182,6 +3200,7 @@ data = [
                 "0-shot": 'The following `escape_rfc3986` function and docstring refer to a utility function to escape non-ASCII characters from a given string, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```def escape_rfc3986(s):\n    """ Escape non-ASCII characters as suggested by RFC 3986.\n        The characters "!*\'();:@&=+$,/?%#[]" are reserved and aren\'t converted.\n    """\n    pass```. Complete the function, having it return the escaped string.',
             }
         ],
+        "chain_of_thought": "",
         "input_examples": [
             {
                 "input": "!*\'();:@&=+$,/?%#[]",
@@ -3247,6 +3266,7 @@ data = [
                 "0-shot": 'The following `fix_xml_ampersands` function and docstring refer to a utility function to replace all lone "&" characters from a given xml string by "&amp;", in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```def fix_xml_ampersands(xml_str):\n    """Replace all lone \'&\' characters by \'&amp;\' in XML"""\n    pass```. Complete the function, having it return the replaced xml string.',
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we must locate all '&' in the string. Then, we must check whether it has already been escaped, by verifying if it is already followed by an 'amp;' substring. If not, we must escape the ampersand, changing it to '&amp;'. In the example, since no ampersands were escaped yet, we must escape all of them, thus resulting in the escaped string: '\"&amp;x=y&amp;z=a'.",
         "input_examples": [
             {
                 "input": '"&x=y&z=a',
@@ -3312,6 +3332,7 @@ data = [
                 "0-shot": 'The following `mimetype2ext` function and docstring refer to a utility function to convert a mimetype into its corresponding extension, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```MIMETYPE_EXTENSION_MAPPING = {\n    \'3gpp\': \'3gp\',\n    \'smptett+xml\': \'tt\',\n    \'ttaf+xml\': \'dfxp\',\n    \'ttml+xml\': \'ttml\',\n    \'x-flv\': \'flv\',\n    \'x-mp4-fragmented\': \'mp4\',\n    \'x-ms-sami\': \'sami\',\n    \'x-ms-wmv\': \'wmv\',\n    \'mpegurl\': \'m3u8\',\n    \'x-mpegurl\': \'m3u8\',\n    \'vnd.apple.mpegurl\': \'m3u8\',\n    \'dash+xml\': \'mpd\',\n    \'f4m+xml\': \'f4m\',\n    \'hds+xml\': \'f4m\',\n    \'vnd.ms-sstr+xml\': \'ism\',\n    \'quicktime\': \'mov\',\n    \'mp2t\': \'ts\',\n    \'x-wav\': \'wav\',\n}\n\ndef mimetype2ext(mt):\n    """ Converts mimetype to extension\n    \n    Specifications:\n        \'audio/mp4\': \'m4a\'\n        \'audio/mpeg\': \'mp3\' (Per RFC 3003, audio/mpeg can be .mp1, .mp2 or .mp3 - which is most popular)\n        Other extensions: refer to mimetype-extension mapping. If no corresponding extension is found,\n        returns the input mt.\n    """\n    \n    pass```. Complete the function, having it return the string corresponding to the mimetype equivalent extension.',
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we must check for the special cases, such as 'audio/mp4' and 'audio/mpeg'. If the mimetype does not match a special case, we must extract only the second part of the mimetype. Then, we must try to match this substring with a mimetype in the mimetype-extension mapping. If a match is found, then we must return the mapped extension, otherwise, we must return the stripped mimetype substring. In the example, since 'video/x-flv' is not a special case, we must match the second part of the mimetype, 'x-flv' with its corresponding extension, which, from the mapping, is 'flv'.",
         "input_examples": [
             {
                 "input": "video/x-flv",
@@ -3371,12 +3392,13 @@ data = [
     },
     {
         "problem_id": "YTDL6",
-        "problem_description": "Mimetype to extension util",
+        "problem_description": "Parse iso8601",
         "prompts": [
             {
-                "0-shot": 'The following `parse_iso8601` function and docstring refer to a utility function to convert an ISO datetime into a UNIX timestamp, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```def parse_iso8601(date_str, delimiter=\'T\', timezone=None):\n    """ Return a UNIX timestamp from the given date.\n        Delimiter corresponds to the time delimiter (e.g. 2023-10-19T00:00:00+0000)\n    """\n\n    pass```. Complete the function, having it return a string corresponing to the UNIX timestamp if the datetime is valid, or None otherwise.',
+                "0-shot": 'The following `parse_iso8601` function and docstring refer to a utility function to convert an ISO datetime into a UNIX timestamp, in the context of a project to download videos from video hosting services, such as Youtube. The function is as follows: ```def parse_iso8601(date_str, delimiter=\'T\', timezone=None):\n    """ Return a UNIX timestamp from the given date.\n        Delimiter corresponds to the time delimiter (e.g. 2023-10-19T00:00:00+0000)\n    """\n\n    pass```. Complete the function, having it return a string corresponding to the UNIX timestamp if the datetime is valid, or None otherwise.',
             }
         ],
+        "chain_of_thought": "Let's think step by step. First, we must parse the input datetime. This input can have multiple formats, such as '2014-03-23T23:04:26+0100' or '2014-03-23T22:04:26Z', so we must sanitize them first. Then, we must convert the datetime into a UNIX timestamp. Lastly, we must convert the timestamp into a string. In the example, '2014-03-23T23:04:26+0100' corresponds to 1395612266 seconds in a UNIX timestamp, which then is converted to a string: '1395612266'.",
         "input_examples": [
             {
                 "input": "2014-03-23T23:04:26+0100",
