@@ -25,6 +25,16 @@ def list_problem_ids():
     return problem_ids
 
 
+def list_problems_with_cot_ids():
+    problem_ids = []
+
+    for problem in data:
+        if problem['chain_of_thought']:
+            problem_ids.append(problem['problem_id'])
+
+    return problem_ids
+
+
 def extract_problem_id(log_file):
     return log_file.split("_")[0]
 
@@ -43,6 +53,12 @@ def extract_examples_from_problem(problem_id, variation_examples):
     for problem in data:
         if problem['problem_id'] == problem_id:
             return problem[variation_examples]
+
+
+def extract_chain_of_thought_from_problem(problem_id):
+    for problem in data:
+        if problem['problem_id'] == problem_id:
+            return problem['chain_of_thought']
 
 
 def extract_tests_from_problem(problem_id):
