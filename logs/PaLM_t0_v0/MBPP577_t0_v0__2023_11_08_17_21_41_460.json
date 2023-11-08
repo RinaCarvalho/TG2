@@ -1,0 +1,1 @@
+{"prompt": "For a given integer, write a function to find the last digit of the factorial of the integer. The function must receive an integer as input and return an integer.", "response": "\ndef last_digit_factorial(n): \r\n    result = 1\r\n    for i in range(2, n + 1): \r\n        result = (result * i) % 10\r\n    return result \n"}

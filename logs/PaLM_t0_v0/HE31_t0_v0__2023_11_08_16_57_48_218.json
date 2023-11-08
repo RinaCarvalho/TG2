@@ -1,0 +1,1 @@
+{"prompt": "For a given integer, write a function to check if the number is a prime number. The function must receive an integer as input and return a boolean.", "response": "\ndef is_prime(n): \r\n    if (n <= 1): \r\n        return False\r\n    for i in range(2, n): \r\n        if (n % i == 0): \r\n            return False\r\n    return True\n"}

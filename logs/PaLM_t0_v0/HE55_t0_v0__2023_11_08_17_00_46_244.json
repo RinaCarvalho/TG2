@@ -1,0 +1,1 @@
+{"prompt": "For a given number n, write a function to determine the n-th Fibonacci number, starting from 1 and 1. The function must receive an integer as input and return an integer.", "response": "\ndef fibonacci(n): \r\n    a, b = 1, 1\r\n    for i in range(n-1):\r\n        a, b = b, a + b\r\n    return a\n"}
