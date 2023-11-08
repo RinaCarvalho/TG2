@@ -2,3 +2,4 @@ timeout-decorator
 numpy
 roman
 pytz
+dateutil
