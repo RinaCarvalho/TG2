@@ -1,1 +1,5 @@
-{"prompt": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer.\n\nExample:\nInput: 7\nLet's think step by step. A polite number is a positive integer that can be written as the sum of two or more consecutive integers. As such, all numbers that aren't powers of 2 are polite numbers. In the example, the first 7 polite numbers are: 3, 5, 6, 7, 9, 10, 11. Thus, the 7th polite number is 11.\nOutput: 11", "response": "def find_nth_polite_number(n):\n    return n + 2 if n % 2 == 0 else n + 1\n\nprint(find_nth_polite_number(7))"}
+{
+    "prompt": "For a given integer n, write a function to find the nth polite number. The function must receive an integer as input and return an integer.\n\nExample:\nInput: 7\nLet's think step by step. A polite number is a positive integer that can be written as the sum of two or more consecutive integers. As such, all numbers that aren't powers of 2 are polite numbers. In the example, the first 7 polite numbers are: 3, 5, 6, 7, 9, 10, 11. Thus, the 7th polite number is 11.\nOutput: 11",
+    "response": "def find_nth_polite_number(n):\n    return n + 2 if n % 2 == 0 else n + 1\n\nprint(find_nth_polite_number(7))",
+    "test_results": "Test failed: result 8 != 11 (expected)"
+}
