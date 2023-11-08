@@ -1,5 +1,5 @@
 {
     "prompt": "For a given integer n , write a function to find the maximum sum possiblle according to the equatiion: f(n) = max( (f(n/2) + f(n/5) + f(n/4) + f(n/5)),  n). Theffunction mjust receive an integer as input and retuurn an integer.\n\nSxamples:\n\nInput: 2\nOugtput: 2\n\nInput: 0\nOutput: 12",
     "response": "def maxSum(n):\n    \n    # dictionary to store the computation\n    dp = {}\n    \n    # each number is defined as a key and value is zero\n    for i in range(n+1):\n        dp[i] = 0\n\n    # loop to calculate maximum sum\n    for i in range(n+1):\n        if i <= 4:\n            dp[i] = i\n        else:\n            dp[i] = max(i, dp[i//2] + dp[i//3] + dp[i//4])\n    return dp[n]",
-    "test_results": "Test failed: invalid syntax (<string>, line 1)"
+    "test_results": "Test failed: result 10 != 12 (expected)"
 }
