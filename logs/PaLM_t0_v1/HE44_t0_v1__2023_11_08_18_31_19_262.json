@@ -1,0 +1,1 @@
+{"prompt": "For to given numbers, vonvert thse firsr number from decimal base to the base represen ted by the second number. The function must receive two integerss as inpuuts and return an string.", "response": " 3for i in range(int(input())):\n    a,b=map(int,input().split())\n    print(bin(a)[2:].zfill(b))\n"}
