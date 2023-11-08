@@ -3,13 +3,14 @@
 from prompt_generator import PromptGenerator
 from prompt_constants import Technique, Variation
 from code_generator import CodeGenerator
-from utils import extract_prompt_from_problem, write_to_jsonl, list_problem_ids
+from utils import extract_prompt_from_problem, write_to_jsonl, list_problem_ids, list_problems_with_cot_ids
 
-model = "gpt-3.5-turbo"
+# models: gpt-3.5-turbo, gpt-4, code-bison
+model = "code-bison"
 language = "Python 3"
-problem_id = "YTDL3"
+problem_id = None
 prompt_type = "0-shot"
-log_path = "logs/GPT_35_t0_v1_i2"
+log_path = "logs/PaLM_t0_v1"
 technique=Technique.ZERO_SHOT
 variation=Variation.TYPO
 samples = 10
@@ -32,6 +33,10 @@ if __name__ == "__main__":
     if problem_id:
         generate_code_for_problem(problem_id, prompt_type, technique, variation, model, language, log_path, samples)
     else:
-        problem_ids = list_problem_ids()
-        for problem_id in problem_ids[:34]:
+        if technique == Technique.CHAIN_OF_THOUGHT:
+            problem_ids = list_problems_with_cot_ids()
+        else:
+            problem_ids = list_problem_ids()
+
+        for problem_id in problem_ids[13:]:
             generate_code_for_problem(problem_id, prompt_type, technique, variation, model, language, log_path, samples)
