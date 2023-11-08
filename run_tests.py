@@ -2,7 +2,7 @@ import os
 from evaluator import Evaluator
 from utils import extract_tests_from_problem, write_test_results_to_log, write_to_jsonl
 
-log_directory = "logs/GPT_4_t1_v1"
+log_directory = "logs/GPT_4_t1_v2"
 
 if __name__ == "__main__":
     write_to_jsonl()
