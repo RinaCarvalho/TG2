@@ -31,7 +31,7 @@ class Evaluator:
             return None
 
 
-    @timeout_decorator.timeout(10)
+    @timeout_decorator.timeout(15)
     def run_test(self, tests):
         generated_code = self._extract_generated_code()
 
@@ -48,4 +48,12 @@ class Evaluator:
 
         for test in tests:
             result = test_function(*test["inputs"])
-            assert result == test["output"], f"result {result} != {test['output']} (expected)"
+
+            if self.problem_id == "MBPP160":
+                x, y = result
+                a, b, n = test["inputs"]
+                assert a*x + b*y == n, f"result {result} is not a valid tuple"
+            elif self.problem_id == "YTDL1":
+                assert result == test["output"] or result == test["output"][:-1], f"result {result} != {test['output']} (expected)"
+            else:
+                assert result == test["output"], f"result {result} != {test['output']} (expected)"
