@@ -6,8 +6,9 @@ class PromptGenerator {
     + variation: int
     + generate_prompt_series()
     + generate_modified_prompt()
-    - generate_prompt_with_typos()
-    - generate_few_shot_prompt()
+    - _generate_prompt_with_typos()
+    - _generate_few_shot_prompt()
+    - _generate_chain_of_thought_prompt()
 }
 
 class CodeGenerator {
@@ -15,6 +16,7 @@ class CodeGenerator {
     + language: string
     + generate_code()
     - _log_api_call()
+    - _call_OpenAI_API()
 }
 
 class Evaluator {
