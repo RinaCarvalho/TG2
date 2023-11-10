@@ -2,8 +2,6 @@ import csv
 import json
 import os
 import re
-#import pandas as pd
-#import numpy as np
 from problems import data
 
 problem_file_path = 'problems.jsonl'
@@ -138,32 +136,3 @@ def write_results_to_csv(logs_dir):
             csv_writer.writerow(row)
 
     print("Results have been saved.")
-
-
-#def pass_at_k(n, c, k):
-    #if n - c < k:
-        #return 1.0
-    #return 1.0 - np.prod(1.0 - k / np.arange(n - c + 1, n + 1))
-
-
-# def calculate_pass_at_k(k):
-    #csv_file = "result_compilation.csv"
-    #df = pd.csv_read(csv_file)
-
-    # number of samples for each problem, model and prompt
-    #n = 10
-
-    #pass_at_k_df = df.copy()
-
-    # Iterate over the columns and rows to calculate pass@k for each cell
-    #for column in df.columns:
-        #for row in df.index:
-            #c = df.at[row, column]
-            #pass_k = pass_at_k(n, c, k)
-            #pass_at_k_df.at[row, column] = pass_k
-
-    # Save the new DataFrame with pass@k values to a new CSV file
-    #pass_at_k_csv_file = "pass_at_k_values.csv"
-    #pass_at_k_df.to_csv(pass_at_k_csv_file, index=False)
-
-    #print(f"Pass@{k} values have been calculated and saved to {pass_at_k_csv_file}.")
